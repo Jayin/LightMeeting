@@ -130,8 +130,8 @@ class MeetController extends Controller {
 	/*
 	 *
 	* 会议添加成员
-	*meetid 指定查找id  为空是获得全部会议
-	*field 是json 格式 {"0":"title","1":"address"}
+	*meetid 会议id
+	*memberid 成员id
 	*/
 	
 	public function addjoin(){
@@ -139,10 +139,7 @@ class MeetController extends Controller {
 		$joinmodel=D("joinmeet");
 
 		if($data){
-			$data["stime"]=time();
-			//print_r($data);
-		
-			$res=$joinmodel->add($data);
+			$res=$joinmodel->addjoin($data);
 			if($res){
 				echo "success";
 			}else{
@@ -152,6 +149,70 @@ class MeetController extends Controller {
 		}else{
 			echo "post error";
 		}
+	}
+	
+	
+	/*
+	 *
+	*查看会议成员
+	*meetid 会议id
+	*return json
+	* [{
+        "id": "2",
+        "username": "zhlhuang",
+        "nickname": "黄振炼",
+        "sex": "m",
+        "company": "1",
+        "position": "1",
+        "stime": "1415080561"
+      }]
+	*
+	*/
+	
+	public function getjoinmember(){
+		$meetid=I("post.meetid"); //通过post 传入会议id
+		$joinmodel=D("joinmeet");
+		$res=$joinmodel->getjoinmember($meetid);
+		
+		if($res){
+			$this->AjaxReturn($res);
+		}else{
+			echo "error";
+		}
+	}
+	
+	
+	
+	/*
+	 *
+	*查看会议列表
+	*memberid 会员的id（查找该会员相关的会议）
+	*
+	[
+    {
+        "id": "1",
+        "title": "袂卓第一次会议",
+        "intro": "这是我们第一次全体例会",
+        "address": "北主楼1608",
+        "createmember": "2",
+        "weight": "20",
+        "starttime": "1411039823",
+        "endtime": "1411047056"
+    }
+    ]
+	*/
+	
+	public function getjoinmeet(){
+		$memberid=I("post.memberid"); //根据会员的id 查看参加会议列表
+		$joinmodel=D("joinmeet");
+		$res=$joinmodel->getjoinmeet($memberid);
+		if($res){
+			$this->AjaxReturn($res);
+		}else{
+			echo "error";
+		}
+		
+		
 	}
 	
 	
