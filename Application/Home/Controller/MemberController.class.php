@@ -3,11 +3,10 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Common\Controller\BaseController;
 
 
-
-
-class MemberController extends Controller {
+class MemberController extends BaseController {
 	
 	
 	public function hello(){
@@ -31,6 +30,10 @@ class MemberController extends Controller {
             [birth] => 2014-10-31
 	*/
 	public function addmember(){
+		//一下数据必须不能为空
+		$postdata=array('username','nickname','password','sex','company','position');
+		$this->reqPost($postdata); 
+		
 		$data=I("post.");
 		
 		
@@ -52,9 +55,10 @@ class MemberController extends Controller {
 		$res=$membermodel->add($data);
 
 		if($res){
-			echo $res;
+// 			echo "success";
+			$this->ajaxReturn(qc_json_success());;
 		}else{
-			echo $res; 
+			$this->ajaxReturn(qc_json_error());; 
 		}
 		
 	}
@@ -63,10 +67,12 @@ class MemberController extends Controller {
 	/*
 	 *
 	* 这里是会员的登录界面
-	*
+	*  所需数据，username password
 	*/
 	
 	public function login(){
+		$postdata=array("username","password");
+		$this->reqPost($postdata);
 		
 	 	$username=I("post.username");
 		$password=md5(I("post.password"));
@@ -75,9 +81,10 @@ class MemberController extends Controller {
 		$res=$membermodel->chklogin($username,$password); //返回一个bool  true登录成功
 		
 		if($res){
-			echo session("member")["username"]."  ok";
+			session("member")["username"]."  ok";
+			$this->ajaxReturn(qc_json_success());
 		}else{
-			echo "error";
+			$this->ajaxReturn(qc_json_error());;
 		}
 	}
 	
@@ -86,6 +93,14 @@ class MemberController extends Controller {
 	 *
 	* 获取会员相应资料
 	*Param id 是用户的指定id（默认为空从session）  key  就是我们要查找会员属性
+	*
+	*返回
+	*{
+    "code": 20000,
+    "response": {
+        "username": "zhlhuang"
+    }
+     }
 	*/
 	
 
@@ -94,9 +109,11 @@ class MemberController extends Controller {
 		    $key=I("get.key");
 		    $member=session("member");
 		    if($member==NULL){
-		    	echo "errror";
+		    	$this->ajaxReturn(qc_json_error());
 		    }else{
-		    	echo  $member[$key];
+// 		    	echo  $member[$key];
+		    	
+		    	$this->ajaxReturn(qc_json_success(array($key=>$member[$key])));
 		    	
 		    }
 	}
@@ -112,9 +129,7 @@ class MemberController extends Controller {
 	function getallmember(){
 		$membermodel=M("member");
 		$res=$membermodel->select();
-		echo "<pre>";
-		print_r($res);
-		echo "</pre>";
+      $this->ajaxReturn(qc_json_success($res));
 	}
 	
 	/*
@@ -123,7 +138,12 @@ class MemberController extends Controller {
 	 *   
 	 */
 	function getonemember(){
-		$memberid=I("get.memberid");//通过get方式获取会员id
+		
+		$postdata=array("memberid");
+		$this->reqPost($postdata);
+		
+		
+		$memberid=I("post.memberid");//通过get方式获取会员id
 		if($memberid==NULL){
 			return NULL;
 		}
@@ -132,9 +152,7 @@ class MemberController extends Controller {
 		
 		$res=$membermodel->where("id=".$memberid)->find();
 		
-		echo "<pre>";
-		print_r($res);
-		echo "</pre>";
+       $this->ajaxReturn(qc_json_success($res));
 		
 	}
 	
