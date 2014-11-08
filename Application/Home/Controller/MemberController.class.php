@@ -23,15 +23,15 @@ class MemberController extends BaseController {
             [nickname] => 黄振炼
             [password] => 123
             [sex] => m
-            [company] => 1
-            [position] => 1
+            [company] => 0
+            [position] => 0
             [phone] => 15088132444
             [email] => 364626853@qq.com
             [birth] => 2014-10-31
 	*/
 	public function addmember(){
-		//一下数据必须不能为空
-		$postdata=array('username','nickname','password','sex','company','position');
+		//一下数据必须不能为空   公司职位可以为空
+		$postdata=array('username','nickname','password','sex');
 		$this->reqPost($postdata); 
 		
 		$data=I("post.");
@@ -81,7 +81,7 @@ class MemberController extends BaseController {
 		$res=$membermodel->chklogin($username,$password); //返回一个bool  true登录成功
 		
 		if($res){
-			session("member")["username"]."  ok";
+			//session("member")["username"]."  ok";
 			$this->ajaxReturn(qc_json_success());
 		}else{
 			$this->ajaxReturn(qc_json_error());;
