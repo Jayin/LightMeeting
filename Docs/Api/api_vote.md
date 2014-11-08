@@ -3,6 +3,7 @@ api_vote
 > 投票  
 > By Jayin Ton
 
+**NOTE 注意检查权限**
 
 ### 创建(发起)投票项
 `POST /home/vote/create` 
@@ -12,7 +13,7 @@ api_vote
 meetid | 所属会议id     | Y
 title|  投票主题      | Y
 intro  | 投票简介   | Y
-ctime   | 起始时间   | Y
+stime   | 起始时间   | Y
 etime   | 终止时间  | Y
 
 
@@ -73,11 +74,11 @@ vpintro  | 选项 介绍   | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-voteid | 投票id | Y
-title|  投票主题      | Y
-intro  | 投票简介   | Y
-ctime   | 起始时间   | Y
-etime   | 终止时间  | Y
+id | 投票id | Y
+title|  投票主题      | N
+intro  | 投票简介   | N
+stime   | 起始时间   | N
+etime   | 终止时间  | N
 
 
 **Response**  
@@ -146,6 +147,7 @@ voteid|  投票id  | Y
         "title":foo,
         "intro":foo,
         "ctime":148000,
+        "stime":148000,
         "etime":480000,
         "option" :[
             "1" : 18
