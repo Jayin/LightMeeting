@@ -146,9 +146,7 @@ voteid：|  投票id  | Y
         "ctime":148000,
         "etime":480000,
         "option" :[
-            "1" : {
-                "count":1
-            },
+            "1" : 18
 
         ]
 
