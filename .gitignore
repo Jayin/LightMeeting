@@ -1,2 +1,6 @@
 Runtime/
 Application/THP/
+.setting/
+.project
+.buildpath
+.idea/
