@@ -43,4 +43,10 @@ class BaseController extends Controller {
 			return $this;
 		}
 	}
+	/**
+	 * 需要登录
+	 */
+	protected  function reqLogin(){
+		return $this->getlogin();
+	}
 }
