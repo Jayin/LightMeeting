@@ -28,6 +28,7 @@ etime   | 终止时间  | Y
 
 ### 添加一选项
 `POST /home/vote/addOption`
+
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 voteid | 所属投票表id     | Y
@@ -47,6 +48,7 @@ vpintro  | 选项 介绍   | Y
 
 ### 更新一选项
 `POST /home/vote/updateOption`
+
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 vpotionsid | 选项id | Y
@@ -131,7 +133,7 @@ voteid：|  投票id  | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-voteid：|  投票id  | Y
+voteid|  投票id  | Y
 
 
 **Response**  
