@@ -26,3 +26,10 @@ function qc_json_success($data='operate successfully',$code =20000){
 function qc_json_error_request(){
 	return qc_json_error('Request method error',40001);
 }
+/**
+ * 获得用户的IP
+ * @return string
+ */
+function qc_getRoteIP(){
+	return $_SERVER['REMOTE_ADDR'];
+}
