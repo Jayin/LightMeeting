@@ -9,10 +9,9 @@ class MeetController extends BaseController {
 	public function index(){
 		echo "hello";
 	}
-	/*
-	 *
+	/**
 	* 添加会议
-	*   
+	* @param  
 	"title": "袂卓第二次会议",
     "intro": "这是我们第二次全体例会",
     "address": "北主楼1608",
@@ -30,28 +29,19 @@ class MeetController extends BaseController {
 		
 		$data=I("post.");
 		$member=session("member");
-			if(!$data){ //post 数据为空  真返回错误提示
-				echo "post error";
-				exit;
-			}
 			$data["createmember"]=$member["id"];//创建会议人
 			$meetmodel=D("meet");
 			$res=$meetmodel->addmeet($data);
 			
-			if($res){
-				$this->ajaxReturn(qc_json_success()); //添加会议成功
-			}else{
-				$this->ajaxReturn(qc_json_error()); //添加会议失败
-			}
+			$this->ajaxReturn($res);
 
 		
 	//	echo date("Y/m/d H:i:s",$data["endtime"]);
 	}
 	
-	/*
-	 *
+	/**
 	* 更新会议
-	*
+	*@param
 	"id":2
 	"title": "袂卓第二次会议",
 	"intro": "这是我们第二次全体例会",
@@ -63,26 +53,22 @@ class MeetController extends BaseController {
 	* 上面是我们需要修改的数据
 	*/
 	public function updatemeet(){
+	    
+	    $this->reqPost(array("id"));//更细腻会议的id必须有
 		$data=I("post.");
 		$meetmodel=D("meet"); //实例化一个model
-		if($data){
-			$res=$meetmodel->updatemeet($data);
-			if($res){
-				$this->ajaxReturn(qc_json_success());
-			}else{
-				$this->ajaxReturn(qc_json_error("no data update"));
-			}
-		}else{
-			$this->ajaxReturn(qc_json_error("post NULL"));
-		}
 		
+		
+			$res=$meetmodel->updatemeet($data);
+			$this->ajaxReturn($res);
+
 		
 	}
 	
 	
-	/*
-	 *
+	/**
 	* 删除相应的会议
+	* @param
 	* meetid 会议的id
 	*/
 	
@@ -94,22 +80,15 @@ class MeetController extends BaseController {
 		
 		$meetid=I("post.meetid");
 		$meetmodel=D("meet");
-		if($meetid){
-		 $res=$meetmodel->where("id=".$meetid)->delete();
-		 if($res){
-		 	$this->ajaxReturn(qc_json_success());
-		 }else{
-		 	$this->ajaxReturn(qc_json_error());
-		 }
-		}else{
-			echo "post error";
-		}
+		$res=$meetmodel->deletemeet($meetid);
+		$this->ajaxReturn($res);
+		
 		
 	}
 	
-	/*
-	 *
+	/**
 	* 获取相应的会议
+	* @param
 	*meetid 指定查找id  为空是获得全部会议
 	*field 是json 格式 {"0":"title","1":"address"}
 	*/
@@ -127,20 +106,14 @@ class MeetController extends BaseController {
 		}
 		
 		$meetmodel=D("meet");
-		
-		
-		
-		if($meetid==NULL){
-			$res=$meetmodel->select();
-		}else{
-			$res=$meetmodel->field($field)->where("id=".$meetid)->find();
-		}
+	
+	    $res=$meetmodel->field($field)->where("id=".$meetid)->find();
 		$this->ajaxReturn(qc_json_success($res));
 	}
 	
-	/*
-	 *
+	/**
 	* 会议添加成员
+	*@param
 	*meetid 会议id
 	*memberid 成员id
 	*/
@@ -153,18 +126,39 @@ class MeetController extends BaseController {
 		$data=I("post.");
 		$joinmodel=D("joinmeet");
 
-			$res=$joinmodel->addjoin($data);
-			if($res){
-				$this->ajaxReturn(qc_json_success());
-			}else{
-				$this->ajaxReturn(qc_json_error());
-			}		
+		$res=$joinmodel->addjoin($data);
+		
+		$this->ajaxReturn($res);
+			
 	}
 	
 	
-	/*
-	 *
+	/**
+	 * 
+	 * 退出会议
+	 * @param
+	 * meetid 退出会议的id
+	 * 
+	 */
+	
+	public function outjoin(){
+	    $postdata=array("meetid");
+	    $this->reqPost($postdata)->reqLogin();
+	    $meetid=I("post.meetid");
+	    $joinmodel=D("joinmeet");
+
+	    $res=$joinmodel->outjoin($meetid);
+	    
+	    $this->ajaxReturn($res);
+	    
+	}
+	
+	
+	
+	
+	/**
 	*查看会议成员
+	*@param
 	*meetid 会议id
 	*return json
 	* [{
@@ -184,20 +178,15 @@ class MeetController extends BaseController {
 		$joinmodel=D("joinmeet");
 		$res=$joinmodel->getjoinmember($meetid);
 		
-		if($res){
-			$this->ajaxReturn(qc_json_success($res));
-		}else{
-			$this->ajaxReturn(qc_json_error());
-		}
+		$this->ajaxReturn($res);
 	}
 	
 	
 	
-	/*
-	 *
+	/**
 	*查看会议列表
 	*memberid 会员的id（查找该会员相关的会议）
-	*
+	*@param
 	[
     {
         "id": "1",
@@ -213,14 +202,16 @@ class MeetController extends BaseController {
 	*/
 	
 	public function getjoinmeet(){
+	    $this->reqLogin();
 		$memberid=I("post.memberid"); //根据会员的id 查看参加会议列表
+		$member=session("member");
+		if($memberid==NULL){
+		    $memberid=$member["id"];
+		}
+		
 		$joinmodel=D("joinmeet");
 		$res=$joinmodel->getjoinmeet($memberid);
-		if($res){
-			$this->ajaxReturn(qc_json_success($res));
-		}else{
-			$this->ajaxReturn(qc_json_error());
-		}
+		$this->ajaxReturn($res);
 		
 		
 	}
