@@ -51,8 +51,12 @@ class VoteModel extends BaseModel {
 	 */
 	public function deleteVote($voteid){
 		$this->where('id=%d',$voteid)->delete();
+		M('VoteOption')->where("voteid='%s'",$voteid)->delete();
 		return qc_json_success('删除成功');
 	}
+
+
+
 	public function info($vote_id){
 		
 	}
