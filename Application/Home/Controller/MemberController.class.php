@@ -35,34 +35,70 @@ class MemberController extends BaseController {
 		$this->reqPost($postdata); 
 		
 		$data=I("post.");
-		
-		
-		$data["ctime"]=time(); //注册时间
-		$data["cIP"]=$_SERVER['REMOTE_ADDR'];//加入注册IP
-		
-		$data["lasttime"]=time(); //登录时间
-		$data["lastIP"]=$_SERVER['REMOTE_ADDR'];//登录IP
-		
-		$data["password"]=md5($data["password"]);
-		
-	
-		$data["birth"]=strtotime($data["birth"]); //将时间转化成时间戳
-		//echo date("Y/m/d",$data["birth"]);
-		
+			
 		$membermodel=D("Member");
 
 		
-		$res=$membermodel->add($data);
-
-		if($res){
-// 			echo "success";
-			$this->ajaxReturn(qc_json_success());;
-		}else{
-			$this->ajaxReturn(qc_json_error());; 
-		}
+		$res=$membermodel->addmember($data);
+		$this->ajaxReturn($res);
 		
 	}
 	
+	/*
+	 * 通过传入一个memberid值，获得一个会员资料
+	 * 需要传入会员资料有：
+	 [id]=>2
+	 [nickname] => 黄振炼
+	 [sex] => m
+	 [company] => 0
+	 [position] => 0
+	 [phone] => 15088132444
+	 [email] => 364626853@qq.com
+	 [birth] => 2014-10-31
+	 */
+	public function updatemember(){
+	    //以上信息是允许更新的。
+	    $this->reqPost(array("id"))->getlogin();  //修改用户时要有用户的id
+	    
+	    $data=I("post.");
+	    unset($data["password"],$data["username"]); //出去传进的值中password 还有username
+	    
+	    $membermodel=D("member");
+	    $res=$membermodel->updatemember($data);
+	    
+	    $this->ajaxReturn($res);
+	   // print_r($data);
+	   
+	}
+	
+	/*
+	 *
+	 * 这是用户密码修改
+	 *  id 用户id
+	 *  password  旧密码 
+	 *  newpassword  新密码
+	 */
+	
+	
+	public function updatepassword(){
+	    $this->reqPost(array('id','password','newpassword'))->getlogin();
+	    $id=I("post.id");
+	    $password=md5(I("post.password")); //密码经过md5 加密
+	    $newpassword=md5(I("post.newpassword"));
+	    $member=session("member");
+	    $membermodel=D("member");
+	    
+	    if($id==$member["id"]){
+	        $res=$membermodel->updatepassword($id,$password,$newpassword);
+	        $this->ajaxReturn($res);
+	    }else{
+	        $this->ajaxReturn(qc_json_error('login error'));
+	    }
+	    
+	    
+	    print_r($member);
+	    
+	}
 	
 	/*
 	 *
@@ -79,13 +115,21 @@ class MemberController extends BaseController {
 		
 		$membermodel=D("member");
 		$res=$membermodel->chklogin($username,$password); //返回一个bool  true登录成功
-		
-		if($res){
-			//session("member")["username"]."  ok";
-			$this->ajaxReturn(qc_json_success());
-		}else{
-			$this->ajaxReturn(qc_json_error());;
-		}
+
+		$this->ajaxReturn($res);
+	}
+	
+	/*
+	 *
+	 *退出登录
+	 */
+	public function logout(){
+	    session("member",null);
+	    if(session("member")==NULL){
+	        $this->ajaxReturn(qc_json_success());
+	    }else{
+	        $this->ajaxReturn(qc_json_error());
+	    }
 	}
 	
 
@@ -155,9 +199,6 @@ class MemberController extends BaseController {
        $this->ajaxReturn(qc_json_success($res));
 		
 	}
-	
-	
-	
 	
 	
 }
