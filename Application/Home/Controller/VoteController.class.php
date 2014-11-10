@@ -41,5 +41,42 @@ class VoteController extends BaseController {
 		$this->reqPost(array('voteid'))->reqLogin();
 		$this->ajaxReturn(D('Vote')->deleteVote(I('post.voteid')));
 	}
+	/**
+	 * 添加一选项
+	 */
+	public function addOption(){
+		$this->reqPost(array('voteid','meetid','vpintro'))->reqLogin();
+		$this->ajaxReturn(D('VoteOption')->addOption(I('post.')));
+
+	} 
+	/**
+	 * 更新一选项
+	 */
+	public function updateOption(){
+		$this->reqPost(array('vpotionsid','vpintro'))->reqLogin();	
+		$data = I('post.');
+		$data['id'] = I('post.vpotionsid');
+		$this->ajaxReturn(D('VoteOption')->updateOption($data));
+	}
+	/**
+	 * 删除一选项
+	 */
+	public function deleteOption(){
+		$this->reqPost('vpotionsid')->reqLogin();
+		$this->ajaxReturn(D('VoteOption')->deleteOption(I('post.vpotionsid')));
+	}
+	/**
+	 * 获得选项列表
+	 * @param number $voteid
+	 */
+	public function listOption($voteid = 0){
+		$this->reqLogin();
+		$this->ajaxReturn(D('VoteOption')->lists($voteid));
+	}
+	
+	public function vote(){
+		//TODO
+	}
+	
 }
 

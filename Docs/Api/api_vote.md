@@ -53,9 +53,43 @@ vpintro  | 选项 介绍   | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 vpotionsid | 选项id | Y
-voteid | 所属投票表id     | Y
-meetid|  所属会议表id      | Y
-vpintro  | 选项 介绍   | Y
+voteid | 所属投票表id     | N
+meetid|  所属会议表id      | N
+vpintro  | 选项 介绍   | N
+
+
+**Response**  
+
+```json
+{
+    "code":20000,
+    "response"："operate successfully"
+}
+```
+
+### 删除一选项
+`POST /home/vote/deleteOption`
+
+字段  |描述 |  是否必须 
+------------ | -------------| -------------
+vpotionsid | 选项id | Y
+
+
+**Response**  
+
+```json
+{
+    "code":20000,
+    "response"："operate successfully"
+}
+```
+
+### 获得选项列表
+`POST /home/vote/listOption`
+
+字段  |描述 |  是否必须 
+------------ | -------------| -------------
+voteid | 投票项id | Y
 
 
 **Response**  
