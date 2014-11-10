@@ -175,20 +175,25 @@ voteid|  投票id  | Y
 
 ```json
 {
-    "code":20000,
-    "response"：{
-        "meetid":1,
-        "title":foo,
-        "intro":foo,
-        "ctime":148000,
-        "stime":148000,
-        "etime":480000,
-        "option" :[
-            "1" : 18
-
+    "code": 20000,
+    "response": {
+        "id": "2",
+        "meetid": "1",
+        "title": "title1",
+        "intro": "intro1",
+        "ctime": "1415609755",
+        "stime": "1415980800",
+        "etime": "1419436800",
+        "option": [
+            {
+                "id": "4",
+                "voteid": "2",
+                "meetid": "1",
+                "vpintro": "iphone",
+                "count": "0"
+            },
+            ......
         ]
-
-
     }
 }
 ```

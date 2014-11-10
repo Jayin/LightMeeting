@@ -55,9 +55,24 @@ class VoteModel extends BaseModel {
 		M('VoteMember')->where("voteid=%s",$voteid)->delete();
 		return qc_json_success('删除成功');
 	}
-
-	public function info($vote_id){
-		
+	/**
+	 * 查看一投票项
+	 * @param unknown $voteid  投票id 
+	 * @return json
+	 */
+	public function info($voteid){
+		$res = $this->where("id=%s",$voteid)->limit(1)->select();
+		if($res){
+			$ret = $res[0];
+			$ret['option'] = D('VoteOption')->lists($voteid)['response'];
+			for($i = 0; $i< count($ret['option']);$i++){
+				$VoteMember = M('VoteMember');
+				$ret['option'][$i]['count'] = $VoteMember->where("voteid=%s AND optionsid=%s",$ret['option'][$i]['voteid'],$ret['option'][$i]['id'])
+															 ->count();
+			}
+			return qc_json_success($ret);
+		}
+		return qc_json_error('找不到该投票项');
 	}
 }
 
