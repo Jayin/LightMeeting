@@ -96,8 +96,27 @@ voteid | 投票项id | Y
 
 ```json
 {
-    "code":20000,
-    "response"："operate successfully"
+    "code": 20000,
+    "response": [
+        {
+            "id": "4",
+            "voteid": "2",
+            "meetid": "1",
+            "vpintro": "iPhone"
+        },
+        {
+            "id": "5",
+            "voteid": "2",
+            "meetid": "1",
+            "vpintro": "Android"
+        },
+        {
+            "id": "6",
+            "voteid": "2",
+            "meetid": "1",
+            "vpintro": "WinPhone"
+        }
+    ]
 }
 ```
 

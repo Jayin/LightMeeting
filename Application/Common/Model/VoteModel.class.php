@@ -52,7 +52,7 @@ class VoteModel extends BaseModel {
 	public function deleteVote($voteid){
 		$this->where('id=%d',$voteid)->delete();
 		M('VoteOption')->where("voteid=%s",$voteid)->delete();
-		M('VoteMember')->where("voteid=%s",$voteid)->delete();
+		M('VoteRecord')->where("voteid=%s",$voteid)->delete();
 		return qc_json_success('删除成功');
 	}
 	/**
@@ -66,8 +66,7 @@ class VoteModel extends BaseModel {
 			$ret = $res[0];
 			$ret['option'] = D('VoteOption')->lists($voteid)['response'];
 			for($i = 0; $i< count($ret['option']);$i++){
-				$VoteMember = M('VoteMember');
-				$ret['option'][$i]['count'] = $VoteMember->where("voteid=%s AND optionsid=%s",$ret['option'][$i]['voteid'],$ret['option'][$i]['id'])
+				$ret['option'][$i]['count'] = M('VoteRecord')->where("voteid=%s AND optionsid=%s",$ret['option'][$i]['voteid'],$ret['option'][$i]['id'])
 															 ->count();
 			}
 			return qc_json_success($ret);

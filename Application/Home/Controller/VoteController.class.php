@@ -78,7 +78,7 @@ class VoteController extends BaseController {
 	 */
 	public function vote(){
 		$this->reqPost(array('voteid','optionsid'))->reqLogin();
-		$this->ajaxReturn(D('VoteMember')->addVote(I('post.')));
+		$this->ajaxReturn(D('VoteRecord')->addVote(I('post.')));
 	}
 	/**
 	 * 查看一投票项 信息

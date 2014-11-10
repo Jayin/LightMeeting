@@ -1,8 +1,8 @@
 --
 -- 表的结构 `qc_vote_member`
 --
-DROP TABLE IF EXISTS `qc_vote_member`;
-CREATE TABLE `qc_vote_member` (
+DROP TABLE IF EXISTS `qc_vote_record`;
+CREATE TABLE `qc_vote_record` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '一次投票记录标识id',
   `optionsid` int(11) NOT NULL COMMENT '选项id',
   `voteid` int(11) NOT NULL COMMENT '投票id',
