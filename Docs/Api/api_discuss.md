@@ -28,6 +28,7 @@ content  | 讨论简介   | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
+discussid|  讨论id      | Y
 title|  讨论标题      | N
 content  | 讨论简介   | N
 
@@ -65,13 +66,13 @@ discussid|  讨论id      | Y
 ### 评论一讨论
 `POST /home/discuss/createComment` 
 
-**把对应的讨论也删除掉**
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 discussid|  讨论id      | Y
-reply_member|  评论对象id(即评论中回复某人)  | N
 content|  评论内容      | Y
+reply_member|  评论对象id(即评论中回复某人)  | N
+
 
 **Response**  
 
@@ -105,7 +106,7 @@ commentid |  评论id      | Y
 
 
 ### 获得一讨论的信息
-`POST /home/discuss/info` 
+`GET /home/discuss/info` 
 
 
 字段  |描述 |  是否必须 
