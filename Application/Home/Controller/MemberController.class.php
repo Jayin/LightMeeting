@@ -81,19 +81,16 @@ class MemberController extends BaseController {
 	
 	
 	public function updatepassword(){
-	    $this->reqPost(array('id','password','newpassword'))->getlogin();
-	    $id=I("post.id");
+	    $this->reqPost(array('password','newpassword'))->getlogin();
+	   
 	    $password=md5(I("post.password")); //密码经过md5 加密
 	    $newpassword=md5(I("post.newpassword"));
 	    $member=session("member");
 	    $membermodel=D("member");
 	    
-	    if($id==$member["id"]){
-	        $res=$membermodel->updatepassword($id,$password,$newpassword);
-	        $this->ajaxReturn($res);
-	    }else{
-	        $this->ajaxReturn(qc_json_error('login error'));
-	    }
+	    $id=$member["id"];
+	    $res=$membermodel->updatepassword($id,$password,$newpassword);
+	    $this->ajaxReturn($res);
 	    
 	    
 	    print_r($member);
