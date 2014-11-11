@@ -60,25 +60,6 @@ discussid|  讨论id      | Y
 ```
 
 
-### 删除讨论信息
-`POST /home/discuss/delete` 
-
-**把对应的讨论也删除掉**
-
-字段  |描述 |  是否必须 
------------- | -------------| -------------
-discussid|  讨论id      | Y
-
-**Response**  
-
-```json
-{
-    "code":20000,
-    "response"："operate successfully"
-}
-```
-
-
 
 
 ### 评论一讨论
