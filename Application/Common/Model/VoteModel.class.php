@@ -43,6 +43,7 @@ class VoteModel extends BaseModel {
 			}
 			return qc_json_success('操作成功,数据没有任何更新');
 		}
+		return qc_json_error($this->getError());
 	}
 	/**
 	 * 删除已投票项目
