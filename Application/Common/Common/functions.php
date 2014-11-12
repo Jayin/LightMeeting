@@ -33,3 +33,16 @@ function qc_json_error_request(){
 function qc_getRoteIP(){
 	return $_SERVER['REMOTE_ADDR'];
 }
+/** 
+ * 获得登陆用户信息
+ * <br>
+ * 信息包含：id,username,nickname,sex,company,position,email...
+ * qc_member表中 除了password的字段
+ * @return type
+ */
+function qc_getLoginUser(){
+    if(session('?member')){
+        return session("member");
+    }
+    return NULL;
+}
