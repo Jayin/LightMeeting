@@ -18,7 +18,11 @@ class DiscussModel extends BaseModel {
 	protected $_auto = array(
 			array('ctime',NOW_TIME,self::MODEL_INSERT),
 	);
-	
+	/**
+	 * 创建一个讨论
+	 * @param array $data
+	 * @return json
+	 */
 	public function createDiscuss($data){
 		$data['memberid'] = session('member')['id'];
 		if($this->create($data)){
@@ -29,9 +33,12 @@ class DiscussModel extends BaseModel {
 		}
 		return qc_json_error($this->getError());
 	}
-	
+	/**
+	 * 更新讨论信息
+	 * @param unknown $data
+	 * @return Ambigous <multitype:number, multitype:number string >|Ambigous <multitype:number, multitype:number unknown >
+	 */
 	public function updateDiscuss($data){
-		//TODO QC::要确认只有创建人才能更新
 		if($this->create($data)){
 			$res = $this->save();
 			if($res === false){
@@ -44,13 +51,22 @@ class DiscussModel extends BaseModel {
 		}
 		return qc_json_error($this->getError());
 	}
-	
+	/**
+	 * 删除讨论
+	 * @param unknown $discussid
+	 * @return Ambigous <multitype:number, multitype:number unknown >
+	 */
 	public function deleteDiscuss($discussid){
 		$this->where("id=%s",$discussid)->delete();
 		M('Comment')->where('discussid=%s',$discussid)->delete();
 		return qc_json_success('删除成功');
 	}
-	
+	/**
+	 * 获得讨论信息
+	 * @param unknown $discussid 讨论id 
+	 * @param number $withComments 是否需要返回评论列表(0不需要 1需要) 
+	 * @return unknown|Ambigous <multitype:number, multitype:number string >
+	 */
 	public function info($discussid,$withComments = 0){
 		$res = $this->where("id=%s",$discussid)->limit(1)->select();
 		if($res){

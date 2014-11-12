@@ -16,6 +16,11 @@ class CommentModel extends BaseModel {
 			array('reply_member','0',self::MODEL_INSERT),
 	);
 	
+	/**
+	 * 创建一评论
+	 * @param array $data
+	 * @return json
+	 */
 	public function createComment($data){
 		$data['author'] = session('member')['id'];
 		if($this->create($data)){
@@ -26,13 +31,22 @@ class CommentModel extends BaseModel {
 		}
 		return qc_json_error($this->getError());
 	}
-	
+	/**
+	 * 删除评论
+	 * @param array $commentid
+	 * @return json
+	 */
 	public function deleteComment($commentid){
-		$this->where("id=%s",$commentid)->delete();
-		//删除对应的评论
-		return qc_json_success('删除成功');
+		if($this->where("id=%s AND author=%s",$commentid,qc_getLoginUser()['id'])->delete()){
+			return qc_json_success('删除成功');
+		}
+		return qc_json_error('删除失败');
 	}
-	
+	/**
+	 * 获得一讨论的所有评论
+	 * @param array $discussid
+	 * @return json
+	 */
 	public function lists($discussid){
 		$res = $this->where("discussid=%s",$discussid)->order('ctime asc')->select();
 		if($res){
