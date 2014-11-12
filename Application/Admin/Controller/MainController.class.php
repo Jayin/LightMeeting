@@ -4,10 +4,10 @@ namespace Admin\Controller;
 
 use Think\Controller;
 
-class IndexController extends Controller {
+class MainController extends Controller {
     
 
     public function index(){
-    	$this->display();
+        $this->display();
     }
 }
