@@ -49,4 +49,15 @@ class BaseController extends Controller {
 	protected  function reqLogin(){
 		return $this->getlogin();
 	}
+	
+	
+	/**
+	 *获取当前登录会员资料 
+	 * 
+	 */
+	protected function reqLoginmember(){
+	    $member=session("member");
+	    unset($member["password"],$member["ctime"],$member["cIP"]);
+	    return $member;
+	}
 }
