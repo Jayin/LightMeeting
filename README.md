@@ -4,18 +4,23 @@ LightMeeting
 
 This is the backend of the LightMeeting project.
 
+
 Author
 ===
+
 [黄振炼](https://coding.net/u/zhlhuang)
+
 [唐杰英](https://coding.net/u/jayinton)
 
 Thanks
 ===
+
 [ThinkPHP](http://www.thinkphp.cn/)
 
 
 License
 ===
+```
    Copyright 2014 zhlhuang
    Copyright 2014 jayinton
 
@@ -30,3 +35,4 @@ License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+```
