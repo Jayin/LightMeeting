@@ -100,6 +100,33 @@ password|用户密码|Y|varchar（32）
 ```
 
 
+###获取登录会员信息
+
+`POST /home/member/getloginmember` 
+`该api 需要登录`
+
+
+```json
+
+{
+    "code": 20000,
+    "response": {
+        "id": "2",
+        "username": "zhlhuang",
+        "nickname": "黄振炼",
+        "sex": "m",
+        "company": "1",
+        "position": "1",
+        "phone": "15088132444",
+        "email": "364626853@qq.com",
+        "birth": "2014",
+        "lasttime": "1414739037",
+        "lastIP": "127.0.0.1"
+    }
+}
+```
+
+
 
 
 
