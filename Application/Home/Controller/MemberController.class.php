@@ -160,6 +160,16 @@ class MemberController extends BaseController {
 	}
 	
 	
+	public function getloginmember(){
+	   
+	   
+	    $this->reqLogin();
+	  
+	    $member=$this->reqLoginmember();
+	 
+	    $this->ajaxReturn(qc_json_success($member));
+	}
+	
 	/*
 	 *
 	* 获取全部会员资料
