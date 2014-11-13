@@ -9,7 +9,7 @@ return array (
 		//'SESSION_TYPE' => 'Db', // 用数据库的形式存储session
 		'URL_HTML_SUFFIX' => 'html|phtml', // 伪静态后缀名设置
 		'LOAD_EXT_FILE' => 'functions',
-		
+		'URL_CASE_INSENSITIVE' =>true, //不区分URL大小写
 )
 ;
 
