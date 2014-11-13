@@ -101,6 +101,11 @@ password|用户密码|Y|varchar（32）
 
 
 ###获取登录会员信息
+
+`POST /home/member/getloginmember` 
+`该api 需要登录`
+
+
 ```json
 
 {
