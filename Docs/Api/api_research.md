@@ -163,7 +163,7 @@ voteid | 投票id | Y
 
 
 ### 用户回答问题
-`POST /home/research/vote` 
+`POST /home/research/answer` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
@@ -189,7 +189,7 @@ option_content | 答案内容 | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-voteid|  投票id  | Y
+$researchid |  调查表id  | Y
 
 
 **Response**  
