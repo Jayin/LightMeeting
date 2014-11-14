@@ -6,24 +6,6 @@ api_research
 
 **NOTE 注意检查权限**
 
-调查表
-－ ctime －－》 stime
-调查问题
-调查回答表
-－ optionid，
-－ option content 
-－ rm asnwser ，memberid
-－ add  author
-
-questionid | 问题id | Y
-researchid|  调查id（可能不需要！  | Y
-optionid ｜ 答案id｜
-option_content | 答案内容 | Y
-
-
-
-
-
 ### 创建调查表
 `POST /home/research/create` 
 
