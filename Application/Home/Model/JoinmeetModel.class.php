@@ -17,7 +17,7 @@ class JoinmeetModel extends Model{
 		if($res){
 		   return qc_json_success();
 		}else{
-		    return qc_json_error();
+		    return qc_json_error('加入失败');
 		}
 		
 		
@@ -33,10 +33,10 @@ class JoinmeetModel extends Model{
 	        if($res){
 	            return qc_json_success();
 	        }else{
-	            return qc_json_error();
+	            return qc_json_error('退出失败');
 	        }
 	    }else{
-	        return qc_json_error("login error");
+	        return qc_json_error("没有登录");
 	    }
 	    
 	}
@@ -53,7 +53,7 @@ class JoinmeetModel extends Model{
 		if($res){
 		    return qc_json_success($res);
 		}else{
-		    return qc_json_error();
+		    return qc_json_error('没有参会人员');
 		}
 		
 	}
@@ -66,8 +66,8 @@ class JoinmeetModel extends Model{
 		
 	    if($res){
 			return qc_json_success($res);
-			return qc_json_error();
 		}
+		return qc_json_error('没有参加会议');
 		
 	}
 }
