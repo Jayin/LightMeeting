@@ -12,6 +12,9 @@ class JoinmeetModel extends Model{
 			return qc_json_error("member joined");
 		}
 		
+
+		
+		
 		$res=$this->add($data);
 		
 		if($res){

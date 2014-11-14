@@ -23,7 +23,13 @@ class MeetModel extends Model{
 
 		$res=$this->add($data);
 		
+		
 		if($res){
+		    
+		    $joindata=array("meetid"=>$res,"memberid"=>$data["createmember"]);
+		    $joinmodel=D("joinmeet"); //实例化一个参加会议表
+		    $joinmodel->addjoin($joindata);
+		    
 		   return  qc_json_success(); //添加会议成功
 		}else{
 		    return qc_json_error("添加失败"); //添加会议失败
