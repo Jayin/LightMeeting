@@ -12,7 +12,7 @@ Author
 
 [唐杰英](https://coding.net/u/jayinton)
 
-Thanks
+Web Framework
 ===
 
 [ThinkPHP](http://www.thinkphp.cn/)

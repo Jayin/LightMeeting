@@ -1,20 +1,39 @@
-api_vote
+api_research
 ===
-> 投票  
+> 调查  
 > By Jayin Ton
+
 
 **NOTE 注意检查权限**
 
-### 创建(发起)投票项
-`POST /home/vote/create` 
+调查表
+－ ctime －－》 stime
+调查问题
+调查回答表
+－ optionid，
+－ option content 
+－ rm asnwser ，memberid
+－ add  author
+
+questionid | 问题id | Y
+researchid|  调查id（可能不需要！  | Y
+optionid ｜ 答案id｜
+option_content | 答案内容 | Y
+
+
+
+
+
+### 创建调查表
+`POST /home/research/create` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 meetid | 所属会议id     | Y
 title|  投票主题      | Y
 intro  | 投票简介   | Y
-stime   | 起始时间   | Y
-etime   | 终止时间  | Y
+stime   | 起始时间(格式2014-10-01)   | Y
+etime   | 终止时间(格式2014-10-01)  | Y
 
 
 **Response**  
@@ -26,15 +45,15 @@ etime   | 终止时间  | Y
 }
 ```
 
-
-### 添加一选项
-`POST /home/vote/addOption`
+### 添加一问题
+`POST /home/research/addQuestion`
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-voteid | 所属投票表id     | Y
-meetid|  所属会议表id      | Y
-vpintro  | 选项 介绍   | Y
+researchid | 所属调查表id     | Y
+meetid |  所属会议表id      | Y
+title  | | Y
+options  | 选项 JSON字符串  | Y
 
 
 **Response**  
@@ -47,16 +66,14 @@ vpintro  | 选项 介绍   | Y
 ```
 
 
-### 更新一选项
-`POST /home/vote/updateOption`
+### 更新一问题
+`POST /home/research/updateQuestion`
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-vpotionsid | 选项id | Y
-voteid | 所属投票表id     | N
-meetid|  所属会议表id      | N
-vpintro  | 选项 介绍   | N
-
+questionid |  问题id | Y
+title  | | N
+options  | 选项 JSON字符串  | N
 
 **Response**  
 
@@ -67,12 +84,12 @@ vpintro  | 选项 介绍   | N
 }
 ```
 
-### 删除一选项
-`POST /home/vote/deleteOption`
+### 删除一问题
+`POST /home/research/deleteQuestion`
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-vpotionsid | 选项id | Y
+questionid | 问题id | Y
 
 
 **Response**  
@@ -84,8 +101,8 @@ vpotionsid | 选项id | Y
 }
 ```
 
-### 获得选项列表
-`POST /home/vote/listOption`
+### 获得问题列表
+`POST /home/research/listQuestion`
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
@@ -122,8 +139,8 @@ voteid | 投票项id | Y
 
 
 
-### 更新投票项
-`POST /home/vote/update` 
+### 更新调查表
+`POST /home/research/update` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
@@ -145,8 +162,8 @@ etime   | 终止时间  | N
 
 
 
-### 删除投票项
-`POST /home/vote/delete` 
+### 删除调查表
+`POST /home/research/delete` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
@@ -163,13 +180,16 @@ voteid | 投票id | Y
 ```
 
 
-### 用户投票
-`POST /home/vote/vote` 
+### 用户回答问题
+`POST /home/research/vote` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-vpotionsid | 选项id | Y
-voteid：|  投票id  | Y
+questionid | 问题id | Y
+researchid|  调查id（可能不需要！  | Y
+optionid ｜ 答案id｜
+option_content | 答案内容 | Y
+
 
 
 **Response**  
@@ -182,8 +202,8 @@ voteid：|  投票id  | Y
 ```
 
 
-### 查看一投票项
-`POST /home/vote/info` 
+### 查看调查表
+`POST /home/research/info` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
@@ -203,14 +223,6 @@ voteid|  投票id  | Y
         "ctime": "1415609755",
         "stime": "1415980800",
         "etime": "1419436800",
-        "option": [
-            {
-                "id": "4",
-                "voteid": "2",
-                "meetid": "1",
-                "vpintro": "iphone",
-                "count": "0"
-            },
             ......
         ]
     }
