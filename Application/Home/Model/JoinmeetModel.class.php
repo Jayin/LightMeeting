@@ -61,11 +61,21 @@ class JoinmeetModel extends Model{
 		
 	}
 	
-	public function getjoinmeet($memberid){
+	public function getjoinmeet($memberid,$page=1,$limit=5){
 		$res=$this->field("m.*")
 		->table("qc_joinmeet j,qc_meet m")
 		->where("j.meetid=m.id and j.memberid=".$memberid)->order("starttime desc")
+		->page($page,$limit)
 		->select();
+		
+		$i=0;
+		foreach ($res as $value){
+		    $res[$i]["starttime"]= date("Y-m-d H-i-s",$value["starttime"]);
+		    $res[$i++]["endtime"]= date("Y-m-d H-i-s",$value["endtime"]);
+		}
+		
+		
+		
 		
 	    if($res){
 			return qc_json_success($res);

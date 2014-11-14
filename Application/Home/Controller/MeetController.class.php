@@ -203,14 +203,14 @@ class MeetController extends BaseController {
 	
 	public function getjoinmeet(){
 	    $this->reqLogin();
-		$memberid=I("post.memberid"); //根据会员的id 查看参加会议列表
+		$page=I("post.page");
+		$limit=I("post.limit");
 		$member=session("member");
-		if($memberid==NULL){
-		    $memberid=$member["id"];
-		}
+		$memberid=$member["id"];
+		
 		
 		$joinmodel=D("joinmeet");
-		$res=$joinmodel->getjoinmeet($memberid);
+		$res=$joinmodel->getjoinmeet($memberid,$page,$limit);
 		$this->ajaxReturn($res);
 		
 		
