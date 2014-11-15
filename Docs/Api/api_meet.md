@@ -73,7 +73,7 @@ meetid|所要删除的会议id|Y|int
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
 meetid|加入会议id|Y|int
-memberid|加入人员id|Y|int
+memberid|加入人员id|N|为空默认为登录id
 
 
 ```json
