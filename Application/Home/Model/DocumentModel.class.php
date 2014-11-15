@@ -38,6 +38,7 @@ class DocumentModel extends Model
     {
         $memberid = $member["id"];
         $data["memberid"] = $memberid;
+        $data["ctime"]=time();
         if (! $this->create($data)) {
             return qc_json_error($this->getError());
         }
@@ -89,5 +90,29 @@ class DocumentModel extends Model
         }
         
         return qc_json_error("没有权限删除");
+    }
+    
+    /**
+     * 获取会议id
+     *   */
+    
+    
+    public function listmeetdoc($meetid,$page,$limit=5){
+        if($page==NULL||intval($page)<=0){
+            $page=1;
+        }
+         
+        if($limit==NULL||intval($limit)<=0){
+            $limit=5;
+        }
+         
+        $res=$this->where("meetid=".$meetid)->page($page,$limit)->select();
+         
+        if($res){
+            return qc_json_success($res);
+        }
+         
+        return qc_json_error("查无数据");
+    
     }
 }
