@@ -9,11 +9,8 @@ class JoinmeetModel extends Model{
 		$where="meetid=".$data["meetid"]." and memberid=".$data["memberid"];
 		$res=$this->where($where)->find();
 		if($res){
-			return qc_json_error("member joined");
+			return qc_json_error("已经加入会议");
 		}
-		
-
-		
 		
 		$res=$this->add($data);
 		
