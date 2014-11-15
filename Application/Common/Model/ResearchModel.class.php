@@ -57,11 +57,26 @@ class ResearchModel extends BaseModel {
      * @return json
      */
     public function deleteResearch($researchid){
-        $this->where("id=%s",$researchid)->delete();
-        M('ResearchQuestion')->where("researchid=%s",$researchid)->delete();
-        //TODO 还要删除ResearchAnswer的数据
-        return qc_json_success("删除成功");
-
+        $Model = M();
+        $Model->startTrans();
+        $res = D('ResearchQuestion')->lists($researchid);
+        if(isset($res['code'])){
+            $questions = $res['response'];
+        }
+        if($questions == null){
+            $questions = array();
+        }
+        foreach($questions as $q){
+            M('ResearchAnswer')->where("questionid=%s",$q['id'])->delete();
+            M('ResearchQuestion')->where("id=%s",$q['id'])->limit(1)->delete();
+        }
+        if($this->where("id=%s",$researchid)->delete()){
+            $Model->commit();
+            return qc_json_success("删除成功");
+        }
+        $Model->rollback();
+        return qc_json_error("删除失败");
+        
     }
 
     public function info($researchid){

@@ -44,9 +44,15 @@ class ResearchQuestionModel extends BaseModel{
     }
 
     public function deleteQuestion($questionid){
-        $this->where('id=%d',$questionid)->delete();
-        //delete releate ...
-        return qc_json_success('删除成功');
+        $Model = M();
+        $Model->startTrans();
+        M('ResearchAnswer')->where("questionid=%s",$questionid)->delete();
+        if($this->where('id=%d',$questionid)->delete()){
+            $Model->commit();
+            return qc_json_success('删除成功');
+        }
+        $Model->rollback();
+        return qc_json_error("删除失败");
     }
 
     public function lists($researchid){
