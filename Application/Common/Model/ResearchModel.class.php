@@ -58,13 +58,26 @@ class ResearchModel extends BaseModel {
      */
     public function deleteResearch($researchid){
         $this->where("id=%s",$researchid)->delete();
-        //删除相关联系的
+        M('ResearchQuestion')->where("researchid=%s",$researchid)->delete();
+        //TODO 还要删除ResearchAnswer的数据
         return qc_json_success("删除成功");
 
     }
 
     public function info($researchid){
-
+        $research = $this->find($researchid);
+        if($research){
+            $ret = $research;
+            $questions = D('ResearchQuestion')->lists($researchid);
+            if(isset($questions['code'])){
+                $ret['questions'] = $questions['response'];    
+            }else{
+                $ret['questions'] = array();
+            }
+            
+            return qc_json_success($ret);
+        }
+        return qc_json_error('找不到该调查');
     }
 }
 

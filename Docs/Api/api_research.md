@@ -28,13 +28,12 @@ etime   | 终止时间(格式2014-10-01)  | Y
 ```
 
 ### 添加一问题
-`POST /home/research/addQuestion`
+`POST /home/research/createQuestion`
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 researchid | 所属调查表id     | Y
-meetid |  所属会议表id      | Y
-title  | | Y
+title  |  调查标题| Y
 options  | 选项 JSON字符串  | Y
 
 
@@ -126,9 +125,9 @@ voteid | 投票项id | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-id | 投票id | Y
-title|  投票主题      | N
-intro  | 投票简介   | N
+id | 调查id | Y
+title|  调查标题      | N
+intro  | 调查简介   | N
 stime   | 起始时间   | N
 etime   | 终止时间  | N
 
@@ -168,7 +167,6 @@ voteid | 投票id | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 questionid | 问题id | Y
-researchid|  调查id（可能不需要！  | Y
 optionid ｜ 答案id｜
 option_content | 答案内容 | Y
 
@@ -189,7 +187,7 @@ option_content | 答案内容 | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-$researchid |  调查表id  | Y
+researchid |  调查表id  | Y
 
 
 **Response**  

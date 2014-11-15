@@ -10,9 +10,8 @@ class ResearchQuestionModel extends BaseModel{
 
     protected $_validate = array(
          array('researchid','require','缺少所属调查id',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
-         array('meetid','require','缺少所属会议id',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
          array('title','require','缺少调查问题标题',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
-         array('options：text','require','缺少选项组',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
+         array('options','require','缺少选项组',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
     );
 
     protected $_auto = array(
@@ -30,6 +29,7 @@ class ResearchQuestionModel extends BaseModel{
     }
 
     public function updateQuestion($data){
+        //过滤不要的更新的字段
         if($this->create($data)){
             $res = $this->save();
             if($res === false){
@@ -49,5 +49,12 @@ class ResearchQuestionModel extends BaseModel{
         return qc_json_success('删除成功');
     }
 
+    public function lists($researchid){
+        $res = $this->where("researchid=%s",$researchid)->select();
+        if($res){
+            return qc_json_success($res);
+        }
+        return qc_json_error($res);
+    }
 
 }
