@@ -62,6 +62,16 @@ class JoinmeetModel extends Model{
 	}
 	
 	public function getjoinmeet($memberid,$page=1,$limit=5){
+	    
+	    if($page==NULL){
+	        $page=1;
+	    }
+	    
+	    if($limit==NULL){
+	        $limit=5;
+	    }
+	    
+	    
 		$res=$this->field("m.*")
 		->table("qc_joinmeet j,qc_meet m")
 		->where("j.meetid=m.id and j.memberid=".$memberid)->order("starttime desc")
