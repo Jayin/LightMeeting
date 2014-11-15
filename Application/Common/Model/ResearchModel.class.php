@@ -78,7 +78,11 @@ class ResearchModel extends BaseModel {
         return qc_json_error("删除失败");
         
     }
-
+    /**
+     * 获得一调查的信息
+     * @param int $researchid 调查id
+     * @return json
+     */
     public function info($researchid){
         $research = $this->find($researchid);
         if($research){
@@ -89,7 +93,6 @@ class ResearchModel extends BaseModel {
             }else{
                 $ret['questions'] = array();
             }
-            
             return qc_json_success($ret);
         }
         return qc_json_error('找不到该调查');

@@ -19,7 +19,11 @@ class ResearchAnswerModel extends BaseModel{
             //创建时间
             array('ctime',NOW_TIME,self::MODEL_INSERT),
     );
-
+    /**
+     *  创建答案
+     * @param  array $data [description]
+     * @return json
+     */
     public function createAnswer($data){
         $data['memberid'] = session('member')['id'];
         if($this->create($data)){
@@ -30,7 +34,11 @@ class ResearchAnswerModel extends BaseModel{
         }
         return qc_json_error($this->getError());
     }
-
+    /**
+     *  更新答案
+     * @param  array $data [description]
+     * @return json
+     */
     public function updateAnswer($data){
         if($this->create($data)){
             $res = $this->save();
@@ -44,7 +52,11 @@ class ResearchAnswerModel extends BaseModel{
         }
         return qc_json_error($this->getError());
     }
-
+    /**
+     *  删除答案
+     * @param  int $answerid  答案id
+     * @return json
+     */
     public function deleteAnswer($answerid){
         $this->where('id=%d',$answerid)->delete();
         //delete relate..
