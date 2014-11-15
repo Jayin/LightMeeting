@@ -17,7 +17,11 @@ class ResearchQuestionModel extends BaseModel{
     protected $_auto = array(
 
     );
-
+    /**
+     * 创建调查问题
+     * @param array $data
+     * @return json
+     */
     public function createQuestion($data){
         if($this->create($data)){
             if($this->add()){
@@ -27,7 +31,11 @@ class ResearchQuestionModel extends BaseModel{
         }
         return qc_json_error($this->getError());
     }
-
+    /**
+     * 更新调查问题
+     * @param array $data
+     * @return json
+     */
     public function updateQuestion($data){
         //过滤不要的更新的字段
         if($this->create($data)){
@@ -42,7 +50,11 @@ class ResearchQuestionModel extends BaseModel{
         }
         return qc_json_error($this->getError());
     }
-
+    /**
+     * 删除调查问题
+     * @param int $questionid
+     * @return json
+     */
     public function deleteQuestion($questionid){
         $Model = M();
         $Model->startTrans();
@@ -54,13 +66,17 @@ class ResearchQuestionModel extends BaseModel{
         $Model->rollback();
         return qc_json_error("删除失败");
     }
-
+    /**
+     * 获得调查下的调查问题
+     * @param int $researchid 调查id
+     * @return json
+     */
     public function lists($researchid){
         $res = $this->where("researchid=%s",$researchid)->select();
         if($res){
             return qc_json_success($res);
         }
-        return qc_json_error($res);
+        return qc_json_error('找不到该调查表');
     }
 
 }
