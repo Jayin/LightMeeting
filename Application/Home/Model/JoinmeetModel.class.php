@@ -77,8 +77,8 @@ class JoinmeetModel extends Model{
 		
 		$i=0;
 		foreach ($res as $value){
-		    $res[$i]["starttime"]= date("Y-m-d H-i-s",$value["starttime"]);
-		    $res[$i++]["endtime"]= date("Y-m-d H-i-s",$value["endtime"]);
+		    $res[$i]["starttime"]= date("Y-m-d H:i:s",$value["starttime"]);
+		    $res[$i++]["endtime"]= date("Y-m-d H:i:s",$value["endtime"]);
 		}
 		
 		
