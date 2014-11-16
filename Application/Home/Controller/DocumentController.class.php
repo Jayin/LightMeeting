@@ -100,7 +100,13 @@ class DocumentController extends BaseController {
      */
     
     public function listdoc($id){
-        echo $id;
+        $this->reqLogin();
+        $documentmodel=D("Document");
+        
+        $res=$documentmodel->listdoc($id);
+        
+        $this->ajaxReturn($res);
+        
     }
     
 }

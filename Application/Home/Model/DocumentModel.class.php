@@ -93,7 +93,8 @@ class DocumentModel extends Model
     }
     
     /**
-     * 获取会议id
+     * 获取会议
+     * 所属会议id
      *   */
     
     
@@ -115,4 +116,23 @@ class DocumentModel extends Model
         return qc_json_error("查无数据");
     
     }
+    
+    /**
+     * 获取文档
+     * 文档id
+     *   */
+    
+    
+    public function listdoc($id){
+        $where="id=".$id;
+        $res=$this->where($where)->find();
+        if($res){
+            return qc_json_success($res);
+        }
+        return qc_json_error("查不到该文档");
+    }
+    
+    
+    
+    
 }
