@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+include_path=5;org.eclipse.dltk.USER_LIBRARY/org.eclipse.php.core.PHPNature\#PHPUnit\u00055;org.eclipse.dltk.USER_LIBRARY/org.eclipse.php.core.PHPNature\#PHPUnit
 org.eclipse.php.core.phpDoc=false
 phpVersion=php5.5
 useShortTags=true
