@@ -6,8 +6,8 @@ class MeetModel extends Model{
     
     //时间格式进行判断
     protected $_validate = array(
-        array("starttime",'checktime','starttime error',self::EXISTS_VALIDATE,'callback'),
-        array("endtime",'checktime','endtime error',self::EXISTS_VALIDATE,'callback')
+        array("starttime",'checktime','起始时间格式错误',self::EXISTS_VALIDATE,'callback'),
+        array("endtime",'checktime','结束时间格式错误',self::EXISTS_VALIDATE,'callback')
     );
     public function checktime($starttime){
         if($starttime==NULL){
@@ -23,10 +23,16 @@ class MeetModel extends Model{
 
 		$res=$this->add($data);
 		
+		
 		if($res){
+		    
+		    $joindata=array("meetid"=>$res,"memberid"=>$data["createmember"]);
+		    $joinmodel=D("joinmeet"); //实例化一个参加会议表
+		    $joinmodel->addjoin($joindata);
+		    
 		   return  qc_json_success(); //添加会议成功
 		}else{
-		    return qc_json_error(); //添加会议失败
+		    return qc_json_error("添加失败"); //添加会议失败
 		}
 	}
 	
@@ -44,7 +50,7 @@ class MeetModel extends Model{
 		if($res){
 		    return qc_json_success();
 		}else{
-		   return qc_json_error("no data update");
+		   return qc_json_error("没有更新数据");
 		}
 		
 	}
@@ -58,10 +64,10 @@ class MeetModel extends Model{
 	        if($res){
 	            return qc_json_success();
 	        }else{
-	            return qc_json_error();
+	            return qc_json_error("删除失败");
 	        }
 	    }else{    
-	        return qc_json_error("post error");
+	        return qc_json_error("数据错误");
 	    }	    
 	}
 	

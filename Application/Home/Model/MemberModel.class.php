@@ -3,7 +3,7 @@ namespace Home\Model;
 use Think\Model;
 class MemberModel extends Model{
     protected $_validate = array(
-        array("username",'','username必须唯一',self::EXISTS_VALIDATE,'unique',self::MODEL_INSERT),
+        array("username",'','用户名必须唯一',self::EXISTS_VALIDATE,'unique',self::MODEL_INSERT),
         array("sex",'checkSex','性别不仔细',self::EXISTS_VALIDATE,'callback'),
         array("email",'email',"email 不合法")
     );
@@ -43,7 +43,7 @@ class MemberModel extends Model{
 	            // 			echo "success";
 	            return qc_json_success();
 	        }else{
-	            return qc_json_error();
+	            return qc_json_error("添加错误");
 	        }
 	    } 
 	        return qc_json_error($this->getError());
@@ -58,7 +58,7 @@ class MemberModel extends Model{
 	        if($res){
 	            return qc_json_success();
 	        }else{
-	            return  qc_json_success("no data update");
+	            return  qc_json_success();
 	        }
 	    }else {
 	        return qc_json_error($this->getError());
@@ -76,15 +76,16 @@ class MemberModel extends Model{
 	        if($res){
 	            return qc_json_success();
 	        }else{
-	            return qc_json_error();
+	            return qc_json_error("更新失败");
 	        }
 	    }else {
-	        return qc_json_error("password error");
+	        return qc_json_error("密码错误");
 	    }
 	    
 	}
 	
 	public function chkpassword($id,$password){
+	    //这个是原始密码检测
 	   $where="id=%d and password='%s'";
 	   $res=$this->where($where,$id,$password)->find();
 	   
@@ -110,21 +111,10 @@ class MemberModel extends Model{
 			session("member",$res);//将登录成功会员数据存在session中
 			return qc_json_success();
 		}else{
-			return qc_json_error('password error');
+			return qc_json_error("密码错误");
 		}
 		
 	}
 	
-	
 
-	/*
-	 *
-	* 查看是否有登录用户
-	*
-	*/
-	public function getloginmember(){
-		$res=session('member');
-
-		return $res;
-	}
 }

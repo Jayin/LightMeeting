@@ -58,12 +58,15 @@ class MemberController extends BaseController {
 	 */
 	public function updatemember(){
 	    //以上信息是允许更新的。
-	    $this->reqPost(array("id"))->getlogin();  //修改用户时要有用户的id
+	    $this->getlogin();  //修改用户时要有用户的id
 	    
 	    $data=I("post.");
 	    unset($data["password"],$data["username"]); //出去传进的值中password 还有username
 	    
+	    $member=$this->reqLoginmember();
 	    $membermodel=D("member");
+	    
+	    $data["id"]=$member["id"]; //修改用户的id为登录id
 	    $res=$membermodel->updatemember($data);
 	    
 	    $this->ajaxReturn($res);
@@ -160,6 +163,11 @@ class MemberController extends BaseController {
 	}
 	
 	
+	/*
+	 *
+	 * 获取登录会员资料
+	 *
+	 */
 	public function getloginmember(){
 	   
 	   

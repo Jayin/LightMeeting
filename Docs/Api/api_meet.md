@@ -73,7 +73,7 @@ meetid|所要删除的会议id|Y|int
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
 meetid|加入会议id|Y|int
-memberid|加入人员id|Y|int
+memberid|加入人员id|N|为空默认为登录id
 
 
 ```json
@@ -140,7 +140,8 @@ meetid|查询会议的id|Y|int
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
 memberid|成员id|N|为NULL查看登录memberid
-
+page|页数|N|int
+limit|每页数量|N|int
 ```json
 {
     "code": 20000,
@@ -152,18 +153,18 @@ memberid|成员id|N|为NULL查看登录memberid
             "address": "北主楼1608",
             "createmember": "2",
             "weight": "20",
-            "starttime": "1412163023",
-            "endtime": "1412170256"
+            "starttime": "2014-10-01 19-30-23",
+            "endtime": "2014-10-01 21-30-56"
         },
         {
-            "id": "1",
-            "title": "袂卓第一次会议",
-            "intro": "这是我们第一次全体例会",
-            "address": "北主楼1608",
+            "id": "14",
+            "title": "袂卓第五次会议",
+            "intro": "这是我们第五次全体例会",
+            "address": "2014-09-25",
             "createmember": "2",
-            "weight": "20",
-            "starttime": "1411039823",
-            "endtime": "1411047056"
+            "weight": "0",
+            "starttime": "2014-09-25 00-00-00",
+            "endtime": "2014-09-25 00-00-00"
         }
     ]
 }

@@ -6,24 +6,6 @@ api_research
 
 **NOTE 注意检查权限**
 
-调查表
-－ ctime －－》 stime
-调查问题
-调查回答表
-－ optionid，
-－ option content 
-－ rm asnwser ，memberid
-－ add  author
-
-questionid | 问题id | Y
-researchid|  调查id（可能不需要！  | Y
-optionid ｜ 答案id｜
-option_content | 答案内容 | Y
-
-
-
-
-
 ### 创建调查表
 `POST /home/research/create` 
 
@@ -46,13 +28,12 @@ etime   | 终止时间(格式2014-10-01)  | Y
 ```
 
 ### 添加一问题
-`POST /home/research/addQuestion`
+`POST /home/research/createQuestion`
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 researchid | 所属调查表id     | Y
-meetid |  所属会议表id      | Y
-title  | | Y
+title  |  调查标题| Y
 options  | 选项 JSON字符串  | Y
 
 
@@ -102,11 +83,11 @@ questionid | 问题id | Y
 ```
 
 ### 获得问题列表
-`POST /home/research/listQuestion`
+`GET /home/research/listQuestion`
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-voteid | 投票项id | Y
+researchid | 调查id | Y
 
 
 **Response**  
@@ -116,22 +97,16 @@ voteid | 投票项id | Y
     "code": 20000,
     "response": [
         {
-            "id": "4",
-            "voteid": "2",
-            "meetid": "1",
-            "vpintro": "iPhone"
+            "id": "2",
+            "researchid": "2",
+            "title": "what's you sex?",
+            "options": "{'1':'man','2':'woman'}"
         },
         {
-            "id": "5",
-            "voteid": "2",
-            "meetid": "1",
-            "vpintro": "Android"
-        },
-        {
-            "id": "6",
-            "voteid": "2",
-            "meetid": "1",
-            "vpintro": "WinPhone"
+            "id": "3",
+            "researchid": "2",
+            "title": "what's you sex?",
+            "options": "{'1':'man','2':'woman'}"
         }
     ]
 }
@@ -144,9 +119,9 @@ voteid | 投票项id | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-id | 投票id | Y
-title|  投票主题      | N
-intro  | 投票简介   | N
+id | 调查id | Y
+title|  调查标题      | N
+intro  | 调查简介   | N
 stime   | 起始时间   | N
 etime   | 终止时间  | N
 
@@ -181,12 +156,11 @@ voteid | 投票id | Y
 
 
 ### 用户回答问题
-`POST /home/research/vote` 
+`POST /home/research/answer` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 questionid | 问题id | Y
-researchid|  调查id（可能不需要！  | Y
 optionid ｜ 答案id｜
 option_content | 答案内容 | Y
 
@@ -203,11 +177,11 @@ option_content | 答案内容 | Y
 
 
 ### 查看调查表
-`POST /home/research/info` 
+`GET /home/research/info` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-voteid|  投票id  | Y
+researchid |  调查表id  | Y
 
 
 **Response**  
@@ -218,12 +192,23 @@ voteid|  投票id  | Y
     "response": {
         "id": "2",
         "meetid": "1",
-        "title": "title1",
-        "intro": "intro1",
-        "ctime": "1415609755",
-        "stime": "1415980800",
-        "etime": "1419436800",
-            ......
+        "title": "Title22",
+        "intro": "This is introduction222",
+        "stime": "1356969600",
+        "etime": "1356969600",
+        "questions": [
+            {
+                "id": "2",
+                "researchid": "2",
+                "title": "what's you sex?",
+                "options": "{'1':'man','2':'woman'}"
+            },
+            {
+                "id": "3",
+                "researchid": "2",
+                "title": "what's you sex?",
+                "options": "{'1':'man','2':'woman'}"
+            }
         ]
     }
 }
