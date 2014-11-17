@@ -63,7 +63,7 @@ qc.post = function(url,data,success_handler,error_hander,faild_hander){
                 error_hander(json.msg);
             }
         }
-    },'json');
+    },'json').fail(faild_hander);
 }
 
 
