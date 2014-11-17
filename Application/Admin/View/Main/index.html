@@ -71,10 +71,39 @@
 
     </div>
 </body>
+<script type="text/javascript" src="__PUBLIC__/js/qc.js">
+</script>
 <script type="text/javascript">
 (function($) {
-    console.log('ok!');
-})(jQuery)
+    qc.debug = true;
+
+    qc.get('/admin/test/get2', {
+        "name": 'jayin',
+        'id': 233
+    }, function(response) {
+        console.log(response);
+    }, function(msg) {
+        console.log(msg);
+    });
+
+
+    qc.post('/admin/test/post', {
+        "name": 'jayin',
+        'id': 233
+    }, function(response) {
+        console.log('ok-->' + response);
+    });
+
+
+    qc.post('/admin/test/post1', {
+        "name": 'jayin',
+        'id': 233
+    }, function(response) {
+        console.log('ok-->' + response);
+    }, function(msg) {
+        console.log('error!' + msg);
+    });
+})(jQuery);
 </script>
 
 </html>
