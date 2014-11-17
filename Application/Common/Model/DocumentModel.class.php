@@ -1,9 +1,8 @@
 <?php
-namespace Home\Model;
+namespace Common\Model;
 
-use Think\Model;
 
-class DocumentModel extends Model
+class DocumentModel extends BaseModel
 {
 
     protected $_validate = array(

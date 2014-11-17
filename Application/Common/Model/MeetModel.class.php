@@ -1,7 +1,7 @@
 <?php
-namespace Home\Model;
-use Think\Model;
-class MeetModel extends Model{
+namespace Common\Model;
+
+class MeetModel extends BaseModel{
     
     
     //时间格式进行判断

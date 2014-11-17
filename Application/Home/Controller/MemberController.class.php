@@ -2,7 +2,6 @@
 
 namespace Home\Controller;
 
-use Think\Controller;
 use Common\Controller\BaseController;
 
 
@@ -10,7 +9,7 @@ class MemberController extends BaseController {
 	
 	
 	public function hello(){
-		$res=D("member")->getloginmember();
+		$res=D("Member")->getloginmember();
 		echo "<pre>";
 		print_r($res);
 		echo "</pre>";
@@ -64,7 +63,7 @@ class MemberController extends BaseController {
 	    unset($data["password"],$data["username"]); //出去传进的值中password 还有username
 	    
 	    $member=$this->reqLoginmember();
-	    $membermodel=D("member");
+	    $membermodel=D("Member");
 	    
 	    $data["id"]=$member["id"]; //修改用户的id为登录id
 	    $res=$membermodel->updatemember($data);
@@ -89,7 +88,7 @@ class MemberController extends BaseController {
 	    $password=md5(I("post.password")); //密码经过md5 加密
 	    $newpassword=md5(I("post.newpassword"));
 	    $member=session("member");
-	    $membermodel=D("member");
+	    $membermodel=D("Member");
 	    
 	    $id=$member["id"];
 	    $res=$membermodel->updatepassword($id,$password,$newpassword);
@@ -113,7 +112,7 @@ class MemberController extends BaseController {
 	 	$username=I("post.username");
 		$password=md5(I("post.password"));
 		
-		$membermodel=D("member");
+		$membermodel=D("Member");
 		$res=$membermodel->chklogin($username,$password); //返回一个bool  true登录成功
 
 		$this->ajaxReturn($res);

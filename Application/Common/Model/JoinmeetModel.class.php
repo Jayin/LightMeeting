@@ -1,7 +1,7 @@
 <?php
-namespace Home\Model;
-use Think\Model;
-class JoinmeetModel extends Model{
+namespace Common\Model;
+
+class JoinmeetModel extends BaseModel{
 	
 	
 	public function addjoin($data){

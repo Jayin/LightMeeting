@@ -1,7 +1,7 @@
 <?php
-namespace Home\Model;
-use Think\Model;
-class MemberModel extends Model{
+namespace Common\Model;
+
+class MemberModel extends BaseModel{
     protected $_validate = array(
         array("username",'','用户名必须唯一',self::EXISTS_VALIDATE,'unique',self::MODEL_INSERT),
         array("sex",'checkSex','性别不仔细',self::EXISTS_VALIDATE,'callback'),
