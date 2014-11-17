@@ -69,6 +69,28 @@ class DocumentController extends BaseController {
         
     }
     
+    /**
+     * 根据会议id获取文档
+     * @param
+     * meetid 所属会议id
+     */
+    public function listmeetdoc(){
+        $postdata=array("meetid");
+        $this->reqPost($postdata)->reqLogin();
+    
+        $meetid=I("post.meetid");
+        $page=I("post.page");
+        $limit=I("post.limit");
+        $documentmodel=D("Document");
+    
+        $res=$documentmodel->listmeetdoc($meetid,$page,$limit);
+    
+        $this->ajaxReturn($res);
+    
+         
+    }
+    
+    
     
     /**
      * 查看文档
@@ -78,7 +100,13 @@ class DocumentController extends BaseController {
      */
     
     public function listdoc($id){
-        echo $id;
+        $this->reqLogin();
+        $documentmodel=D("Document");
+        
+        $res=$documentmodel->listdoc($id);
+        
+        $this->ajaxReturn($res);
+        
     }
     
 }

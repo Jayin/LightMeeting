@@ -9,11 +9,8 @@ class JoinmeetModel extends Model{
 		$where="meetid=".$data["meetid"]." and memberid=".$data["memberid"];
 		$res=$this->where($where)->find();
 		if($res){
-			return qc_json_error("member joined");
+			return qc_json_error("已经加入会议");
 		}
-		
-
-		
 		
 		$res=$this->add($data);
 		
@@ -62,6 +59,16 @@ class JoinmeetModel extends Model{
 	}
 	
 	public function getjoinmeet($memberid,$page=1,$limit=5){
+	    
+	    if($page==NULL){
+	        $page=1;
+	    }
+	    
+	    if($limit==NULL){
+	        $limit=5;
+	    }
+	    
+	    
 		$res=$this->field("m.*")
 		->table("qc_joinmeet j,qc_meet m")
 		->where("j.meetid=m.id and j.memberid=".$memberid)->order("starttime desc")
@@ -70,8 +77,8 @@ class JoinmeetModel extends Model{
 		
 		$i=0;
 		foreach ($res as $value){
-		    $res[$i]["starttime"]= date("Y-m-d H-i-s",$value["starttime"]);
-		    $res[$i++]["endtime"]= date("Y-m-d H-i-s",$value["endtime"]);
+		    $res[$i]["starttime"]= date("Y-m-d H:i:s",$value["starttime"]);
+		    $res[$i++]["endtime"]= date("Y-m-d H:i:s",$value["endtime"]);
 		}
 		
 		

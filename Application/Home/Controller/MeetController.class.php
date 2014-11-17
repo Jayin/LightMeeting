@@ -120,10 +120,15 @@ class MeetController extends BaseController {
 	
 	public function addjoin(){
 		
-		$postdata=array("meetid","memberid");
-		$this->reqPost($postdata);		
+		$postdata=array("meetid");
+		$this->reqPost($postdata)->reqLogin();		
 		
+		$member=$this->reqLoginmember();
 		$data=I("post.");
+		if($data["memberid"]==NULL){
+		   $data["memberid"]=$member["id"];
+		}
+		
 		$joinmodel=D("joinmeet");
 
 		$res=$joinmodel->addjoin($data);

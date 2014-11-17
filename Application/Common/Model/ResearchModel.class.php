@@ -57,14 +57,45 @@ class ResearchModel extends BaseModel {
      * @return json
      */
     public function deleteResearch($researchid){
-        $this->where("id=%s",$researchid)->delete();
-        //删除相关联系的
-        return qc_json_success("删除成功");
-
+        $Model = M();
+        $Model->startTrans();
+        $res = D('ResearchQuestion')->lists($researchid);
+        if(isset($res['code'])){
+            $questions = $res['response'];
+        }
+        if($questions == null){
+            $questions = array();
+        }
+        foreach($questions as $q){
+            M('ResearchAnswer')->where("questionid=%s",$q['id'])->delete();
+            M('ResearchQuestion')->where("id=%s",$q['id'])->limit(1)->delete();
+        }
+        if($this->where("id=%s",$researchid)->delete()){
+            $Model->commit();
+            return qc_json_success("删除成功");
+        }
+        $Model->rollback();
+        return qc_json_error("删除失败");
+        
     }
-
+    /**
+     * 获得一调查的信息
+     * @param int $researchid 调查id
+     * @return json
+     */
     public function info($researchid){
-
+        $research = $this->find($researchid);
+        if($research){
+            $ret = $research;
+            $questions = D('ResearchQuestion')->lists($researchid);
+            if(isset($questions['code'])){
+                $ret['questions'] = $questions['response'];    
+            }else{
+                $ret['questions'] = array();
+            }
+            return qc_json_success($ret);
+        }
+        return qc_json_error('找不到该调查');
     }
 }
 

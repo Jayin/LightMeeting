@@ -10,15 +10,18 @@ class ResearchQuestionModel extends BaseModel{
 
     protected $_validate = array(
          array('researchid','require','缺少所属调查id',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
-         array('meetid','require','缺少所属会议id',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
          array('title','require','缺少调查问题标题',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
-         array('options：text','require','缺少选项组',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
+         array('options','require','缺少选项组',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
     );
 
     protected $_auto = array(
 
     );
-
+    /**
+     * 创建调查问题
+     * @param array $data
+     * @return json
+     */
     public function createQuestion($data){
         if($this->create($data)){
             if($this->add()){
@@ -28,8 +31,13 @@ class ResearchQuestionModel extends BaseModel{
         }
         return qc_json_error($this->getError());
     }
-
+    /**
+     * 更新调查问题
+     * @param array $data
+     * @return json
+     */
     public function updateQuestion($data){
+        //过滤不要的更新的字段
         if($this->create($data)){
             $res = $this->save();
             if($res === false){
@@ -42,12 +50,33 @@ class ResearchQuestionModel extends BaseModel{
         }
         return qc_json_error($this->getError());
     }
-
+    /**
+     * 删除调查问题
+     * @param int $questionid
+     * @return json
+     */
     public function deleteQuestion($questionid){
-        $this->where('id=%d',$questionid)->delete();
-        //delete releate ...
-        return qc_json_success('删除成功');
+        $Model = M();
+        $Model->startTrans();
+        M('ResearchAnswer')->where("questionid=%s",$questionid)->delete();
+        if($this->where('id=%d',$questionid)->delete()){
+            $Model->commit();
+            return qc_json_success('删除成功');
+        }
+        $Model->rollback();
+        return qc_json_error("删除失败");
     }
-
+    /**
+     * 获得调查下的调查问题
+     * @param int $researchid 调查id
+     * @return json
+     */
+    public function lists($researchid){
+        $res = $this->where("researchid=%s",$researchid)->select();
+        if($res){
+            return qc_json_success($res);
+        }
+        return qc_json_error('找不到该调查表');
+    }
 
 }
