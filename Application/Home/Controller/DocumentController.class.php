@@ -19,7 +19,7 @@ class DocumentController extends BaseController {
         $postdata=array("meetid","title","content");
         $this->reqPost($postdata)->reqLogin();
         $data=I("post.");
-        $documentmodel=D("document");
+        $documentmodel=D("Document");
         $member=$this->reqLoginmember();
         $res=$documentmodel->createdoc($data,$member);
         
@@ -42,7 +42,7 @@ class DocumentController extends BaseController {
         $data=I("post.");
         unset($data["meetid"]);
         $member=$this->reqLoginmember();
-        $documentmodel=D("document");
+        $documentmodel=D("Document");
         $res=$documentmodel->updatedoc($data,$member);
         
         $this->ajaxReturn($res);
@@ -61,7 +61,7 @@ class DocumentController extends BaseController {
         $this->reqPost($postdata)->reqLogin();
         $id=I("post.id");
         $member=$this->reqLoginmember();
-        $documentmodel=D("document");
+        $documentmodel=D("Document");
         
         $res=$documentmodel->deletedoc($id,$member);
         

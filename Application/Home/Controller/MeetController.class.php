@@ -2,7 +2,6 @@
 
 namespace Home\Controller;
 
-use Think\Controller;
 use Common\Controller\BaseController;
 
 class MeetController extends BaseController {
@@ -30,7 +29,7 @@ class MeetController extends BaseController {
 		$data=I("post.");
 		$member=session("member");
 			$data["createmember"]=$member["id"];//创建会议人
-			$meetmodel=D("meet");
+			$meetmodel=D("Meet");
 			$res=$meetmodel->addmeet($data);
 			
 			$this->ajaxReturn($res);
@@ -56,7 +55,7 @@ class MeetController extends BaseController {
 	    
 	    $this->reqPost(array("id"));//更细腻会议的id必须有
 		$data=I("post.");
-		$meetmodel=D("meet"); //实例化一个model
+		$meetmodel=D("Meet"); //实例化一个model
 		
 		
 			$res=$meetmodel->updatemeet($data);
@@ -79,7 +78,7 @@ class MeetController extends BaseController {
 		
 		
 		$meetid=I("post.meetid");
-		$meetmodel=D("meet");
+		$meetmodel=D("Meet");
 		$res=$meetmodel->deletemeet($meetid);
 		$this->ajaxReturn($res);
 		
@@ -105,7 +104,7 @@ class MeetController extends BaseController {
 			$field=json_decode($field,1);
 		}
 		
-		$meetmodel=D("meet");
+		$meetmodel=D("Meet");
 	
 	    $res=$meetmodel->field($field)->where("id=".$meetid)->find();
 		$this->ajaxReturn(qc_json_success($res));
@@ -129,7 +128,7 @@ class MeetController extends BaseController {
 		   $data["memberid"]=$member["id"];
 		}
 		
-		$joinmodel=D("joinmeet");
+		$joinmodel=D("Joinmeet");
 
 		$res=$joinmodel->addjoin($data);
 		
@@ -150,7 +149,7 @@ class MeetController extends BaseController {
 	    $postdata=array("meetid");
 	    $this->reqPost($postdata)->reqLogin();
 	    $meetid=I("post.meetid");
-	    $joinmodel=D("joinmeet");
+	    $joinmodel=D("Joinmeet");
 
 	    $res=$joinmodel->outjoin($meetid);
 	    
@@ -180,7 +179,7 @@ class MeetController extends BaseController {
 	
 	public function getjoinmember(){
 		$meetid=I("post.meetid"); //通过post 传入会议id
-		$joinmodel=D("joinmeet");
+		$joinmodel=D("Joinmeet");
 		$res=$joinmodel->getjoinmember($meetid);
 		
 		$this->ajaxReturn($res);
@@ -214,7 +213,7 @@ class MeetController extends BaseController {
 		$memberid=$member["id"];
 		
 		
-		$joinmodel=D("joinmeet");
+		$joinmodel=D("Joinmeet");
 		$res=$joinmodel->getjoinmeet($memberid,$page,$limit);
 		$this->ajaxReturn($res);
 		
