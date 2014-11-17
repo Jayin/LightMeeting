@@ -230,8 +230,28 @@ meetid | 会议id | Y
 
 ```json
 {
-    "code":20000,
-    "response"："operate successfully"
+    "code": 20000,
+    "response": [
+        {
+            "id": "2",
+            "meetid": "1",
+            "title": "title1",
+            "intro": "intro1",
+            "ctime": "1415609755",
+            "stime": "1415980800",
+            "etime": "1419436800"
+        },
+        {
+            "id": "3",
+            "meetid": "1",
+            "title": "title1",
+            "intro": "intro1",
+            "ctime": "1415609820",
+            "stime": "1415980800",
+            "etime": "1419436800"
+        },
+      ........
+    ]
 }
 ```
 

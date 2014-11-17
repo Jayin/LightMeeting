@@ -156,8 +156,26 @@ meetid | 会议id | Y
 
 ```json
 {
-    "code":20000,
-    "response"："operate successfully"
+    "code": 20000,
+    "response": [
+        {
+            "id": "2",
+            "meetid": "1",
+            "memberid": "9",
+            "title": "amazing!",
+            "content": "萌萌哒的内容",
+            "ctime": "1416205119"
+        },
+        {
+            "id": "3",
+            "meetid": "1",
+            "memberid": "9",
+            "title": "amazing!",
+            "content": "萌萌哒的内容",
+            "ctime": "1416205120"
+        },
+         ........
+    ]
 }
 ```
 

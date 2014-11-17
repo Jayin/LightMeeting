@@ -226,6 +226,25 @@ meetid | 会议id | Y
 
 ```json
 {
-    "code":20000,
-    "response"："operate successfully"
+    "code": 20000,
+    "response": [
+        {
+            "id": "1",
+            "meetid": "1",
+            "title": "Title1",
+            "intro": "This is introduction",
+            "stime": "1356969600",
+            "etime": "1356969600"
+        },
+        {
+            "id": "2",
+            "meetid": "1",
+            "title": "Title1",
+            "intro": "This is introduction",
+            "stime": "1356969600",
+            "etime": "1356969600"
+        },
+        ........
+    ]
 }
+```
