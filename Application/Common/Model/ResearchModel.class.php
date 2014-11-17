@@ -97,6 +97,18 @@ class ResearchModel extends BaseModel {
         }
         return qc_json_error('找不到该调查');
     }
+    
+    /**
+     * 获得会议的调查表列表
+     * @return Ambigous <multitype:number, multitype:number unknown >
+     */
+    public function lists($meetid){
+    	$res = $this->where("meetid=%s",$meetid)->select();
+    	if(empty($res)){
+    		$res = array();
+    	}
+    	return qc_json_success($res);
+    }
 }
 
 

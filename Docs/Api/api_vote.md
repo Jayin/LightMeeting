@@ -216,3 +216,23 @@ voteid|  投票id  | Y
     }
 }
 ```
+
+
+### 获得会议的投票列表
+`POST /home/vote/lists` 
+
+字段  |描述 |  是否必须 
+------------ | -------------| -------------
+meetid | 会议id | Y
+
+
+**Response**  
+
+```json
+{
+    "code":20000,
+    "response"："operate successfully"
+}
+```
+
+

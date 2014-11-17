@@ -75,5 +75,13 @@ class DiscussController extends BaseController {
 	 public function listComment($discussid){
 	 	$this->ajaxReturn(D('Comment')->lists($discussid));
 	 }
+	 /**
+	  * 获得会议的讨论列表
+	  * @param unknown $meetid 会议id
+	  */
+	 public function lists($meetid){
+	 	$this->reqLogin();
+	 	$this->ajaxReturn(D('Discuss')->lists($meetid));
+	 }
 }
 

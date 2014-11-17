@@ -144,4 +144,22 @@ discussid|  讨论id      | Y
 ```
 
 
+### 获得会议的讨论列表
+`POST /home/discuss/lists` 
+
+字段  |描述 |  是否必须 
+------------ | -------------| -------------
+meetid | 会议id | Y
+
+
+**Response**  
+
+```json
+{
+    "code":20000,
+    "response"："operate successfully"
+}
+```
+
+
 

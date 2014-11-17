@@ -213,3 +213,19 @@ researchid |  调查表id  | Y
     }
 }
 ```
+
+### 获得会议的调查列表
+`POST /home/research/lists` 
+
+字段  |描述 |  是否必须 
+------------ | -------------| -------------
+meetid | 会议id | Y
+
+
+**Response**  
+
+```json
+{
+    "code":20000,
+    "response"："operate successfully"
+}
