@@ -14,7 +14,7 @@ qc.log = function(msg){
     }
 }
 //  GET
-qc.get =  function (url,params,success_handler,error_hander,faild_hander){
+qc.get =  function (url,params,success_handler,error_handler,faild_handler){
     // $.get(url,params)
     if(params && typeof params === 'object'){
          for (var key in params){
@@ -36,14 +36,14 @@ qc.get =  function (url,params,success_handler,error_hander,faild_hander){
             }
         }else{
             //error
-            if(error_hander){
-                error_hander(json.msg);
+            if(error_handler){
+                error_handler(json.msg);
             }
         }
-    },'json').fail(faild_hander);
+    },'json').fail(faild_handler);
 }
 // POST
-qc.post = function(url,data,success_handler,error_hander,faild_hander){
+qc.post = function(url,data,success_handler,error_handler,faild_handler){
     url = qc.base_url + url;
 
     qc.log("POST url : " );
@@ -59,11 +59,11 @@ qc.post = function(url,data,success_handler,error_hander,faild_hander){
                 success_handler(json.response);
             }
         }else{
-            if(error_hander){
-                error_hander(json.msg);
+            if(error_handler){
+                error_handler(json.msg);
             }
         }
-    },'json').fail(faild_hander);
+    },'json').fail(faild_handler);
 }
 
 
