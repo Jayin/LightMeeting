@@ -73,8 +73,7 @@ class DiscussController extends BaseController {
 	  * @param unknown $discussid 讨论id
 	  */
 	 public function listComment($discussid){
-	 	$this->ajaxReturn(D('Discuss')->lists($discussid));
+	 	$this->ajaxReturn(D('Comment')->lists($discussid));
 	 }
-	 
 }
 
