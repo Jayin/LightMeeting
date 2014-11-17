@@ -25,14 +25,14 @@ class DiscussController extends BaseController {
 	  * 创建(发起)讨论
 	  */
 	 public function create(){
-	 	$this->reqPost(array('meetid','title','content'));
+	 	$this->reqPost(array('meetid','title','content'))->reqLogin();;
 	 	$this->ajaxReturn(D('Discuss')->createDiscuss(I('post.')));
 	 }
 	 /**
 	  * 更新讨论信息
 	  */
 	 public function update(){
-	 	$this->reqPost(array('discussid'))->reqEditable(I('post.discussid'));
+	 	$this->reqPost(array('discussid'))->reqLogin()->reqEditable(I('post.discussid'));
 	 	$data = I('post.');
 	 	$data['id'] = I('post.discussid');
 	 	$this->ajaxReturn(D('Discuss')->updateDiscuss($data));
@@ -41,6 +41,7 @@ class DiscussController extends BaseController {
 	  * 删除讨论信息
 	  */
 	 public function delete(){
+	 	$this->reqLogin();
 	 	$this->reqPost(array('discussid'))->reqEditable(I('post.discussid'));
 	 	$this->ajaxReturn(D('Discuss')->deleteDiscuss(I('post.discussid')));
 	 }
@@ -49,7 +50,7 @@ class DiscussController extends BaseController {
 	  */
 	 public function createComment(){
 	 	//TODO QC::检查是否有评论权限
-	 	$this->reqPost(array('discussid','content'));
+	 	$this->reqPost(array('discussid','content'))->reqLogin();
 	 	$this->ajaxReturn(D('Comment')->createComment(I('post.')));
 	 }
 	 /**
@@ -57,7 +58,7 @@ class DiscussController extends BaseController {
 	  */
 	 public function deleteComment(){
 	 	//TODO QC::检查是否有删除评论权限
-	 	$this->reqPost(array('commentid'));
+	 	$this->reqPost(array('commentid'))->reqLogin();
 	 	$this->ajaxReturn(D('Comment')->deleteComment(I('post.commentid')));
 	 }
 	 /**
@@ -66,6 +67,7 @@ class DiscussController extends BaseController {
 	  * @param number $withComments 是否需要返回评论列表(0不需要 1需要)
 	  */
 	 public function info($discussid,$withComments = 0){
+	 	$this->reqLogin();
 	 	$this->ajaxReturn(D('Discuss')->info($discussid,$withComments));
 	 }
 	 /**
@@ -73,6 +75,7 @@ class DiscussController extends BaseController {
 	  * @param unknown $discussid 讨论id
 	  */
 	 public function listComment($discussid){
+	 	$this->reqLogin();
 	 	$this->ajaxReturn(D('Comment')->lists($discussid));
 	 }
 	 /**
