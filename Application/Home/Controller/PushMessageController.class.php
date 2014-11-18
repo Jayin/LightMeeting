@@ -18,20 +18,20 @@ class PushMessageController extends BaseController{
         $this->ajaxReturn(qc_json_success(D('PushMessage')->createMessage(I('post.'))));
     }
     /** 
-     * 获得推送消息列表
-     */
-    public function lists($page = 1, $limit = 10){
-        $this->reqLogin();
-     
-        $res = D('PushMessage')->lists($page,$limit);
-        $this->ajaxReturn(qc_json_success($res));
-    }
-    /** 
      * 删除推送消息
      */
     public function delete(){
         $this->reqPost(array('id'))->reqLogin();
         
         $this->ajaxReturn(qc_json_success(D('PushMessage')->deleteMessage(I('post.id'))));
+    }
+    /**
+     * 获得推送消息列表
+     */
+    public function lists($page = 1, $limit = 10){
+    	$this->reqLogin();
+    	 
+    	$res = D('PushMessage')->lists($page,$limit);
+    	$this->ajaxReturn(qc_json_success($res));
     }
 }
