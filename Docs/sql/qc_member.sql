@@ -19,4 +19,4 @@ CREATE TABLE IF NOT EXISTS `qc_member` (
   `lastIP` varchar(32) NOT NULL COMMENT '最后一次登录ip',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=gbk AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=gbk AUTO_INCREMENT=9 ;
