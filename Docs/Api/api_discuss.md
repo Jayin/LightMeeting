@@ -118,8 +118,17 @@ withComments |  是否需要返回评论列表(0不需要 1需要)  | N
 
 ```json
 {
-    "code":20000,
-    "response"："operate successfully"
+    "code": 20000,
+    "response": {
+        "id": "2",
+        "meetid": "1",
+        "memberid": "9",
+        "title": "amazing!",
+        "content": "萌萌哒的内容",
+        "ctime": "1416205119",
+        "comments": [],
+        "comment_count": "0"
+    }
 }
 ```
 
@@ -138,8 +147,28 @@ discussid|  讨论id      | Y
 
 ```json
 {
-    "code":20000,
-    "response"："operate successfully"
+    "code": 20000,
+    "response": [
+        {
+            "id": "8",
+            "discussid": "2",
+            "reply_member": "0",
+            "author": "9",
+            "content": "碉堡+1",
+            "ctime": "1416299683",
+            "cip": "127.0.0.1"
+        },
+        {
+            "id": "9",
+            "discussid": "2",
+            "reply_member": "0",
+            "author": "9",
+            "content": "碉堡+1",
+            "ctime": "1416299684",
+            "cip": "127.0.0.1"
+        },
+        ......
+    ]
 }
 ```
 
