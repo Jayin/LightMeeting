@@ -120,7 +120,7 @@ researchid | 调查id | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 id | 调查id | Y
-title|  调查标题      | N
+title|  调查标题      | Y
 intro  | 调查简介   | N
 stime   | 起始时间   | N
 etime   | 终止时间  | N
