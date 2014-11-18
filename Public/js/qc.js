@@ -65,6 +65,26 @@ qc.post = function(url,data,success_handler,error_handler,faild_handler){
         }
     },'json').fail(faild_handler);
 }
+//创建表单
+//qc.form().add('username').add('password').create();
+//--> Object {username: "test", password: "123123123"} 
+qc.form = function (){
+    var kv = {};
+    kv.data = {};
+    kv.add = function(key,value){
+        if(value !== undefined){
+            kv.data[key] = value;
+        }else{
+            kv.data[key] = $('#'+key).val();
+        }
+        return this;
+    }
+
+    kv.create = function(){
+        return kv.data;
+    }
+    return kv;
+}
 
 
 
