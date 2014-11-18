@@ -161,7 +161,7 @@ researchid | 调查表id | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 questionid | 问题id | Y
-optionid ｜ 答案id｜
+optionid | 答案id | Y
 option_content | 答案内容 | Y
 
 
