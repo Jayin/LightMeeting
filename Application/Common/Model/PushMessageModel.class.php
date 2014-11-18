@@ -3,16 +3,27 @@ namespace Home\Model;
 
 use Common\Model\BaseModel;
 use Org\Util\ArrayList;
-
+/** 
+ * 推送消息模型
+ * @author zjien
+ * @author Jayin Ton
+ */
 class PushMessageModel extends BaseModel{
+
+    protected $_auto = array(
+        array('sendtime',NOW_TIME,self::MODEL_INSERT)
+    );
+    /** 
+     * 创建
+     * @param array $data 
+     * @return json
+     */
     public function createMessage($data){
-        $data['sendtime']=time();
         if($this->create($data)){
-            $res=$this->add();
+            $res = $this->add();
             if($res) 
                 return qc_json_success();
-            
-             return qc_json_error();
+            return qc_json_error();
         }
         return qc_json_error($this->getError());
     }
@@ -22,20 +33,27 @@ class PushMessageModel extends BaseModel{
      * @param $pageNow=1 当前页数默认为1
      * @param $pageSize=10 每页大小默认为10
      */
-    public function lists($pageNow=1,$listRows=10){
-        $start=($pageNow-1)*$listRows;
-        $res=$this->limit($start,$listRows)->select();
+    public function lists($page = 1,$limit = 10){
+        if($page <= 0){
+            $page = 1;
+        }
+        if($limit <= 0){
+            $limit = 10;
+        }
+        $res = $this->limit(($page-1)*$limit,$limit)->select();
         return qc_json_success($res);
     }
     
-    
+    /** 
+     * 删除
+     * @param  int $id 消息id
+     * @return json
+     */
     public function deleteMessage($id){
-        $where="id in(%s)";
-        $res=$this->where($where,$id)->delete();
+        $res = $this->where("id=%s",$id)->limit(1)->delete();
         if($res)
-            return qc_json_success();
-        
-        return qc_json_error();
+            return qc_json_success('删除成功');
+        return qc_json_error('删除失败');
     }
     
 }

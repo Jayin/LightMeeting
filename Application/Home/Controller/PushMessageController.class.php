@@ -3,25 +3,35 @@
 namespace Home\Controller;
 
 use Common\Controller\BaseController;
-
+/** 
+ * 推送消息接口
+ * @author zjien
+ * @author Jayin Ton
+ */
 class PushMessageController extends BaseController{
+    /** 
+     * 创建一推送消息
+     */
     public function create(){
         $this->reqPost(array('to','content'))->reqLogin();
         
-        $this->ajaxReturn(D('PushMessage')->createMessage(I('post.')));
+        $this->ajaxReturn(qc_json_success(D('PushMessage')->createMessage(I('post.'))));
     }
-    
-    public function lists(){
-        $this->reqPost(array('pageNow','pageSize'))->reqLogin();
+    /** 
+     * 获得推送消息列表
+     */
+    public function lists($page = 1, $limit = 10){
+        $this->reqLogin();
      
-        $res=D('PushMessage')->lists(I('post.pageNow'),I('post.pageSize'));
-        $this->ajaxReturn($res);
+        $res = D('PushMessage')->lists($page,$limit);
+        $this->ajaxReturn(qc_json_success($res));
     }
-    
-    public function deleteMessage(){
+    /** 
+     * 删除推送消息
+     */
+    public function delete(){
         $this->reqPost(array('id'))->reqLogin();
         
-        $id=I('post.id');
-        $this->ajaxReturn(D('PushMessage')->deleteMessage($id));
+        $this->ajaxReturn(qc_json_success(D('PushMessage')->deleteMessage(I('post.id'))));
     }
 }
