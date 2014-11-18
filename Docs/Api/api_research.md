@@ -122,8 +122,8 @@ researchid | 调查id | Y
 id | 调查id | Y
 title|  调查标题      | Y
 intro  | 调查简介   | N
-stime   | 起始时间   | N
-etime   | 终止时间  | N
+stime   | 起始时间(格式2014-10-01) | Y
+etime   | 终止时间(格式2014-10-01) | Y
 
 
 **Response**  
