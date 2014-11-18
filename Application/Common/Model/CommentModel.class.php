@@ -52,7 +52,7 @@ class CommentModel extends BaseModel {
 		if($res){
 			return qc_json_success($res);
 		}
-		qc_json_success(array());
+		return qc_json_success(array());
 	}
 }
 

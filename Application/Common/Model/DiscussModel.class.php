@@ -79,7 +79,7 @@ class DiscussModel extends BaseModel {
 			}
 			//评论数
 			$ret['comment_count'] = M('Comment')->where("discussid=%s",$discussid)->count();
-			return $ret;
+			return qc_json_success($ret);
 		}
 		return qc_json_error('找不到该讨论信息');
 	}
