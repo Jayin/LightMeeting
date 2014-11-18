@@ -13,4 +13,14 @@ class MemberController extends BaseController {
     public function login(){
         $this->display();
     }
+    
+    /**
+     * 会员会员注册
+     *
+     *   */
+    
+    
+    public function register(){
+        $this->display();
+    }
 }
