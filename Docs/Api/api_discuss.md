@@ -135,7 +135,7 @@ withComments |  是否需要返回评论列表(0不需要 1需要)  | N
 
 
 ### 获得一讨论的评论的列表
-`POST /home/discuss/listComment` 
+`GET /home/discuss/listComment` 
 
 
 字段  |描述 |  是否必须 
@@ -174,7 +174,7 @@ discussid|  讨论id      | Y
 
 
 ### 获得会议的讨论列表
-`POST /home/discuss/lists` 
+`GET /home/discuss/lists` 
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------

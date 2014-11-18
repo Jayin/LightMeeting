@@ -6,10 +6,6 @@ qc.js
 - jQuery的http get post封装
 - 创建表单工具
 
-设计思路
-===
-- 基于jQuery 
-
 
 Useage
 ===
