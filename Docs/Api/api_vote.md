@@ -132,8 +132,8 @@ limit |返回数 默认10 |N
 id | 投票id | Y
 title|  投票主题      | N
 intro  | 投票简介   | N
-stime   | 起始时间   | N
-etime   | 终止时间  | N
+stime   | 起始时间   | Y
+etime   | 终止时间  | Y
 
 
 **Response**  
@@ -170,7 +170,7 @@ voteid | 投票id | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-vpotionsid | 选项id | Y
+optionsid | 选项id | Y
 voteid：|  投票id  | Y
 
 
