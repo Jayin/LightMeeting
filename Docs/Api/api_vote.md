@@ -168,7 +168,7 @@ voteid | 投票id | Y
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
-vpotionsid | 选项id | Y
+optionsid | 选项id | Y
 voteid：|  投票id  | Y
 
 
