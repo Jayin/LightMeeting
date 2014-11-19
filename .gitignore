@@ -4,3 +4,5 @@ Application/THP/
 .project
 .buildpath
 .idea/
+//不同主机的配置
+server_config.php
