@@ -1,4 +1,4 @@
-﻿api_document
+api_document
 ===
 > 会议管理  
 > By zhlhuang   
@@ -35,8 +35,8 @@ content|文档内容|Y|text
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
 id|文档id|Y|int
-title|文档标题|N|varchar
-content|文档内容|N|text
+title|文档标题|Y|varchar
+content|文档内容|Y|text
 
 ```json
 {
