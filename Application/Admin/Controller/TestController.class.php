@@ -25,4 +25,9 @@ class TestController extends Controller {
     public function post1(){
     	$this->ajaxReturn(qc_json_error(I('post.')));
     }
+    
+    function createQRcode($text){
+    	vendor('QRcode.phpqrcode');
+    	\QRcode::png($text);
+    }
 }
