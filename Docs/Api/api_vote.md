@@ -130,8 +130,8 @@ voteid | 投票项id | Y
 id | 投票id | Y
 title|  投票主题      | N
 intro  | 投票简介   | N
-stime   | 起始时间   | N
-etime   | 终止时间  | N
+stime   | 起始时间   | Y
+etime   | 终止时间  | Y
 
 
 **Response**  
