@@ -68,6 +68,7 @@
     	  $.post(url,data,function(reqData){
     		  if(reqData.code==20000){
     			  alert("登录成功");
+    			  location.href="index";
     		  }else{
     			  alert("登录失败");
     		  }
