@@ -55,7 +55,7 @@ vpintro  | 选项 介绍   | Y
 vpotionsid | 选项id | Y
 voteid | 所属投票表id     | N
 meetid|  所属会议表id      | N
-vpintro  | 选项 介绍   | N
+vpintro  | 选项 介绍   | Y
 
 
 **Response**  
