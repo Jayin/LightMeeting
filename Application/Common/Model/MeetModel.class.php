@@ -1,6 +1,8 @@
 <?php
 namespace Common\Model;
 
+use Common\Model\BaseModel;
+
 class MeetModel extends BaseModel{
     
     
@@ -27,7 +29,7 @@ class MeetModel extends BaseModel{
 		if($res){
 		    
 		    $joindata=array("meetid"=>$res,"memberid"=>$data["createmember"]);
-		    $joinmodel=D("joinmeet"); //实例化一个参加会议表
+		    $joinmodel=D("Joinmeet"); //实例化一个参加会议表
 		    $joinmodel->addjoin($joindata);
 		    
 		   return  qc_json_success(); //添加会议成功
