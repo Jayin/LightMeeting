@@ -92,9 +92,9 @@ class VoteController extends BaseController {
 	 * 获得会议的投票列表
 	 * @param unknown $meetid 会议id
 	 */
-	public function lists($meetid){
+	public function lists($meetid,$page = 1,$limit = 10){
 		$this->reqLogin();
-		$this->ajaxReturn(D('Vote')->lists($meetid));
+		$this->ajaxReturn(D('Vote')->lists($meetid,$page ,$limit));
 	}
 	
 }

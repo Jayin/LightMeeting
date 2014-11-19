@@ -78,8 +78,8 @@ class VoteModel extends BaseModel {
 	 * 获得会议的投票列表
 	 * @return Ambigous <multitype:number, multitype:number unknown >
 	 */
-	public function lists($meetid){
-		$res = $this->where("meetid=%s",$meetid)->select();
+	public function lists($meetid,$page = 1,$limit = 10){
+		$res = $this->where("meetid=%s",$meetid)->limit(($page-1)*$limit,$limit)->select();
 		if(empty($res)){
 			$res = array();
 		}

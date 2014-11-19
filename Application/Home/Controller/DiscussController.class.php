@@ -74,17 +74,17 @@ class DiscussController extends BaseController {
 	  * 获得一讨论的评论的列表
 	  * @param unknown $discussid 讨论id
 	  */
-	 public function listComment($discussid){
+	 public function listComment($discussid, $page = 1 ,$limit = 10){
 	 	$this->reqLogin();
-	 	$this->ajaxReturn(D('Comment')->lists($discussid));
+	 	$this->ajaxReturn(D('Comment')->lists($discussid,$page,$limit));
 	 }
 	 /**
 	  * 获得会议的讨论列表
 	  * @param unknown $meetid 会议id
 	  */
-	 public function lists($meetid){
+	 public function lists($meetid, $page = 1 ,$limit = 10){
 	 	$this->reqLogin();
-	 	$this->ajaxReturn(D('Discuss')->lists($meetid));
+	 	$this->ajaxReturn(D('Discuss')->lists($meetid,$page,$limit));
 	 }
 }
 

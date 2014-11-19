@@ -47,8 +47,14 @@ class CommentModel extends BaseModel {
 	 * @param array $discussid
 	 * @return json
 	 */
-	public function lists($discussid){
-		$res = $this->where("discussid=%s",$discussid)->order('ctime asc')->select();
+	public function lists($discussid,$page = 1,$limit = 10){
+		if($page <= 0){
+			$page = 1;
+		}
+		if($limit <= 0){
+			$limit = 10;
+		}
+		$res = $this->where("discussid=%s",$discussid)->limit(($page-1)*$limit,$limit)->order('ctime asc')->select();
 		if($res){
 			return qc_json_success($res);
 		}
