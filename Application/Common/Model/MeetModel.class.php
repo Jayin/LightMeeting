@@ -75,6 +75,16 @@ class MeetModel extends BaseModel{
 	}
 	
 	
+	public function findmeet($id){
+	    $res=$this->where("id=".$id)->find();
+	    
+	    if($res){
+	       return qc_json_success($res);
+	    }
+	    
+	    
+	    return NULL;
+	}
 	
 	
 }

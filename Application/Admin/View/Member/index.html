@@ -45,13 +45,13 @@
 									data-toggle="collapse" data-target="#navbar-collapse-01">
 									<span class="sr-only">Toggle navigation</span>
 								</button>
-								<a class="navbar-brand" href="#">个人中心</a>
+								<a class="navbar-brand" href="index">个人中心</a>
 							</div>
 							<div class="collapse navbar-collapse" id="navbar-collapse-01">
 								<ul class="nav navbar-nav navbar-left">
-									<li><a href="#fakelink">会议列表<span
+									<li><a href="#index">会议列表<span
 											class="navbar-unread">1</span></a></li>
-									<li><a href="#fakelink">添加会议</a></li>
+									<li><a href="../Meet/createmeet">添加会议</a></li>
 									<li><a href="#fakelink">关于我们</a></li>
 								</ul>
 
@@ -134,8 +134,13 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$val.intro}</p>
 						</div>
 						<div class="meet meet-title">地址：{$val.address}</div>
-						<div class="meet meet-title">时间：{$val.starttime}</div>
-						<div class="meet meet-title">时间：{$val.endtime}</div>
+						<div class="meet meet-title">开始时间：{$val.starttime}</div>
+						<div class="meet meet-title">结束时间：{$val.endtime}</div>
+						<div class="meet meet-title" align="right">
+						<span><a href="javascript:void(0);" name='btn-delete' data-title="{$val.title}" data-id="{$val.id}">删除</a>|</span>
+						<span><a href="../Meet/updatemeet/id/{$val.id}.html">更新</a></span>
+						</div>
+						
 					</div>
 					
                   </foreach>
@@ -164,7 +169,26 @@
 				   			   )
 				  data.s1=$("#"+s1+""); */
 (function($) {
-				})(jQuery);
+	$("[name=btn-delete]").on("click",function(){
+		var $ele = $(this);
+		var id = $ele.data('id');
+		var title = $ele.data('title');
+		if(confirm('你确定删除会议 《'  + title+'》 吗? ')){
+			qc.post("/Home/Meet/deletemeet",
+					{"meetid":id},
+					function(res){
+						alert("删除成功");
+						//闪烁不显示
+						$ele.parent().parent().parent().fadeOut();
+					},
+					function (msg){
+						alert(msg);
+					}
+					);
+		}
+	});
+	
+})(jQuery);
 			</script>
 </body>
 </html>
