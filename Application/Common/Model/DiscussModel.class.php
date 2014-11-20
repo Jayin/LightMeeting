@@ -18,6 +18,8 @@ class DiscussModel extends BaseModel {
 	protected $_auto = array(
 			array('ctime',NOW_TIME,self::MODEL_INSERT),
 	);
+	
+	protected $readonlyField = array('meetid','memberid','ctime');
 	/**
 	 * 创建一个讨论
 	 * @param array $data

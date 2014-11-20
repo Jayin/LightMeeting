@@ -14,9 +14,9 @@ class ResearchQuestionModel extends BaseModel{
          array('options','require','缺少选项组',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
     );
 
-    protected $_auto = array(
-
-    );
+    protected $_auto = array();
+    
+    protected $readonlyField = array('researchid');
     /**
      * 创建调查问题
      * @param array $data
