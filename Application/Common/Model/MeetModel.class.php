@@ -19,15 +19,14 @@ class MeetModel extends BaseModel{
     }
     
 	public function addmeet($data){
-			
 		$data["starttime"]=strtotime($data["starttime"]);//将格式化时间转化成时间戳
 		$data["endtime"]=strtotime($data["endtime"]);
-
-		$res=$this->add($data);
-		
-		
+	
+		if(!$this->create($data)){
+			return qc_json_error($this->getError()); 
+		}
+		$res=$this->add();
 		if($res){
-		    
 		    $joindata=array("meetid"=>$res,"memberid"=>$data["createmember"]);
 		    $joinmodel=D("Joinmeet"); //实例化一个参加会议表
 		    $joinmodel->addjoin($joindata);

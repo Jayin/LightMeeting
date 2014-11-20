@@ -21,7 +21,7 @@ class MeetController extends BaseController {
 	
 	public  function addmeet(){
 		
-		$postdata=array("title","address","starttime");
+		$postdata=array("title","address","starttime","endtime");
 		$this->reqPost($postdata)->getlogin();
 		
 		
