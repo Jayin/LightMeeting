@@ -11,8 +11,12 @@ class JoinmeetModel extends BaseModel{
 		if($res){
 			return qc_json_error("已经加入会议");
 		}
+
+		if(!$this->create($data)){
+			return qc_json_error($this->getError()); 
+		}
 		
-		$res=$this->add($data);
+		$res=$this->add();
 		
 		if($res){
 		   return qc_json_success();
