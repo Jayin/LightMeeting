@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>轻会议--会员注册</title>
+<meta name="description"
+	content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version." />
+
+<meta name="viewport"
+	content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+<!-- Loading Bootstrap -->
+<link href="__PUBLIC__/flat/dist/css/vendor/bootstrap.min.css"
+	rel="stylesheet">
+<link href="__PUBLIC__/flat/dist/css/myself.css" rel="stylesheet">
+<!-- Loading Flat UI -->
+<link href="__PUBLIC__/flat/dist/css/flat-ui.css" rel="stylesheet">
+<link href="__PUBLIC__/flat/docs/assets/css/demo.css" rel="stylesheet">
+
+<link href="__PUBLIC__/css/datepicker.css" rel="stylesheet">
+
+
+<link rel="shortcut icon" href="img/favicon.ico">
+
+
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+      <script src="__PUBLIC__/flat/dist/js/vendor/html5shiv.js"></script>
+      <script src="__PUBLIC__/flat/dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body style="background-color: #EDEFF1;">
+	<div class="container-fluid" style="margin-top: 30px;">
+		<div class="row-fluid">
+			<div class="col-xs-12"></div>
+		</div>
+
+		<div class="row-fluid">
+			<div class="col-xs-1"></div>
+			<div class="col-xs-10">
+				<div class="row demo-row">
+					<div class="col-xs-12">
+						<nav class="navbar navbar-inverse navbar-embossed"
+							role="navigation">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle"
+									data-toggle="collapse" data-target="#navbar-collapse-01">
+									<span class="sr-only">Toggle navigation</span>
+								</button>
+								<a class="navbar-brand" href="#">个人中心</a>
+							</div>
+							<div class="collapse navbar-collapse" id="navbar-collapse-01">
+								<ul class="nav navbar-nav navbar-left">
+									<li><a href="#fakelink">会议列表</a></li>
+									<li><a href="#fakelink">添加会议<span
+											class="navbar-unread">1</span></a></li>
+									<li><a href="#fakelink">关于我们</a></li>
+								</ul>
+
+							</div>
+							<!-- /.navbar-collapse -->
+						</nav>
+						<!-- /navbar -->
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<div class="col-xs-1"></div>
+		</div>
+
+
+		<div class="row-fluid" style="">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-6">
+
+
+
+				<div class="form-group">
+
+					<span class="input-icon fui-check-inverted">主题</span> <input
+						type="text" id="title" class="form-control login-field" value=""
+						placeholder="输入会议主题" style="height: 42px;" /> <span
+						class="input-icon fui-check-inverted">简介</span>
+					<textarea id="intro" class="form-control login-field"
+						style="height: 238px; width: 706px;" placeholder="输入会议简洁 "
+						style="height: 42px;"></textarea>
+
+					<span class="input-icon fui-check-inverted">会议地点</span> <input
+						type="text" id="address" class="form-control login-field"
+						value="" placeholder="输入地点" style="height: 42px;" /> <span
+						class="input-icon fui-check-inverted">开始时间</span> <br /> <input
+						class="span2 form-control login-field" value="" id="starttime"
+						type="text" style="width: 40%; display: inline" /><font color="#ccc">24小时制时间 :</font><input
+						class="span2 form-control login-field" value="" id="starttime-h"
+						type="text" style="width: 10%; display: inline;" /> :<input
+						class="span2 form-control login-field" value="" id="starttime-i"
+						type="text" style="width: 10%; display: inline;" /> <br /> 
+						
+						
+						<span class="input-icon fui-check-inverted">结束时间</span><br />
+					<input class="span2 form-control login-field" value="" id="endtime"
+						type="text" style="width: 40%; display: inline"><font color="#ccc">24小时制时间 :</font><input
+						class="span2 form-control login-field" value="" id="endtime-h"
+						type="text" style="width: 10%; display: inline;" /> :<input
+						class="span2 form-control login-field" value="" id="endtime-i"
+						type="text" style="width: 10%; display: inline;" /> <br /> <br />
+					<a id="btn-creatmeet" class="btn btn-block btn-lg btn-primary">提交</a>
+
+
+				</div>
+
+
+			</div>
+			<div class="col-xs-3"></div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+	<div class="row-fluid">
+		<div class="col-xs-12"">
+			<h6 class="text-center">
+				2014 by <a href="http://www.meizhuo.org">meizhuo.org</a>
+			</h6>
+		</div>
+	</div>
+
+
+
+	<script src="__PUBLIC__/flat/dist/js/vendor/jquery.min.js"></script>
+	<script src="__PUBLIC__/flat/dist/js/flat-ui.min.js"></script>
+	<script src="__PUBLIC__/flat/docs/assets/js/application.js"></script>
+	<script src="__PUBLIC__/js/bootstrap-datepicker.js"></script>
+	<script src="__PUBLIC__/js/qc.js"></script>
+	<script type="text/javascript"
+		src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">  
+</script>
+
+	<script>
+	
+	(function($) {
+		
+		
+		$("#btn-creatmeet").on("click",function(){
+			
+			//将时间字符串拼接
+			starttime=$("#starttime").val()+" "+$("#starttime-h").val()+":"+$("#starttime-i").val();
+			endtime=$("#endtime").val()+" "+$("#endtime-h").val()+":"+$("#endtime-i").val();
+			$("#starttime").val(starttime);
+			$("#endtime").val(endtime);
+			
+			json=qc.form().add("title").add("intro").add("address").add("starttime").add("endtime").create();
+			alert(json.endtime);
+		});
+	
+	})(jQuery);
+				videojs.options.flash.swf = "__PUBLIC__/flat/dist/js/vendors/video-js.swf";
+				$(function(){
+					window.prettyPrint && prettyPrint();
+					
+		        // disabling dates
+		        var nowTemp = new Date();
+		        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+		        var checkin = $('#starttime').datepicker({
+		        	format: 'yyyy-mm-dd'
+		
+		        }).on('changeDate', function(ev) {
+		          if (ev.date.valueOf() > checkout.date.valueOf()) {
+		            var newDate = new Date(ev.date)
+		            newDate.setDate(newDate.getDate() + 1);
+		            checkout.setValue(newDate);
+		          }
+		          checkin.hide();
+		        //  $('#dpd2')[0].focus();
+		        }).data('datepicker');
+		        var checkout = $('#endtime').datepicker({
+		        	format: 'yyyy-mm-dd'
+		        }).on('changeDate', function(ev) {
+		          checkout.hide();
+		        }).data('datepicker');
+				});
+			</script>
+</body>
+</html>
