@@ -4,6 +4,7 @@
 //线上与线下的公共配置
 $common_config = array(
 		//公共配置
+		'URL_MODEL' => 2, //URL模式 REWRITE模式
 		'LOG_RECORD' => true, // 开启日志记录
 		'LOG_TYPE' => 'File', // 日志记录类型 默认为文件方式
 		'TMPL_TEMPLATE_SUFFIX' => '.html',
