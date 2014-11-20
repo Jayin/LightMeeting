@@ -2,9 +2,9 @@
 
 namespace Admin\Controller;
 
-use Think\Controller;
+use Common\Controller\BaseController;
 
-class TestController extends Controller {
+class TestController extends BaseController {
     
 
     public function index(){

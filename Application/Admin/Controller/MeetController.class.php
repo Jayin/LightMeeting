@@ -2,9 +2,9 @@
 
 namespace Admin\Controller;
 
-use Think\Controller;
+use Common\Controller\BaseController;
 
-class MeetController extends Controller {
+class MeetController extends BaseController {
     
 
     public function index(){
