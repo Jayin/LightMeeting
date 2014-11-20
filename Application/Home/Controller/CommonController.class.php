@@ -9,10 +9,15 @@ use Common\Controller\BaseController;
  *
  */
 class CommonController extends BaseController {
-	
-	public function createQRcode($text = '轻会议'){
+	/**
+	 * 生成二维码
+	 * @param string $text 二维码内容
+	 * @param number $size 二维码长宽,一般为25的倍数,单位：px
+	 * @param number $margin 外边距 单位:px
+	 */
+	public function createQRcode($text = '',$size = 50, $margin = 2){
 		vendor('QRcode.phpqrcode');
-		\QRcode::png($text);
+		\QRcode::png($text,false,QR_ECLEVEL_L,$size/25,$margin);
 	}
 }
 

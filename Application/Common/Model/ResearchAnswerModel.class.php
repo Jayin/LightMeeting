@@ -19,6 +19,8 @@ class ResearchAnswerModel extends BaseModel{
             //创建时间
             array('ctime',NOW_TIME,self::MODEL_INSERT),
     );
+    
+    protected $readonlyField = array('questionid','author','ctime');
     /**
      *  创建答案
      * @param  array $data [description]

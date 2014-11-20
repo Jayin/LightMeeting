@@ -13,6 +13,7 @@ class VoteModel extends BaseModel {
 			//创建时间
 			array('ctime',NOW_TIME,self::MODEL_INSERT)
 	);
+	protected $readonlyField = array('meetid');
 	/**
 	 * 创建一投票
 	 * @param array $data

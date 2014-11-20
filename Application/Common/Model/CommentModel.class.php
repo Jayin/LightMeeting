@@ -15,6 +15,7 @@ class CommentModel extends BaseModel {
 			array('cip','qc_getRoteIP',self::MODEL_INSERT,'function'),
 			array('reply_member','0',self::MODEL_INSERT),
 	);
+	protected $readonlyField = array('discussid','reply_member','author','ctime','cip');
 	
 	/**
 	 * 创建一评论

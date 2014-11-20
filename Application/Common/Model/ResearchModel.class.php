@@ -19,6 +19,7 @@ class ResearchModel extends BaseModel {
 
     protected $_auto = array();
 
+    protected $readonlyField = array('meetid');
     /** 
      * 创建一调查
      * @param array $data 

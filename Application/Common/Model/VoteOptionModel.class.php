@@ -12,7 +12,8 @@ class VoteOptionModel extends BaseModel{
 		array('meetid','require','缺少关联的会议id',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
 		array('vpintro','require','缺少选项描述',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
 	);
-
+	
+	protected $readonlyField = array('voteid', 'meetid');
     /** 
      * 添加一个投票选项
      * @param array $data 
@@ -31,7 +32,7 @@ class VoteOptionModel extends BaseModel{
 	 * @param array $data
 	 */
     public function updateOption($data){
-        if($this->field('voteid,meetid',true)->create($data)){
+        if($this->create($data)){
             $res = $this->save();
             if($res === false){
             	return qc_json_error($this->getError());
