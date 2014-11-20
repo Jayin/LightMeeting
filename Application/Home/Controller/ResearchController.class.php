@@ -65,10 +65,12 @@ class ResearchController extends BaseController{
     /**
      * 获得一调查的调查问题列表
      * @param int $researchid 调查id
+     * @param int $page 页码
+     * @param int $limie 返回数
      */
-    public function listQuestion($researchid){
+    public function listQuestion($researchid,$page = 1,$limit = 10){
         $this->reqLogin();
-        $this->ajaxReturn(D('ResearchQuestion')->lists($researchid));
+        $this->ajaxReturn(D('ResearchQuestion')->lists($researchid,$page ,$limit ));
     }
     /**
      * 回答一调查问题
@@ -91,8 +93,8 @@ class ResearchController extends BaseController{
      * 获得会议的讨论列表
      * @param unknown $meetid 会议id
      */
-    public function lists($meetid){
+    public function lists($meetid,$page = 1,$limit = 10){
     	$this->reqLogin();
-    	$this->ajaxReturn(D('Research')->lists($meetid));
+    	$this->ajaxReturn(D('Research')->lists($meetid,$page ,$limit));
     }
 }

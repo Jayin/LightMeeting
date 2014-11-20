@@ -45,6 +45,8 @@ class CommentModel extends BaseModel {
 	/**
 	 * 获得一讨论的所有评论
 	 * @param array $discussid
+	 * @param int page 页码
+	 * @param int 返回数
 	 * @return json
 	 */
 	public function lists($discussid,$page = 1,$limit = 10){

@@ -66,13 +66,21 @@ class ResearchQuestionModel extends BaseModel{
         $Model->rollback();
         return qc_json_error("删除失败");
     }
-    /**
+    /**  
      * 获得调查下的调查问题
-     * @param int $researchid 调查id
+     * @param int $researchid  调查id
+     * @param int $page 页码
+     * @param int $limit  返回数
      * @return json
      */
-    public function lists($researchid){
-        $res = $this->where("researchid=%s",$researchid)->select();
+    public function lists($researchid,$page = 1,$limit = 10){
+        if($page <= 0){
+            $page = 1;
+        }
+        if($limit <= 0){
+            $limit = 10;
+        }
+        $res = $this->where("researchid=%s",$researchid)->limit(($page-1)*$limit,$limit)->select();
         if($res){
             return qc_json_success($res);
         }

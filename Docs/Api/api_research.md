@@ -88,6 +88,8 @@ questionid | 问题id | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 researchid | 调查id | Y
+page | 页数 | N
+limit | 每页数量 | N
 
 
 **Response**  
@@ -220,6 +222,8 @@ researchid |  调查表id  | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 meetid | 会议id | Y
+page | 页数 | N
+limit | 每页数量 | N
 
 
 **Response**  
