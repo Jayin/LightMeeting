@@ -2,8 +2,12 @@
 namespace Common\Model;
 
 class MemberModel extends BaseModel{
+    protected $readonlyField = array("id","username","ctime","cIP");
     protected $_validate = array(
-        array("username",'','用户名必须唯一',self::EXISTS_VALIDATE,'unique',self::MODEL_INSERT),
+        array("username",'','用户名必须唯一',self::EXISTS_VALIDATE,'unique'),
+        array("username",'',"用户名不能为空",self::EXISTS_VALIDATE,'notequal'),
+        array("password",'',"密码不能为空",self::EXISTS_VALIDATE,'notequal'),
+        array("nickname",'',"昵称不能为空",self::EXISTS_VALIDATE,'notequal'),
         array("sex",'checkSex','性别不仔细',self::EXISTS_VALIDATE,'callback'),
         array("email",'email',"email 不合法")
     );

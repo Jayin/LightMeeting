@@ -4,15 +4,17 @@ namespace Common\Model;
 use Common\Model\BaseModel;
 
 class MeetModel extends BaseModel{
-    
+    protected $readonlyField = array("id","createmember");
     
     //时间格式进行判断
     protected $_validate = array(
+        array("title",'','主题不能为空',self::EXISTS_VALIDATE,'notequal'),
         array("starttime",'checktime','起始时间格式错误',self::EXISTS_VALIDATE,'callback'),
         array("endtime",'checktime','结束时间格式错误',self::EXISTS_VALIDATE,'callback')
     );
     public function checktime($starttime){
-        if($starttime==NULL){
+        //时间不能小于当前时间
+        if($starttime==NULL||$starttime<time()){
             return false;
         }
         return true;

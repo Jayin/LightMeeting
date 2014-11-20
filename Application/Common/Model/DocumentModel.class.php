@@ -4,8 +4,13 @@ namespace Common\Model;
 
 class DocumentModel extends BaseModel
 {
+    protected $readonlyField = array("id","meetid","memberid");
+    
 
     protected $_validate = array(
+        array("title",'',"标题不能为空",self::EXISTS_VALIDATE,'notequal'),
+        array("meetid",'',"所属会议不能为空",self::EXISTS_VALIDATE,'notequal'),
+        array("memberid",'',"创建人不能为空",self::EXISTS_VALIDATE,'notequal'),
         array(
             "meetid",
             'checkmeetid',

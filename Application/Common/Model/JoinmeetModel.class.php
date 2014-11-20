@@ -2,7 +2,7 @@
 namespace Common\Model;
 
 class JoinmeetModel extends BaseModel{
-	
+    protected $readonlyField = array("id","meetid","memberid","stime");
 	
 	public function addjoin($data){
 		$data["stime"]=time();
