@@ -47,4 +47,42 @@ class MeetController extends AdminBaseController {
        
         $this->display();
     }
+    
+    
+    /**
+     * 会议详情
+     *
+     *   */
+    
+    public function detail($id=0){
+        $this->reqLogin();
+        $Meetmodel=D("Meet");
+       
+        $LoginMember=$this->reqLoginmember(); //获取登录用户
+        $res=$Meetmodel->findmeet($id);  //查找对应meet
+         
+        
+        if(isset($res["code"])){
+            $meet=$res["response"];
+            
+            $Membermodel=D("Member"); //获取相关联的会议创建人
+            $resMember=$Membermodel->getMemberInfo($meet["createmember"])["response"];
+ 
+            $this->assign("Meet",$meet);
+            $this->assign("LoginMemberid",$LoginMember["id"]); //分配登录id
+            $this->assign("Member",$resMember);
+            
+        }else{
+            $this->error("查不到此会议");
+        }
+       
+
+        
+         $this->display();
+        
+        
+    }
+    
+    
+    
 }
