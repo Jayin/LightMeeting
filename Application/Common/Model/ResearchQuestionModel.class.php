@@ -81,6 +81,9 @@ class ResearchQuestionModel extends BaseModel{
             $limit = 10;
         }
         $res = $this->where("researchid=%s",$researchid)->limit(($page-1)*$limit,$limit)->select();
+        for($i = 0;$i < count($res) ; $i++){
+        	$res[$i]['options'] = json_decode($res[$i]['options']);
+        }
         if($res){
             return qc_json_success($res);
         }

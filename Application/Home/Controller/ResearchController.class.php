@@ -44,7 +44,9 @@ class ResearchController extends BaseController{
      */
     public function createQuestion(){
         $this->reqPost(array('researchid','title','options'))->reqLogin();
-        $this->ajaxReturn(D('ResearchQuestion')->createQuestion(I('post.')));
+        $data = I('post.');
+        $data['options'] = I('post.options','','');
+        $this->ajaxReturn(D('ResearchQuestion')->createQuestion($data));
     }
     /**
      * 更新调查问题

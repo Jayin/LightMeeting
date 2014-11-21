@@ -200,16 +200,22 @@ researchid |  调查表id  | Y
         "etime": "1356969600",
         "questions": [
             {
-                "id": "2",
+                "id": "7",
                 "researchid": "2",
                 "title": "what's you sex?",
-                "options": "{'1':'man','2':'woman'}"
+                "options": {
+                    "1": "man",
+                    "2": "woman"
+                }
             },
             {
-                "id": "3",
+                "id": "8",
                 "researchid": "2",
                 "title": "what's you sex?",
-                "options": "{'1':'man','2':'woman'}"
+                "options": {
+                    "1": "man",
+                    "2": "woman"
+                }
             }
         ]
     }
