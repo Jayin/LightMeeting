@@ -59,6 +59,12 @@
   .mytodo-content h6{
 	color: #333;
   }
+  
+  .mytodo-content span{
+  	font-size:18px;
+	color: #fff;
+  }
+  
 .mytodo-name {
   margin: 1px 0 3px;
   font-size: 17px;

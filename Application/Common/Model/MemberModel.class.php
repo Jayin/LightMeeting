@@ -120,5 +120,13 @@ class MemberModel extends BaseModel{
 		
 	}
 	
+	
+	public function getMemberInfo($id){
+	    $res=$this->field("password",true)->where("id='%d'",$id)->find();
+	    if($res){
+	        return qc_json_success($res);
+	    }
+	    return qc_json_error("查不到该用户");
+	}
 
 }
