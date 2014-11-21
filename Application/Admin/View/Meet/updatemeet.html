@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>轻会议--会议添加</title>
+<title>轻会议--会员更新</title>
 <meta name="description"
 	content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version." />
 
@@ -77,35 +77,35 @@
 
 
 				<div class="form-group">
-
+				<input type="hidden" id="id" value="{$id}">
 					<span class="input-icon fui-check-inverted">主题</span> <input
-						type="text" id="title" class="form-control login-field" value=""
+						type="text" id="title" class="form-control login-field" value="{$Meet.title}"
 						placeholder="输入会议主题" style="height: 42px;" /> <span
 						class="input-icon fui-check-inverted">简介</span>
 					<textarea id="intro" class="form-control login-field"
 						style="height: 238px; width: 706px;" placeholder="输入会议简洁 "
-						style="height: 42px;"></textarea>
+						>{$Meet.intro}</textarea>
 
 					<span class="input-icon fui-check-inverted">会议地点</span> <input
 						type="text" id="address" class="form-control login-field"
-						value="" placeholder="输入地点" style="height: 42px;" /> <span
+						value="{$Meet.address}" placeholder="输入地点" style="height: 42px;" /> <span
 						class="input-icon fui-check-inverted">开始时间</span> <br /> <input
-						class="span2 form-control login-field" value="" id="starttime"
+						class="span2 form-control login-field" value="{$Meet.starttime}" id="starttime"
 						type="text" style="width: 40%; display: inline" /><font color="#ccc">24小时制时间 :</font><input
-						class="span2 form-control login-field" value="" id="starttime-h"
+						class="span2 form-control login-field" value="{$Meet.starttime-h}" id="starttime-h"
 						type="text" style="width: 10%; display: inline;" /> :<input
-						class="span2 form-control login-field" value="" id="starttime-i"
+						class="span2 form-control login-field" value="{$Meet.starttime-i}" id="starttime-i"
 						type="text" style="width: 10%; display: inline;" /> <br /> 
 						
 						
 						<span class="input-icon fui-check-inverted">结束时间</span><br />
-					<input class="span2 form-control login-field" value="" id="endtime"
+					<input class="span2 form-control login-field" value="{$Meet.endtime}" id="endtime"
 						type="text" style="width: 40%; display: inline"><font color="#ccc">24小时制时间 :</font><input
-						class="span2 form-control login-field" value="" id="endtime-h"
+						class="span2 form-control login-field" value="{$Meet.endtime-h}" id="endtime-h"
 						type="text" style="width: 10%; display: inline;" /> :<input
-						class="span2 form-control login-field" value="" id="endtime-i"
+						class="span2 form-control login-field" value="{$Meet.endtime-i}" id="endtime-i"
 						type="text" style="width: 10%; display: inline;" /> <br /> <br />
-					<a id="btn-creatmeet" class="btn btn-block btn-lg btn-primary">提交</a>
+					<a id="btn-creatmeet" class="btn btn-block btn-lg btn-primary">更新</a>
 
 
 				</div>
@@ -143,32 +143,30 @@
 
 	<script>
 	
-	videojs.options.flash.swf = "__PUBLIC__/flat/dist/js/vendors/video-js.swf";
-	
 	(function($) {
 		
 		
 		$("#btn-creatmeet").on("click",function(){
-	
-			s=$("#starttime").val();
-			e=endtime=$("#endtime").val();
 			
 			//将时间字符串拼接
-			starttime=$("#starttime").val()+" "+$("#starttime-h").val()+":"+$("#starttime-i").val();
-			endtime=$("#endtime").val()+" "+$("#endtime-h").val()+":"+$("#endtime-i").val();
-			//将starttime 值替换
-			$("#starttime").val(starttime); 
-			$("#endtime").val(endtime);
-			
-			json=qc.form().add("title").add("intro").add("address").add("starttime").add("endtime").create();
-			
-			//将替换的恢复
 			s=$("#starttime").val();
 			e=endtime=$("#endtime").val();
 			
 			
-			qc.post("/Home/Meet/addmeet",json,function(res){
-				alert("添加成功");
+			starttime=$("#starttime").val()+" "+$("#starttime-h").val()+":"+$("#starttime-i").val();
+			endtime=$("#endtime").val()+" "+$("#endtime-h").val()+":"+$("#endtime-i").val();
+			$("#starttime").val(starttime);
+			$("#endtime").val(endtime);
+			
+			json=qc.form().add("id").add("title").add("intro").add("address").add("starttime").add("endtime").create();
+			
+			
+			$("#starttime").val(s);
+			endtime=$("#endtime").val(e);
+			
+			
+			qc.post("/Home/Meet/updatemeet",json,function(res){
+				alert("更新成功");
 			},function(msg){
 				alert(msg);
 			});
@@ -176,7 +174,7 @@
 		});
 	
 	})(jQuery);
-				
+				videojs.options.flash.swf = "__PUBLIC__/flat/dist/js/vendors/video-js.swf";
 				$(function(){
 					window.prettyPrint && prettyPrint();
 					
