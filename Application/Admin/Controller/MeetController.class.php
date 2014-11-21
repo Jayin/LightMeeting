@@ -2,9 +2,9 @@
 
 namespace Admin\Controller;
 
-use Common\Controller\BaseController;
+use Admin\Controller\AdminBaseController;
 
-class MeetController extends BaseController {
+class MeetController extends AdminBaseController {
     
 
     public function index(){
@@ -26,6 +26,7 @@ class MeetController extends BaseController {
     public function updatemeet($id){
         //echo $id;
         $this->reqLogin();
+
         $MeetModel=D("Meet");
         $res=$MeetModel->findmeet($id);
         $data=$res["response"];
@@ -43,11 +44,7 @@ class MeetController extends BaseController {
             $this->assign("Meet",$data);
             $this->assign("id",$id);
         }
-        
-   /*      echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-        exit() */;
+       
         $this->display();
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Admin\Controller;
 
-use Common\Controller\BaseController;
+use Admin\Controller\AdminBaseController;
 
 
-class MemberController extends BaseController {
+class MemberController extends AdminBaseController {
     /**
      * 会员登录
      *
