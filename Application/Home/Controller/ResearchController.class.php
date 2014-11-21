@@ -55,6 +55,9 @@ class ResearchController extends BaseController{
         $this->reqPost(array('questionid'))->reqLogin();
         $data = I('post.');
         $data['id'] = I('post.questionid');
+        if(isset($data['options'])){
+        	$data['options'] = I('post.options','','');
+        }
         $this->ajaxReturn(D('ResearchQuestion')->updateQuestion($data));
     }
     /**
