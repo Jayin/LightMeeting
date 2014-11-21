@@ -163,8 +163,8 @@
 			json=qc.form().add("title").add("intro").add("address").add("starttime").add("endtime").create();
 			
 			//将替换的恢复
-			s=$("#starttime").val();
-			e=endtime=$("#endtime").val();
+			$("#starttime").val(s);
+			$("#endtime").val(e);
 			
 			
 			qc.post("/Home/Meet/addmeet",json,function(res){
