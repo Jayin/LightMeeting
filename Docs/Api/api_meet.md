@@ -140,7 +140,6 @@ meetid|查询会议的id|Y|int
 
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
-memberid|成员id|N|为NULL查看登录memberid
 page|页数|N|int
 limit|每页数量|N|int
 
