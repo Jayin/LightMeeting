@@ -91,7 +91,7 @@ class JoinmeetModel extends BaseModel{
 	    if($res){
 			return qc_json_success($res);
 		}
-		return qc_json_error('没有参加会议');
+		return qc_json_success(array());
 		
 	}
 }
