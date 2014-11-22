@@ -25,7 +25,7 @@ class DiscussController extends BaseController {
 	  * 创建(发起)讨论
 	  */
 	 public function create(){
-	 	$this->reqPost(array('meetid','title','content'))->reqLogin();;
+	 	$this->reqPost(array('meetid','title','content'))->reqLogin();
 	 	$this->ajaxReturn(D('Discuss')->createDiscuss(I('post.')));
 	 }
 	 /**
