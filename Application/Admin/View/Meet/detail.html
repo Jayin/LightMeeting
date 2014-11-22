@@ -3,28 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>轻会议--会议详情</title>
-<meta name="description"
-	content="Flat UI Kit Free is a Twitter Bootstrap Framework design and Theme, this responsive framework includes a PSD and HTML version." />
-
-<meta name="viewport"
-	content="width=1000, initial-scale=1.0, maximum-scale=1.0">
-
-<!-- Loading Bootstrap -->
-<link href="__PUBLIC__/flat/dist/css/vendor/bootstrap.min.css"
-	rel="stylesheet">
-<link href="__PUBLIC__/flat/dist/css/myself.css" rel="stylesheet">
-<!-- Loading Flat UI -->
-<link href="__PUBLIC__/flat/dist/css/flat-ui.css" rel="stylesheet">
-<link href="__PUBLIC__/flat/docs/assets/css/demo.css" rel="stylesheet">
+<include file="Base/head" />
 
 
-<link rel="shortcut icon" href="img/favicon.ico">
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="__PUBLIC__/flat/dist/js/vendor/html5shiv.js"></script>
-      <script src="__PUBLIC__/flat/dist/js/vendor/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body style="background-color: #EDEFF1;">
 	<div class="container-fluid" style="margin-top: 30px;">
@@ -33,40 +14,7 @@
 		</div>
 
 
-		<div class="row-fluid">
-			<div class="col-xs-1"></div>
-			<div class="col-xs-10">
-				<div class="row demo-row">
-					<div class="col-xs-12">
-						<nav class="navbar navbar-inverse navbar-embossed"
-							role="navigation">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle"
-									data-toggle="collapse" data-target="#navbar-collapse-01">
-									<span class="sr-only">Toggle navigation</span>
-								</button>
-								<a class="navbar-brand" href="../Member/index">个人中心</a>
-							</div>
-							<div class="collapse navbar-collapse" id="navbar-collapse-01">
-								<ul class="nav navbar-nav navbar-left">
-									<li><a href="#index">会议列表</a></li>
-									<li><a href="../Meet/createmeet">添加会议</a></li>
-									<li><a href="#index">会议详情<span
-											class="navbar-unread">1</span></a></li>
-									<li><a href="#fakelink">关于我们</a></li>
-								</ul>
-
-							</div>
-							<!-- /.navbar-collapse -->
-						</nav>
-						<!-- /navbar -->
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-				<div class="col-xs-1"></div>
-		</div>
-	
+	<include file="Base/menu" />
 	</div>
 
 
@@ -78,51 +26,7 @@
 
 			<div class="row demo-samples">
 				<div class="col-xs-3">
-					<div class="mytodo" style="background-color: #2F4154;">
-						<ul>
-							<li class="mytodo-done">
-								<div class="mytodo-icon"></div>
-								<div class="mytodo-content  ">
-									<span class="fui-user ">
-										会议详情
-									</span><span
-											class="navbar-unread"></span>
-								</div>
-							</li>
-							<li class="mytodo-done">
-								<div class="mytodo-icon"></div>
-								<div class="mytodo-content">
-									<span class="fui-folder">
-										会议文档
-									</span>
-								</div>
-							</li>
-							<li class="mytodo-done">
-								<div class="mytodo-icon"></div>
-								<div class="mytodo-content">
-									<span class="fui-bubble">
-										会议讨论
-									</span>
-								</div>
-							</li>
-							<li class="mytodo-done">
-								<div class="mytodo-icon"></div>
-								<div class="mytodo-content">
-									<span class="fui-search">
-										会议调查
-									</span>
-								</div>
-							</li>
-							<li class="mytodo-done">
-								<div class="mytodo-icon "></div>
-								<div class="mytodo-content">
-									<span class="fui-checkbox-checked">
-										会议投票
-									</span>
-								</div>
-							</li>
-						</ul>
-					</div>
+    <include file="Base/meetmenu" />
 					<!-- /.todo -->
 				</div>
 				<!-- /.col-xs-4 -->
@@ -159,20 +63,7 @@
 				</div>
 <div class="col-xs-1"></div>
 	</div>
-				<div class="row-fluid">
-					<div class="col-xs-12"">
-						<h6 class="text-center">
-							2014 by <a href="http://www.meizhuo.org">meizhuo.org</a>
-						</h6>
-					</div>
-				</div>
-		
-
-			<script src="__PUBLIC__/flat/dist/js/vendor/jquery.min.js"></script>
-			<script src="__PUBLIC__/flat/dist/js/flat-ui.min.js"></script>
-			<script src="__PUBLIC__/flat/docs/assets/js/application.js"></script>
-			<script src="__PUBLIC__/js/qc.js"></script>
-
+<include file="Base/foot" />
 			<script>
 				videojs.options.flash.swf = "__PUBLIC__/flat/dist/js/vendors/video-js.swf";
 (function($) {

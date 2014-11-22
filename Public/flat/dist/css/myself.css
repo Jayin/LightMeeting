@@ -65,6 +65,12 @@
 	color: #fff;
   }
   
+  .mytodo-content span a{
+  	font-size:18px;
+	color: #fff;
+  }
+  
+  
 .mytodo-name {
   margin: 1px 0 3px;
   font-size: 17px;
