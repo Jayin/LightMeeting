@@ -102,5 +102,30 @@ class DiscussModel extends BaseModel {
 		}
 		return qc_json_success($res);
 	}
+	
+	
+	
+	/**
+	 * 获得会议的讨论列表  相应发布人资料
+	 * @return Ambigous <multitype:number, multitype:number unknown >
+	 */
+	public function lists_m($meetid,$page = 1,$limit = 10){
+	    if($page <= 0){
+	        $page = 1;
+	    }
+	    if($limit <= 0){
+	        $limit = 10;
+	    }
+	    $res = $this->where("d.memberid=m.id and d.meetid=%s",$meetid)
+	    ->field("d.*,m.nickname")
+	    ->table("qc_discuss d,qc_member m")
+	    ->limit(($page-1)*$limit,$limit)->select();
+	    if(empty($res)){
+	        $res = array();
+	    }
+	    return qc_json_success($res);
+	}
+	
+	
 }
 
