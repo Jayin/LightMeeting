@@ -39,7 +39,7 @@ class DocumentController extends BaseController {
         $postdata=array("id","title","content");
         $this->reqPost($postdata)->reqLogin();
         
-        $data=I("post.");
+        $data=I("post.",'','');
         unset($data["meetid"]);
         $member=$this->reqLoginmember();
         $documentmodel=D("Document");
