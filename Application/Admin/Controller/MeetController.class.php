@@ -124,4 +124,32 @@ class MeetController extends AdminBaseController {
         $this->display();
     }
     
+    /**
+     * 文档更新
+     *@param
+     *所属会议id
+     *   */
+    
+    public function updatedocument($id){
+        
+        $this->reqLogin();
+        $DocModel=D("Document");
+        $res=$DocModel->listdoc($id);
+        
+        if($res){
+            $doc=$res["response"];
+            $Meet["id"]=$doc["meetid"];  //将会议id分配前端页面显示
+            $this->assign("Meet",$Meet);
+            $this->assign("doc",$doc);
+
+        }
+        
+        
+        
+        
+        
+        $this->display();
+    }
+    
+    
 }
