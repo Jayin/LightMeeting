@@ -143,7 +143,7 @@ class MeetController extends BaseController {
 		$this->reqLogin();		
 		
 		$member=$this->reqLoginmember();
-		$data=I("post.");
+		$data=array('meetid'=>$meetid);
 		if($data["memberid"]==NULL){
 		   $data["memberid"]=$member["id"];
 		}
