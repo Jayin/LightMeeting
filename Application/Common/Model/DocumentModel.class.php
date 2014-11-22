@@ -121,6 +121,36 @@ class DocumentModel extends BaseModel
     
     }
     
+    
+    /**
+     * 获取会议
+     * 所属会议id
+     * 显示发布人nickname
+     *   */
+    
+    public function listmeetdoc1($meetid,$page,$limit=5){
+        if($page==NULL||intval($page)<=0){
+            $page=1;
+        }
+         
+        if($limit==NULL||intval($limit)<=0){
+            $limit=5;
+        }
+         
+        $res=$this->field("d.*,m.nickname")
+        ->where("m.id=d.memberid and d.meetid='%d'",$meetid)
+        ->table("qc_document d,qc_member m")
+        ->page($page,$limit)->select();
+        
+        if($res){
+            return qc_json_success($res);
+        }
+         
+        return qc_json_error("查无数据");
+    
+    }
+    
+    
     /**
      * 获取文档
      * 文档id

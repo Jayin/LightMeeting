@@ -5,8 +5,7 @@
 								<div class="mytodo-content  ">
 									<span class="fui-user ">
 										<a href="{:U('Admin/Meet/detail')}?id={$Meet.id}">会议详情</a>
-									</span><span
-											class="navbar-unread"></span>
+									</span>
 								</div>
 							</li>
 							<li class="mytodo-done">
@@ -15,30 +14,38 @@
 									<span class="fui-folder">
 										<a href="{:U('Admin/Meet/document')}?id={$Meet.id}">会议文档</a>
 									</span>
+									<a href="{:U('Admin/Meet/createdocument')}?id={$Meet.id}">
+									<span  class="span-ui fui-plus"></span></a>
 								</div>
 							</li>
 							<li class="mytodo-done">
 								<div class="mytodo-icon"></div>
 								<div class="mytodo-content">
 									<span class="fui-bubble">
-										<a href="{:U('Admin/Meet/discuss')}?id={$Meet.id}">会议详情</a>
+										<a href="{:U('Admin/Meet/discuss')}?id={$Meet.id}">会议讨论</a>
 									</span>
+									<a href="{:U('Admin/Meet/creatediscuss')}?id={$Meet.id}">
+									<span  class="span-ui fui-plus"></span></a>
 								</div>
 							</li>
 							<li class="mytodo-done">
 								<div class="mytodo-icon"></div>
 								<div class="mytodo-content">
 									<span class="fui-search">
-										<a href="{:U('Admin/Meet/research')}?id={$Meet.id}">会议详情</a>
+										<a href="{:U('Admin/Meet/research')}?id={$Meet.id}">会议调查</a>
 									</span>
+									<a href="{:U('Admin/Meet/createresearch')}?id={$Meet.id}">
+									<span  class="span-ui fui-plus"></span></a>
 								</div>
 							</li>
 							<li class="mytodo-done">
 								<div class="mytodo-icon "></div>
 								<div class="mytodo-content">
 									<span class="fui-checkbox-checked">
-										<a href="{:U('Admin/Meet/vote')}?id={$Meet.id}">会议详情</a>
+										<a href="{:U('Admin/Meet/vote')}?id={$Meet.id}">会议投票</a>
 									</span>
+									<a href="{:U('Admin/Meet/createvote')}?id={$Meet.id}">
+									<span  class="span-ui fui-plus"></span></a>
 								</div>
 							</li>
 						</ul>
