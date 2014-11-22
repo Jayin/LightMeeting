@@ -14,7 +14,7 @@ class ViewController extends AdminBaseController {
 	 * @param number $id 会议id
 	 */
 	public function meeting($id = 0){
-// 		$this->reqLogin();
+		$this->reqLogin();
         $Meetmodel=D("Meet");
        
         $LoginMember=$this->reqLoginmember(); //获取登录用户
@@ -45,6 +45,23 @@ class ViewController extends AdminBaseController {
             $this->error("查不到此会议");
         }
          $this->display();
+	}
+	/**
+	 * 加入文章详情页面
+	 * @param number $id 文档id
+	 */
+	public function document($id = 0){
+		$this->reqLogin();
+		$resDocument = D("Document")->listdoc($id);
+		if(isset($resDocument['code'])){
+			$Document = $resDocument['response'];
+			$Document['ctime'] = date("Y-m-d",$Document['ctime']);
+			
+		}else{
+			$Document = array('title' =>'找不到该文档');
+		}
+		$this->assign("Document",$Document);
+		$this->display();
 	}
 }
 
