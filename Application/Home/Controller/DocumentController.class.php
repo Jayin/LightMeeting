@@ -18,7 +18,7 @@ class DocumentController extends BaseController {
     public function createdoc(){
         $postdata=array("meetid","title","content");
         $this->reqPost($postdata)->reqLogin();
-        $data=I("post.");
+        $data=I("post.",'','');
         $documentmodel=D("Document");
         $member=$this->reqLoginmember();
         $res=$documentmodel->createdoc($data,$member);
