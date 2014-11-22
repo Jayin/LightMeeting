@@ -51,7 +51,7 @@ class ViewController extends AdminBaseController {
 	 * @param number $id 文档id
 	 */
 	public function document($id = 0){
-		$this->reqLogin();
+// 		$this->reqLogin();
 		$resDocument = D("Document")->listdoc($id);
 		if(isset($resDocument['code'])){
 			$Document = $resDocument['response'];
