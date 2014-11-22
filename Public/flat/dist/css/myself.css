@@ -99,10 +99,21 @@
  	
 
  }
+ 
+ .meet-comment{
+	margin: 5px 30px 5px 30px;
+ 	padding: 5px;
+ 	padding-left:15px;
+ 	font-size: 16px;
+ 	border:1px none #DDD;
+
+ 	
+
+ }
   
   .meet-title span{
 	font-size: 16px;
-  	color: #ccc
+  	color: #333;
   }
   
   

@@ -44,12 +44,18 @@
 						</div>
 
 						<div class="meet meet-title" align="right">
-
+							
+							<span><a data-id="{$val.id}" name="a-comment">评论</a></span>
 							<if condition="$LoginMemberid eq $val.memberid ">
-							<span><a href="javascript:void(0);" name='btn-delete'
-								data-title="{$val.title}" data-id="{$val.id}">删除</a>|</span> <span><a
-								href="../Meet/updatediscuss/id/{$val.id}.html">更新</a></span> <else />
+							<span>|<a href="javascript:void(0);" name='btn-delete'
+								data-title="{$val.title}" data-id="{$val.id}">删除</a></span><span>|<a
+								href="../Meet/updatediscuss/id/{$val.id}.html">更新</a></span> 
+								<else />
 							</if>
+						</div>
+						
+						<div id="listcomment{$val.id}" class="meet meet-title" style="display: none;" >
+						
 						</div>
 
 					</div>
@@ -62,6 +68,55 @@
 	<include file="Base/foot" />
 	<script>
 (function($) {
+	function js_date_time(unixtime) { //时间戳转换函数
+		date=new Date(parseInt(unixtime) * 1000);
+		str='';
+		str+=date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+		str+=" "+(date.getHours())+":"+date.getMinutes()+":"+date.getSeconds();
+		return str;
+	}
+
+	$("[name=a-comment]").on("click",function(){
+		var $ele = $(this);
+		var id = $ele.data('id');
+		var obj=$("#listcomment"+id);
+		if(obj.css("display")=="block"){
+
+			obj.slideUp();
+		}else{
+			
+			data={};
+			data.discussid=id;
+			data.page=1;
+			data.limit=5;
+			data.with_member=1;
+			qc.debug=true;
+			qc.get("/home/discuss/listComment",
+					data,
+					function(res){
+				obj.html("");
+				for(val in res){
+			
+					divHtml='';
+					pHtml="<p align='right'>"+js_date_time(res[val].ctime)+"</p>"
+					divHtml+="<div class='meet meet-comment'>"+res[val].nickname+"： "+res[val].content+pHtml+"<div><hr>";
+					obj.append(divHtml);
+					
+					obj.slideDown();
+				}
+				
+				
+			},function(msg){
+					alert(msg);	
+					});
+			
+			
+			
+		}
+		
+		
+		//alert(id);
+	});
 	
 })(jQuery);
 			</script>
