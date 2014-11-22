@@ -1,72 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>轻会议--会员登录</title>
-<include file="Base/head" />
+    <meta charset="utf-8">
+    <title>轻会议--会员登录</title>
+    <include file="Base/head" />
 
 
 </head>
+
 <body>
-	<div class="container" style="margin-top: 80px;">
-		<div class="login">
-			<div class="login-screen">
-				<div class="login-icon">
+    <div class="container" style="margin-top: 80px;">
+        <div class="login">
+            <div class="login-screen">
+                <div class="login-icon">
 
-					<h4>
-						欢迎来到 <small>轻会议</small>
-					</h4>
-				</div>
+                    <h4>
+                        欢迎来到 <small>轻会议</small>
+                    </h4>
+                </div>
 
-				<div class="login-form">
-					<div class="form-group">
-						<input type="text" class="form-control login-field" value=""
-							placeholder="输入用户名" id="login-username" /> <label
-							class="login-field-icon fui-user" for="login-name"></label>
-					</div>
+                <div class="login-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control login-field" value="" placeholder="输入用户名" id="username" />
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
 
-					<div class="form-group">
-						<input type="password" class="form-control login-field" value=""
-							placeholder="输入密码" id="login-password" /> <label
-							class="login-field-icon fui-lock" for="login-pass"></label>
-					</div>
+                    <div class="form-group">
+                        <input type="password" class="form-control login-field" value="" placeholder="输入密码" id="password" />
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
 
-					<a class="btn btn-primary btn-lg btn-block" onclick="login()"
-						href="#">登录</a> <a class="login-link" href="register">用户注册</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="__PUBLIC__/flat/dist/js/vendor/jquery.min.js"></script>
-	<script src="__PUBLIC__/flat/dist/js/flat-ui.min.js"></script>
-	<script src="__PUBLIC__/flat/docs/assets/js/application.js"></script>
+                    <a id="btn-login" class="btn btn-primary btn-lg btn-block" >登录</a> <a class="login-link" href="register">用户注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="__PUBLIC__/flat/dist/js/vendor/jquery.min.js"></script>
+    <script src="__PUBLIC__/flat/dist/js/flat-ui.min.js"></script>
+    <script src="__PUBLIC__/flat/docs/assets/js/application.js"></script>
+    <script src="__PUBLIC__/js/qc.js"></script>
+    <script>
+    (function($) {
+        $('#btn-login').on('click', function() {
+            qc.debug = true;
+            var data = qc.form().add('username').add('password').create();
+            if(data === '' || data.password === ''){
+                alert('请输入登陆信息');
+                return ;
+            }
+            qc.post("/Home/Member/login", data, function(res) {
+                alert("登录成功");
+                location = "{:U('Admin/Member/index')}";
 
-	<script>
-      videojs.options.flash.swf = "__PUBLIC__/flat/dist/js/vendors/video-js.swf"
-      
-      function login(){
-    	  
-    	  username=$("#login-username").val();
-    	  password=$("#login-password").val();
-    	  
-    	  url="{:U('Home/Member/login','','')}";
-    	  var data={};
-    	  data.username=username;
-    	  data.password=password;
-    	  //alert(data);
-    	  $.post(url,data,function(reqData){
-    		  if(reqData.code==20000){
-    			  alert("登录成功");
-    			  location.href="index";
-    		  }else{
-    			  alert("登录失败");
-    		  }
-    	  });
-    	  
-    	  
-      }
-      
-      
+            }, function(msg) {
+                alert(msg);
+            });
+        });
+    })(jQuery);
     </script>
 </body>
+
 </html>

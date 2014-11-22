@@ -106,6 +106,7 @@
 
 						qc.post("/Home/Meet/addmeet", json, function(res) {
 							alert("添加成功");
+							location = "{:U('Admin/Member/index')}";
 						}, function(msg) {
 							alert(msg);
 						});
