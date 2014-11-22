@@ -63,5 +63,31 @@ class CommentModel extends BaseModel {
 		}
 		return qc_json_success(array());
 	}
+	
+	
+	/**
+	 * 获得一讨论的所有评论
+	 * @param array $discussid
+	 * @param int page 页码
+	 * @param int 返回数
+	 * @return json
+	 */
+	public function lists_with_member($discussid,$page = 1,$limit = 10){
+	    if($page <= 0){
+	        $page = 1;
+	    }
+	    if($limit <= 0){
+	        $limit = 10;
+	    }
+	    $res = $this->field("c.*,m.nickname")
+	    ->table("qc_comment c,qc_member m")
+	    ->where("m.id=c.author and c.discussid=%s",$discussid)
+	    ->limit(($page-1)*$limit,$limit)
+	    ->order('ctime asc')->select();
+	    if($res){
+	        return qc_json_success($res);
+	    }
+	    return qc_json_success(array());
+	}
 }
 
