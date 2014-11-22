@@ -127,7 +127,7 @@ class MeetController extends AdminBaseController {
     /**
      * 文档更新
      *@param
-     *所属会议id
+     *所属文档id
      *   */
     
     public function updatedocument($id){
@@ -148,6 +148,19 @@ class MeetController extends AdminBaseController {
         
         
         
+        $this->display();
+    }
+    
+    /**
+     * 创建会议讨论
+     *@param
+     *所属会议id
+     *   */
+    
+    Public function creatediscuss($id){
+        $this->reqLogin();
+        $Meet["id"]=$id;  //将会议id分配前端页面显示
+        $this->assign("Meet",$Meet);
         $this->display();
     }
     
