@@ -135,6 +135,25 @@ class MeetController extends BaseController {
 		$this->ajaxReturn($res);
 			
 	}
+	/**
+	 * 用get的方法加入(以后要加密)
+	 * @param unknown $meetid
+	 */
+	public function addjoinClient($meetid){
+		$this->reqLogin();		
+		
+		$member=$this->reqLoginmember();
+		$data=I("post.");
+		if($data["memberid"]==NULL){
+		   $data["memberid"]=$member["id"];
+		}
+		
+		$joinmodel=D("Joinmeet");
+
+		$res=$joinmodel->addjoin($data);
+		
+		$this->ajaxReturn($res);
+	}
 	
 	
 	/**
