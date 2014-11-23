@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>轻会议--会议详情</title>
+<title>轻会议--创建讨论</title>
 <include file="Base/head" />
 
-
+<link href="__PUBLIC__/umeditor/themes/default/css/umeditor.css"
+	rel="stylesheet">
 </head>
+
 <body style="background-color: #EDEFF1;">
+
 	<div class="container-fluid" style="margin-top: 30px;">
 		<div class="row-fluid">
 			<div class="col-xs-12"></div>
@@ -33,29 +36,22 @@
 				<div class="col-xs-9" style="border-color: $fff;">
 
 					<div class="meet" id="meet">
+						<input type="hidden" id='discussid' value="{$dis.id}">
 						<div class="meet meet-title">
-							会议主题：{$Meet.title} <a
-								href="{:U('Admin/View/meeting/id/','','')}/{$Meet.id}"
-								style="float: right;">会议二维码</a>
-						</div>
-						<div class="meet meet-title">地址：{$Meet.address}</div>
-						<div class="meet meet-title">会议发起者：{$Member.nickname}</div>
-						<div class="meet meet-title">开始时间：{$Meet.starttime|date="Y-m-d
-							H:i:s",###}</div>
-						<div class="meet meet-title">结束时间：{$Meet.endtime|date="Y-m-d
-							H:i:s",###}</div>
-						<div class="meet meet-title">
-							简介：
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$Meet.intro}</p>
+							讨论标题：<input type="text" id="title"
+								class="form-control login-field" value="{$dis.title}"
+								placeholder="输入标题" style="height: 42px;" />
 						</div>
 
-
+						<div class="meet meet-title">讨论内容</div>
+						<div class="meet meet-title">
+							<textarea id="content" class="form-control login-field"
+								style="height: 238px; width: 100%;" placeholder="输入讨论内容 "
+								style="height: 42px;">{$dis.content}</textarea>
+						</div>
 						<div class="meet meet-title" align="right">
-							<if condition="$LoginMemberid eq $Meet.createmember "> <span><a
-								href="javascript:void(0);" name='btn-delete'
-								data-title="{$Meet.title}" data-id="{$Meet.id}">删除</a>|</span> <span><a
-								href="../Meet/updatemeet/id/{$Meet.id}.html">更新</a></span> <else /> </if>
+							<br /> <a id="btn-createdis"
+								class="btn btn-block btn-lg btn-primary">提交</a>
 						</div>
 
 					</div>
@@ -68,7 +64,21 @@
 	<include file="Base/foot" />
 	<script>
 		(function($) {
+			
+			$("#btn-createdis").on("click",function(){
+				
+				data=qc.form().add("discussid").add("title").add("content").create();
+				
+				qc.post("/home/discuss/update",data,function(res){
+					alert("更新成功");
+				},function(msg){
+					alert(msg);
+				});
 
+				
+				
+			});
+			
 		})(jQuery);
 	</script>
 </body>

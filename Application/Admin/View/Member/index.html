@@ -68,18 +68,18 @@
 					<foreach name="Meet" item="val">
 					<div class="meet" id="meet">
 						<div class="meet meet-title">
-							<a href="../Meet/detail.html?id={$val.id}">{$val.title}</a>
-							<a href="{:U('Admin/View/meeting/id/','','')}/{$val.id}" style="float: right;">会议二维码</a>
+							会议主题：<a href="../Meet/detail.html?id={$val.id}">{$val.title}</a>
+							<a href="{:U('Admin/View/meeting/id/','','')}/{$val.id}"
+								style="float: right;">会议二维码</a>
 						</div>
-
+						<div class="meet meet-title">地址：{$val.address}</div>
+						<div class="meet meet-title">开始时间：{$val.starttime}</div>
+						<div class="meet meet-title">结束时间：{$val.endtime}</div>
 						<div class="meet meet-title">
 							简介：
 							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$val.intro}</p>
 						</div>
-						<div class="meet meet-title">地址：{$val.address}</div>
-						<div class="meet meet-title">开始时间：{$val.starttime}</div>
-						<div class="meet meet-title">结束时间：{$val.endtime}</div>
 						<div class="meet meet-title" align="right"></div>
 
 					</div>
@@ -95,8 +95,6 @@
 			<include file="Base/foot" />
 
 			<script>
-
-
 				/*    data = form().add("username").add("sex",)
 				   			   )
 				  data.s1=$("#"+s1+""); */

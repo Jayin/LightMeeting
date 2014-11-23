@@ -25,7 +25,7 @@ class DiscussController extends BaseController {
 	  * 创建(发起)讨论
 	  */
 	 public function create(){
-	 	$this->reqPost(array('meetid','title','content'))->reqLogin();;
+	 	$this->reqPost(array('meetid','title','content'))->reqLogin();
 	 	$this->ajaxReturn(D('Discuss')->createDiscuss(I('post.')));
 	 }
 	 /**
@@ -71,12 +71,24 @@ class DiscussController extends BaseController {
 	 	$this->ajaxReturn(D('Discuss')->info($discussid,$withComments));
 	 }
 	 /**
-	  * 获得一讨论的评论的列表
+	  * 
 	  * @param unknown $discussid 讨论id
 	  */
-	 public function listComment($discussid, $page = 1 ,$limit = 10){
+	 /**
+	  * 获得一讨论的评论的列表
+	  * @param unknown $discussid 讨论id
+	  * @param number $with_member 是否返回发布者昵称 0否1是，默认0
+	  * @param number $page
+	  * @param number $limit
+	  */
+	 public function listComment($discussid,$with_member = 0,$page = 1 ,$limit = 10){
 	 	$this->reqLogin();
-	 	$this->ajaxReturn(D('Comment')->lists($discussid,$page,$limit));
+	 	if($with_member==0){
+	 	    $this->ajaxReturn(D('Comment')->lists($discussid,$page,$limit));
+	 	}else{
+	 	    $this->ajaxReturn(D('Comment')->lists_with_member($discussid,$page,$limit));
+	 	}
+	 	
 	 }
 	 /**
 	  * 获得会议的讨论列表
