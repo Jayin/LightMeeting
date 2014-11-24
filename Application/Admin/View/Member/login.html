@@ -6,7 +6,9 @@
     <title>轻会议--会员登录</title>
     <include file="Base/head" />
 
+    <link href="__PUBLIC__/bootstrap-sweetalert/css/sweet-alert.css" rel="stylesheet">
 
+    <script type="text/javascript" src="__PUBLIC__/bootstrap-sweetalert/js/sweet-alert.min.js"></script>
 </head>
 
 <body>
@@ -31,7 +33,7 @@
                         <label class="login-field-icon fui-lock" for="login-pass"></label>
                     </div>
 
-                    <a id="btn-login" class="btn btn-primary btn-lg btn-block" >登录</a> <a class="login-link" href="register">用户注册</a>
+                    <a id="btn-login" class="btn btn-primary btn-lg btn-block">登录</a> <a class="login-link" href="register">用户注册</a>
                 </div>
             </div>
         </div>
@@ -45,16 +47,23 @@
         $('#btn-login').on('click', function() {
             qc.debug = true;
             var data = qc.form().add('username').add('password').create();
-            if(data === '' || data.password === ''){
-                alert('请输入登陆信息');
-                return ;
+            if (data === '' || data.password === '') {
+                swal("请输入登陆信息", "", "warning");
+                return;
             }
             qc.post("/Home/Member/login", data, function(res) {
-                alert("登录成功");
-                location = "{:U('Admin/Member/index')}";
-
+                swal({
+                    title: "登录成功!",
+                    text: "",
+                    type: "success",
+                    confirmButtonText: "进入",
+                    closeOnConfirm: false
+                }, function() {
+                    location = "{:U('Admin/Member/index')}";
+                });
             }, function(msg) {
                 alert(msg);
+
             });
         });
     })(jQuery);
