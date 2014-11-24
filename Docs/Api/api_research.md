@@ -34,7 +34,8 @@ etime   | 终止时间(格式2014-10-01)  | Y
 ------------ | -------------| -------------
 researchid | 所属调查表id     | Y
 title  |  问题标题| Y
-options  | 选项 JSON字符串  | Y
+option_tpye | 调查问题选项类型(1单选2多选)|Y
+options  | 选项 JSON字符串"{1:man,2:woman}"  | Y
 
 
 **Response**  
