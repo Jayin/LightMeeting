@@ -103,12 +103,14 @@ limit | 每页数量 | N
             "id": "2",
             "researchid": "2",
             "title": "what's you sex?",
+            "option_type":"1",
             "options": "{'1':'man','2':'woman'}"
         },
         {
             "id": "3",
             "researchid": "2",
             "title": "what's you sex?",
+            "option_type":"2",
             "options": "{'1':'man','2':'woman'}"
         }
     ]
