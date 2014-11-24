@@ -197,18 +197,18 @@ class MemberController extends BaseController {
 	 */
 	function getonemember(){
 		
-		$postdata=array("memberid");
-		$this->reqPost($postdata);
+		
+		$this->reqLogin();
 		
 		
-		$memberid=I("post.memberid");//通过get方式获取会员id
+		$memberid=I("post.memberid");//通过post方式获取会员id
 		if($memberid==NULL){
-			return NULL;
+			$memberid=$this->reqLoginmember()["id"];// 如果传入会议id为空，默认登录会员id
 		}
 		
 		$membermodel=M("member");
 		
-		$res=$membermodel->where("id=".$memberid)->find();
+		$res=$membermodel->find($memberid);
 		
        $this->ajaxReturn(qc_json_success($res));
 		

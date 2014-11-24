@@ -131,4 +131,39 @@ password|用户密码|Y|varchar（32）
 
 
 
+###获取登录会员信息
+
+
+
+`POST /home/member/getonemember` 
+`该api 需要登录`
+
+
+字段  |描述 |  是否必须 |数据类型
+------------ | -------------| -------------| -------------
+memberid|用户id|N|不传入默认登录id
+
+
+
+```json
+
+{
+    "code": 20000,
+    "response": {
+        "id": "2",
+        "username": "zhlhuang",
+        "nickname": "黄振炼",
+        "sex": "m",
+        "company": "1",
+        "position": "1",
+        "phone": "15088132444",
+        "email": "364626853@qq.com",
+        "birth": "729964800",
+        "lasttime": "1414739037",
+        "lastIP": "127.0.0.1"
+    }
+}
+```
+
+
 
