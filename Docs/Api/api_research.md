@@ -33,7 +33,7 @@ etime   | 终止时间(格式2014-10-01)  | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 researchid | 所属调查表id     | Y
-title  |  调查标题| Y
+title  |  问题标题| Y
 options  | 选项 JSON字符串  | Y
 
 
@@ -53,7 +53,7 @@ options  | 选项 JSON字符串  | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 questionid |  问题id | Y
-title  | | N
+title  | 问题标题| N
 options  | 选项 JSON字符串  | N
 
 **Response**  
