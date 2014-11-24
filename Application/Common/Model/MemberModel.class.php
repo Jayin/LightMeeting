@@ -57,6 +57,8 @@ class MemberModel extends BaseModel{
 	
 	public function updatemember($data){
 	    //修改用户资料
+	    
+	    $data["birth"]=strtotime($data["birth"]); //将时间转化成时间戳
 	    if($this->create($data)){
 	        $res=$this->save($data);
 	        if($res){
