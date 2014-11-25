@@ -12,6 +12,20 @@ Author
 
 [唐杰英](https://coding.net/u/jayinton)
 
+
+Getting Start
+===
+
+- 创建表 see [Docs/sql](Docs/sql) 
+- MySql配置 see [Docs](Docs/readme.md)
+
+
+API Test
+===
+
+http://localhost/LightMeeting/home/index/test
+
+
 Web Framework
 ===
 

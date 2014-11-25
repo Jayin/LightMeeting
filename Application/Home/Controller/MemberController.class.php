@@ -206,9 +206,9 @@ class MemberController extends BaseController {
 			$memberid=$this->reqLoginmember()["id"];// 如果传入会议id为空，默认登录会员id
 		}
 		
-		$membermodel=M("member");
+		$membermodel=D("Member");
 		
-		$res=$membermodel->find($memberid);
+		$res=$membermodel->getMemberInfo($memberid);
 		
        $this->ajaxReturn(qc_json_success($res));
 		

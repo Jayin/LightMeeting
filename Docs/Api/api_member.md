@@ -131,12 +131,12 @@ password|用户密码|Y|varchar（32）
 
 
 
-###获取登录会员信息
+###获取会员信息
 
 
 
-`POST /home/member/getonemember` 
-`该api 需要登录`
+`POST /home/member/getonemember`  
+`该api 需要登录`  
 
 
 字段  |描述 |  是否必须 |数据类型
