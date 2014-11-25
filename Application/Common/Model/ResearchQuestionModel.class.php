@@ -32,6 +32,30 @@ class ResearchQuestionModel extends BaseModel{
         return qc_json_error($this->getError());
     }
     /**
+     * 批量添加调查问题
+     * @param array $data 多条调查问题
+     * @return json
+     */
+    public function createQuestionMulti(array $data){
+    	if(!is_array($data)){
+    		return qc_json_error();
+    	}
+    	$this->startTrans();
+    	foreach($data as $q){
+    		if($this->create($q)){
+    			if(!$this->add()){
+    				$this->rollback();
+    				return qc_json_error('操作失败');
+    			}
+    		}else{
+    			$this->rollback();
+    			return qc_json_error($this->getError());
+    		}
+    	}
+    	$this->commit();
+    	return qc_json_success();
+    }
+    /**
      * 更新调查问题
      * @param array $data
      * @return json

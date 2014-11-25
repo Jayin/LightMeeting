@@ -48,6 +48,31 @@ options  | 选项 JSON字符串"{1:man,2:woman}"  | Y
 ```
 
 
+
+### 批量添加问题
+`POST /home/research/createQuestion`
+
+字段  |描述 |  是否必须 
+------------ | -------------| -------------
+researchid | 所属调查表id     | Y
+title  |  问题标题| Y
+muti_options | 多项问题,格式为[{"type":1， "options":"json字符串"}] |Y
+
+**NOTE** 
+muti_options为数组
+"muti_options":
+     * "[{"type":1， "options":"json字符串"},{"type":1， "options":"json字符串"}]"
+
+**Response**  
+
+```json
+{
+    "code":20000,
+    "response"："operate successfully"
+}
+```
+
+
 ### 更新一问题
 `POST /home/research/updateQuestion`
 

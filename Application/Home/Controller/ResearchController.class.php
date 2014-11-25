@@ -49,6 +49,30 @@ class ResearchController extends BaseController{
         $this->ajaxReturn(D('ResearchQuestion')->createQuestion($data));
     }
     /**
+     * 创建调查问题
+     * ```json
+     * muti_options是一个数组
+     * "muti_options":
+     * "[{"type":1， "options":"json字符串"},{"type":1， "options":"json字符串"}]"
+     * ```
+     */
+    public function createQuestionMulti(){
+    	$this->reqPost(array('researchid','title','muti_options'))->reqLogin();
+    	$researchid = I('post.researchid');
+    	$title = I('post.title');
+    	$muti_options = I('post.muti_options','','');
+    	$data = array();
+    	foreach ($muti_options as $o){
+    		$data[]  = array(
+    				'researchid' => I('post.researchid'),
+    				'title' 	 => I('post.title'),
+    				'options'    => $o['options'],
+    				'option_type'=> $o['option_type']
+    		);
+    	}
+    	$this->ajaxReturn(D('ResearchQuestion')->createQuestionMulti($data));
+    }
+    /**
      * 更新调查问题
      */
     public function updateQuestion(){
