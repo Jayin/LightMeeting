@@ -195,20 +195,29 @@ class MeetController extends AdminBaseController {
 
 	/**
 	 * 创建调查
-	 * @param int $id 调查id
+	 * @param int $id 会议id
 	 */
 	public function createResearch($id) {
 		$this->reqLogin();
-
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
+		//TODO handle not research 
+		$this->assign('meetid',$id);
 		$this->display();
 	}
 	/**
 	 * 查看调查列表
 	 * @param int $id 调查id
 	 */
-	public function listResearch($id) {
+	public function research($id) {
 		$this->reqLogin();
-
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
+		//TODO handle not research 
+		$res = D('Research')->lists($id);
+		if(isset($res['code'])){
+			$this->assign('Researchs',$res['response']);
+		}
 		$this->display();
 	}
 }
