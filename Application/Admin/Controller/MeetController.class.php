@@ -6,9 +6,9 @@ use Admin\Controller\AdminBaseController;
 
 /**
  * 会议控制器
- * 
+ *
  * @author Jayin Ton
- *         @quthor zhlhuang
+ * @author zhlhuang
  *        
  */
 class MeetController extends AdminBaseController {
@@ -101,7 +101,7 @@ class MeetController extends AdminBaseController {
 	
 	/**
 	 * 创建会议文档
-	 * 
+	 *
 	 * @param int $id
 	 *        	所属会议id
 	 */
@@ -113,7 +113,7 @@ class MeetController extends AdminBaseController {
 	
 	/**
 	 * 文档更新
-	 * 
+	 *
 	 * @param int $id
 	 *        	所属文档id
 	 */
@@ -133,7 +133,7 @@ class MeetController extends AdminBaseController {
 	}
 	/**
 	 * 创建会议讨论
-	 * 
+	 *
 	 * @param int $id
 	 *        	所属会议id
 	 */
@@ -145,7 +145,7 @@ class MeetController extends AdminBaseController {
 	}
 	/**
 	 * 查看会议讨论
-	 * 
+	 *
 	 * @param int $id
 	 *        	所属会议id
 	 */
@@ -169,7 +169,7 @@ class MeetController extends AdminBaseController {
 	}
 	/**
 	 * 更新会议讨论
-	 * 
+	 *
 	 * @param unknown $id
 	 *        	讨论id
 	 */
@@ -194,7 +194,7 @@ class MeetController extends AdminBaseController {
 	
 	/**
 	 * 创建调查
-	 * 
+	 *
 	 * @param int $id
 	 *        	会议id
 	 */
@@ -208,7 +208,7 @@ class MeetController extends AdminBaseController {
 	}
 	/**
 	 * 查看调查列表
-	 * 
+	 *
 	 * @param int $id
 	 *        	调查id
 	 */
