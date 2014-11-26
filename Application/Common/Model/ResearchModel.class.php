@@ -27,8 +27,9 @@ class ResearchModel extends BaseModel {
      */
     public function createResearch($data){
         if($this->create($data)){
-            if($this->add()){
-                return qc_json_success();
+        	$researchid=$this->add();
+            if($researchid){
+                return qc_json_success(array('researchid'=>$researchid));
             }
             return qc_json_error("can't create a research");
         }

@@ -23,7 +23,9 @@ etime   | 终止时间(格式2014-10-01)  | Y
 ```json
 {
     "code":20000,
-    "response"："operate successfully"
+    "response"：{
+        "researchid" : 1
+    }
 }
 ```
 
@@ -55,13 +57,14 @@ options  | 选项 JSON字符串"{1:man,2:woman}"  | Y
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
 researchid | 所属调查表id     | Y
-title  |  问题标题| Y
-muti_options | 多项问题,格式为[{"type":1， "options":"json字符串"}] |Y
+muti_questions | 多项问题,格式为[{title:"Do you like?","type":1， "options":"json字符串"}] |Y
 
 **NOTE** 
 muti_options为数组
+```json
 "muti_options":
-     * "[{"type":1， "options":"json字符串"},{"type":1， "options":"json字符串"}]"
+    "[{title:"Do you like?","type":1， "options":"json字符串"},{title:"Do you like?","type":1， "options":"json字符串"}]"
+```
 
 **Response**  
 

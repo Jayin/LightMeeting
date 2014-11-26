@@ -51,23 +51,23 @@ class ResearchController extends BaseController{
     /**
      * 创建调查问题
      * ```json
-     * muti_options是一个数组
-     * "muti_options":
-     * "[{"type":1， "options":"json字符串"},{"type":1， "options":"json字符串"}]"
+     * muti_questions是一个数组
+     * "muti_questions":
+     * "[{title:"Do you like?","type":1， "options":"json字符串"},{title:"Do you like?","type":1， "options":"json字符串"}]"
      * ```
      */
     public function createQuestionMulti(){
-    	$this->reqPost(array('researchid','title','muti_options'))->reqLogin();
+    	$this->reqPost(array('researchid','muti_questions'))->reqLogin();
     	$researchid = I('post.researchid');
     	$title = I('post.title');
-    	$muti_options = I('post.muti_options','','');
+    	$muti_questions = I('post.muti_questions','','');
     	$data = array();
-    	foreach ($muti_options as $o){
+    	foreach ($muti_questions as $q){
     		$data[]  = array(
     				'researchid' => I('post.researchid'),
-    				'title' 	 => I('post.title'),
-    				'options'    => $o['options'],
-    				'option_type'=> $o['option_type']
+    				'title' 	 => $q['title'],
+    				'options'    => $q['options'],
+    				'option_type'=> $q['option_type']
     		);
     	}
     	$this->ajaxReturn(D('ResearchQuestion')->createQuestionMulti($data));
