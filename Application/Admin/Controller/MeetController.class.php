@@ -207,6 +207,26 @@ class MeetController extends AdminBaseController {
 		$this->display ();
 	}
 	/**
+	 * 更新调查(未完成交互功能)
+	 * @param unknown $id
+	 * @param unknown $researchid
+	 */
+	public function updateResearch($id,$researchid){
+		$this->reqLogin ();
+		$Meet ["id"] = $id; // 将会议id分配前端页面显示
+		$this->assign ( "Meet", $Meet );
+		
+		$resResearch = D('Research')->info($researchid);
+		if(isset($resResearch['code'])){
+			//questions
+			$resResearch['response']['questions'] = D('ResearchQuestion')->listsAll($researchid)['response'];
+			$this->assign('Research',$resResearch['response']);
+			$this->display ();
+		}else{
+			$this->error('找不到该调查','Admin/Meet/research');
+		}
+	}
+	/**
 	 * 查看调查列表
 	 *
 	 * @param int $id

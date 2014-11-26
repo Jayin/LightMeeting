@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>轻会议--更新调查</title>
+    <include file="Base/head" />
+
+    <link href="__PUBLIC__/umeditor/themes/default/css/umeditor.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #EDEFF1;">
+
+    <div class="container-fluid" style="margin-top: 30px;">
+        <div class="row-fluid">
+            <div class="col-xs-12"></div>
+        </div>
+
+
+        <include file="Base/menu" />
+    </div>
+
+
+
+    <div class="row-fluid">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+
+
+            <div class="row demo-samples">
+                <div class="col-xs-3">
+                    <include file="Base/meetmenu" />
+                    <!-- /.todo -->
+                </div>
+                <!-- /.col-xs-4 -->
+                <div class="col-xs-9" style="border-color: $fff;">
+
+                    <div class="meet" id="meet">
+                        <input type="hidden" id='meetid' value="{$Meet.id}">
+                        <div class="meet meet-title">
+                            <strong>调查标题</strong>
+                            <input type="text" id="title" class="form-control login-field" value="{$Research.title}" placeholder="输入标题" style=" height: 42px;" />
+                        </div>
+
+                        <div class="meet meet-title"><strong>调查描述</strong>
+                        </div>
+                        <div class="meet meet-title">
+                            <textarea id="intro" class="form-control login-field" style="height: 238px; width: 100%;" placeholder="输入调查描述 " style="height: 42px;">{$Research.intro}</textarea>
+                        </div>
+                        <div class="meet meet-title"><strong>开始时间</strong>
+                        </div>
+                        <div class="meet meet-title">
+                            <input class="span2 form-control login-field" value="" id="starttime" type="text" style="width: 40%; display: inline" />
+                            <font color="#ccc">24小时制时间 :</font>
+                            <input class="span2 form-control login-field" value="" id="starttime-h" type="text" style="width: 10%; display: inline;" /> :
+                            <input class="span2 form-control login-field" value="" id="starttime-i" type="text" style="width: 10%; display: inline;" />
+                            <br />
+                        </div>
+
+                        <div class="meet meet-title"><strong>结束时间</strong>
+                        </div>
+                        <div class="meet meet-title">
+                            <input class="span2 form-control login-field" value="" id="endtime" type="text" style="width: 40%; display: inline" />
+                            <font color="#ccc">24小时制时间 :</font>
+                            <input class="span2 form-control login-field" value="" id="endtime-h" type="text" style="width: 10%; display: inline;" /> :
+                            <input class="span2 form-control login-field" value="" id="endtime-i" type="text" style="width: 10%; display: inline;" />
+                            <br />
+                        </div>
+
+                        <div class="meet meet-title"><strong>调查问题</strong>
+                            <hr>
+                        </div>
+
+                        <div class="meet meet-title">
+                            <div>
+                                <dl id="question-list">
+                                    <!-- 调查问题里列表-->
+                                    <foreach name="Research.questions" item="q">
+                                        <div name="question-item" data-type="1">
+                                            <if condition="$q.option_type eq '1' ">
+                                                <dt name="question-title">
+                                                    <!--选项类型单选1-->
+                                                    <div class="question question-title input-group input-group-sm">
+                                                        <span class="input-group-addon">单选</span>
+                                                        <input type="text" class="form-control" placeholder="请输入调查的标题" value="{$q.title}">
+                                                        <span name="btn-delete-question" class="input-group-addon fui-cross"></span>
+                                                        <span name="btn-add-options" class="input-group-addon fui-plus"></span>
+                                                    </div>
+                                                </dt>
+
+                                                <else />
+
+                                                <dt name="question-title">
+                                                    <!--选项类型多选2-->
+                                                    <div class="question question-title input-group input-group-sm">
+                                                        <span class="input-group-addon">多选</span>
+                                                        <input type="text" class="form-control" placeholder="请输入调查的标题" value="{$q.title}">
+                                                        <span name="btn-delete-question" class="input-group-addon fui-cross"></span>
+                                                        <span name="btn-add-options" class="input-group-addon fui-plus"></span>
+                                                    </div>
+                                                </dt>
+                                            </if>
+                                            <foreach name="q.options" item="option">
+                                                <dt>
+                                                    <div class="question question-options input-group input-group-sm">
+                                                        <span class="input-group-addon">选项</span>
+                                                        <input type="text" class="form-control" placeholder="请输入调查的选项" value="{$option}">
+                                                        <span name="btn-delete-options" class="input-group-addon fui-cross"></span>
+                                                    </div>
+                                                </dt>
+                                            </foreach>
+
+
+                                        </div>
+
+                                    </foreach>
+                                </dl>
+                            </div>
+                            <!-- 隐藏部分,用来生成模板 -->
+                            <div id="div-hidden">
+                                <div id="div-hidden-question-sigle" style="display:none">
+                                    <div name="question-item" data-type="1">
+                                        <dt name="question-title">
+                                            <!--选项类型单选1-->
+                                            <div class="question question-title input-group input-group-sm">
+                                                <span class="input-group-addon">单选</span>
+                                                <input type="text" class="form-control" placeholder="请输入调查的标题">
+                                                <span name="btn-delete-question" class="input-group-addon fui-cross"></span>
+                                                <span name="btn-add-options" class="input-group-addon fui-plus"></span>
+                                            </div>
+                                        </dt>
+                                        <div name="question-options">
+                                            <dt>
+                                                <div class="question question-options input-group input-group-sm">
+                                                    <span class="input-group-addon">选项</span>
+                                                    <input type="text" class="form-control" placeholder="请输入调查的选项">
+                                                    <span name="btn-delete-options" class="input-group-addon fui-cross"></span>
+                                                </div>
+                                            </dt>
+                                            <dt>
+                                                <div class="question question-options input-group input-group-sm">
+                                                    <span class="input-group-addon">选项</span>
+                                                    <input type="text" class="form-control" placeholder="请输入调查的选项">
+                                                    <span name="btn-delete-options" class="input-group-addon fui-cross"></span>
+                                                </div>
+                                            </dt>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="div-hidden-question-multi" style="display:none">
+                                    <div name="question-item" data-type="2">
+                                        <dt name="question-title">
+                                            <!--选项类型多选2-->
+                                            <div class="question question-title input-group input-group-sm">
+                                                <span class="input-group-addon">多选</span>
+                                                <input type="text" class="form-control" placeholder="请输入调查的标题">
+                                                <span name="btn-delete-question" class="input-group-addon fui-cross"></span>
+                                                <span name="btn-add-options" class="input-group-addon fui-plus"></span>
+                                            </div>
+                                        </dt>
+                                        <div name="question-options">
+                                            <dt>
+                                                <div class="question question-options input-group input-group-sm">
+                                                    <span class="input-group-addon">选项</span>
+                                                    <input type="text" class="form-control" placeholder="请输入调查的选项">
+                                                    <span name="btn-delete-options" class="input-group-addon fui-cross"></span>
+                                                </div>
+                                            </dt>
+                                            <dt>
+                                                <div class="question question-options input-group input-group-sm">
+                                                    <span class="input-group-addon">选项</span>
+                                                    <input type="text" class="form-control" placeholder="请输入调查的选项">
+                                                    <span name="btn-delete-options" class="input-group-addon fui-cross"></span>
+                                                </div>
+                                            </dt>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="div-hidden-options" style="display:none">
+                                    <dt>
+                                        <div class="question question-options input-group input-group-sm">
+                                            <span class="input-group-addon">选项</span>
+                                            <input type="text" class="form-control" placeholder="请输入调查的选项">
+                                            <span name="btn-delete-options" class="input-group-addon fui-cross"></span>
+                                        </div>
+                                    </dt>
+                                </div>
+                            </div>
+                            <div>
+                                <select id="select-type" style="height:38px;">
+                                    <option value="1">单项选择</option>
+                                    <option value="2">多项选择</option>
+                                </select>
+                                <button id="btn-add-question" class="btn btn-primary btn-sm"><span class="fui-plus" style="color:white"></span>添加问题</button>
+
+                            </div>
+
+                        </div>
+
+                        <hr>
+                        <div class="meet meet-title" align="right">
+                            <br />
+                            <a id="btn-submit" class="btn btn-block btn-lg btn-primary">提交</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1"></div>
+    </div>
+    <include file="Base/foot" />
+    <script src="__PUBLIC__/js/bootstrap-datepicker.js"></script>
+    </script>
+    <script>
+    (function($) {
+    //{// 会议id }
+    var meetid = "{$Meet.id}";
+
+    var tpl_question_sigle = $('#div-hidden-question-sigle').html();
+    var tpl_question_multi = $('#div-hidden-question-multi').html();
+    var tpl_options = $('#div-hidden-options').html();
+    // console.log(tpl_question_sigle);
+    // console.log(tpl_question_multi);
+    // console.log(tpl_options);
+
+    //{//提交}
+    // $("#btn-submit").on("click", function() {
+    //     //将时间字符串拼接
+    //     var stime = $("#starttime").val() + " " + $("#starttime-h").val() + ":" + $("#starttime-i").val();
+    //     var etime = $("#endtime").val() + " " + $("#endtime-h").val() + ":" + $("#endtime-i").val();
+
+    //     var data = qc.form().add("meetid", meetid).add("title").add("intro").add("stime", stime).add("etime", etime).create();
+    //     qc.post("/Home/Research/create", data, function(res) {
+    //         var form = {};
+    //         //{//调查id}
+    //         form.researchid = res.researchid;
+    //         form.muti_questions = [];
+
+    //         $('#question-list').find('[name=question-item]').each(function(index, ele) {
+    //             var title = '';
+    //             var option_type = $(ele).data('type');
+    //             var options = {};
+    //             $(ele).find('input').each(function(index, e) {
+    //                 if (index === 0) {
+    //                     title = $(e).val();
+    //                 } else {
+    //                     options[index] = $(e).val();
+    //                 }
+    //             });
+    //             var q = {
+    //                 title: title,
+    //                 option_type: option_type,
+    //                 options: JSON.stringify(options)
+    //             }
+    //             form.muti_questions.push(q);
+    //         });
+    //         if (form.muti_questions.length > 0) {
+    //             qc.post('/Home/Research/createQuestionMulti', form, function(res) {
+    //                 swal({
+    //                     title: "操作成功!",
+    //                     text: "",
+    //                     type: "success",
+    //                     confirmButtonText: "进入",
+    //                     closeOnConfirm: false
+    //                 }, function() {
+    //                     location = "{:U('Admin/Meet/research','','')}/id/" + meetid;
+    //                 });
+    //             }, function(msg) {
+    //                 swal('操作失败');
+    //             });
+    //         } else {
+    //             swal({
+    //                 title: "操作成功!",
+    //                 text: "",
+    //                 type: "success",
+    //                 confirmButtonText: "进入",
+    //                 closeOnConfirm: false
+    //             }, function() {
+    //                 location = "{:U('Admin/Meet/research','','')}/id/" + meetid;
+    //             });
+    //         }
+
+    }, function(msg) {
+    swal(msg);
+    });
+
+    });
+
+
+    $(function() {
+        window.prettyPrint && prettyPrint();
+
+        // disabling dates
+        var nowTemp = new Date();
+        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(),
+            nowTemp.getDate(), 0, 0, 0, 0);
+
+        var checkin = $('#starttime').datepicker({
+            format: 'yyyy-mm-dd'
+
+        }).on('changeDate', function(ev) {
+            if (ev.date.valueOf() > checkout.date.valueOf()) {
+                var newDate = new Date(ev.date)
+                newDate.setDate(newDate.getDate() + 1);
+                checkout.setValue(newDate);
+            }
+            checkin.hide();
+            //  $('#dpd2')[0].focus();
+        }).data('datepicker');
+        var checkout = $('#endtime').datepicker({
+            format: 'yyyy-mm-dd'
+        }).on('changeDate', function(ev) {
+            checkout.hide();
+        }).data('datepicker');
+    });
+
+    $('#btn-add-question').on('click', function() {
+        $ql = $('#question-list');
+
+        if ($('#select-type').val() == 1) {
+            $ql.append(tpl_question_sigle);
+        } else {
+            $ql.append(tpl_question_multi);
+        }
+    });
+    //{//删除问题}
+    $('#question-list').on('click', '[name=btn-delete-question]', function() {
+        $(this).parent().parent().parent().remove();
+        // console.log($(this));
+    });
+    //{//添加问题选项}
+    $('#question-list').on('click', '[name=btn-add-options]', function() {
+        $(this).parent().parent().next().append(tpl_options);
+    });
+    //{//删除问题选项}
+    $('#question-list').on('click', '[name=btn-delete-options]', function() {
+    $(this).parent().parent().remove();
+    // console.log($(this));
+    });
+    })(jQuery);
+    </script>
+</body>
+
+</html>

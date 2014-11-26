@@ -49,7 +49,7 @@
                                 <if condition="$LoginMemberid eq $val.memberid "> <span><a
 								href="javascript:void(0);" name='btn-delete'
 								data-title="{$val.title}" data-id="{$val.id}">删除</a></span>
-                                    <span>|<a href="../Meet/updatediscuss/id/{$val.id}.html">更新</a></span>
+                                    <span>|<a href="{:U('Admin/Meet/updateResearch','','')}/id/{$Meet.id}/researchid/{$val.id}">更新</a></span>
                                     <else /> </if>
                             </div>
 
@@ -66,7 +66,6 @@
     <script>
     (function($) {
 
-    });
 
     })(jQuery);
     </script>
