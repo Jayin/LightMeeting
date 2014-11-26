@@ -52,7 +52,7 @@ options  | 选项 JSON字符串"{1:man,2:woman}"  | Y
 
 
 ### 批量添加问题
-`POST /home/research/createQuestion`
+`POST /home/research/createQuestionMulti`
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
