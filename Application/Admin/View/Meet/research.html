@@ -33,13 +33,14 @@
                 <div class="col-xs-9" style="border-color: $fff;">
                     <foreach name="Researchs" item="val">
                         <div class="meet" id="meet">
-                            <div class="meet meet-title">讨论标题：{$val.title}</div>
-                            <div class="meet meet-title">发布时间：{$val.ctime|date="Y-m-d H:i:s",###}
+                            <div class="meet meet-title">标题：{$val.title}</div>
+                            <div class="meet meet-title">开始时间：{$val.stime|date="Y-m-d H:i:s",###}
                             </div>
-                            <div class="meet meet-title">发布人：{$val.nickname}</div>
+                            <div class="meet meet-title">结束时间：{$val.etime|date="Y-m-d H:i:s",###}
+                            </div>
                             <div class="meet meet-title">
-                                讨论内容：
-                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$val.content}
+                                	内容：
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$val.intro}
                                 </p>
                             </div>
 
