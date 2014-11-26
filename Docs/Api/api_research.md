@@ -128,19 +128,27 @@ limit | 每页数量 | N
     "code": 20000,
     "response": [
         {
-            "id": "2",
-            "researchid": "2",
-            "title": "what's you sex?",
-            "option_type":"1",
-            "options": "{'1':'man','2':'woman'}"
+            "id": "55",
+            "researchid": "1",
+            "title": "whar do you like?",
+            "options": {
+                "0": "我是帅哥",
+                "1": "我是老爸",
+                "3": ""  //如果为空，那么说明要填写才能提交
+            },
+            "option_type": "2" //多选
         },
         {
-            "id": "3",
-            "researchid": "2",
-            "title": "what's you sex?",
-            "option_type":"2",
-            "options": "{'1':'man','2':'woman'}"
+            "id": "64",
+            "researchid": "1",
+            "title": "What's you sex?",
+            "options": {
+                "1": "man",
+                "2": "woman"
+            },
+            "option_type": "1" //单选
         }
+        .....
     ]
 }
 ```
