@@ -210,7 +210,7 @@ class MemberController extends BaseController {
 		
 		$res=$membermodel->getMemberInfo($memberid);
 		
-       $this->ajaxReturn(qc_json_success($res));
+       $this->ajaxReturn($res);
 		
 	}
 	
