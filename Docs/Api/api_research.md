@@ -196,8 +196,11 @@ researchid | 调查表id | Y
 ```
 
 
-### 用户回答问题
+### 用户回答(单选题)问题
 `POST /home/research/answer` 
+
+**单选题调用这个接口**
+
 
 字段  |描述 |  是否必须 
 ------------ | -------------| -------------
@@ -205,6 +208,33 @@ questionid | 问题id | Y
 optionid | 答案id | Y
 option_content | 答案内容 | Y
 
+
+
+**Response**  
+
+```json
+{
+    "code":20000,
+    "response"："operate successfully"
+}
+```
+
+### 用户回答(多选)问题
+`POST /home/research/answerMulti` 
+
+**多题调用这个接口**
+
+
+字段  |描述 |  是否必须 
+------------ | -------------| -------------
+questionid | 问题id | Y
+multi_option | json字符串 格式：[{"optionid":1,"option_content":"man"},{"optionid":1,"option_content":"man"}] | Y
+
+**multi_option**
+```json
+//格式：
+[{"optionid":1,"option_content":"man"},{"optionid":1,"option_content":"man"}] 
+```
 
 
 **Response**  

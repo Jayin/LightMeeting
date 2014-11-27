@@ -22,12 +22,11 @@ class ResearchAnswerModel extends BaseModel{
     
     protected $readonlyField = array('questionid','author','ctime');
     /**
-     *  创建答案
+     *  创建答案(单选)
      * @param  array $data [description]
      * @return json
      */
     public function createAnswer($data){
-        $data['memberid'] = session('member')['id'];
         if($this->create($data)){
             if($this->add()){
                 return qc_json_success();
@@ -35,6 +34,23 @@ class ResearchAnswerModel extends BaseModel{
             return qc_json_error("can't not create a answer");
         }
         return qc_json_error($this->getError());
+    }
+    /** 
+     * 创建答案(多选)
+     * @param  int questionid 问题id
+     * @param  array  $data 答案数组
+     * @return json
+     */
+    public function createAnswerMulti(array $data){
+        $this->startTrans();
+        foreach ($data as $q) {
+            if(!($this->create($q) && $this->add())){
+                $this->rollback();
+                qc_json_error($this->getError());
+            }
+        }
+        $this->commit();
+        return qc_json_success();
     }
     /**
      *  更新答案

@@ -102,13 +102,27 @@ class ResearchController extends BaseController{
         $this->ajaxReturn(D('ResearchQuestion')->lists($researchid,$page ,$limit ));
     }
     /**
-     * 回答一调查问题
+     * 回答调查问题(单选)
      */
     public function answer(){
         $this->reqPost(array('questionid','optionid','option_content'))->reqLogin();
         $data = I('post.');
         $data['author'] = qc_getLoginUser()['id'];
         $this->ajaxReturn(D('ResearchAnswer')->createAnswer($data));
+    }
+    /** 
+     * 回答调查问题(多选)
+     */
+    public function answerMulti(){
+        $this->reqPost(array('questionid','multi_option'))->reqLogin();
+        //json_decode出来的都是stdObject,因此要强制转换
+        $data = (array)json_decode(I('post.multi_option','',''));
+        for($i = 0;$i < count($data);$i++){
+             $data[$i] = (array)$data[$i];
+             $data[$i]['author'] =  qc_getLoginUser()['id'];
+             $data[$i]['questionid'] =I('post.questionid');
+        }
+        $this->ajaxReturn(D('ResearchAnswer')->createAnswerMulti($data));
     }
     /**
      * 获得一调查的详细信息

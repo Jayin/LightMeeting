@@ -2,14 +2,14 @@
 
 namespace Home\Controller;
 
-use Think\Controller;
+use Think\Controller\RestController;
 
 /**
  * defalut controller for Home
  * @author Jayin Ton
  *
  */
-class IndexController extends Controller {
+class IndexController extends RestController {
 	
 	
 	public function test(){
@@ -19,4 +19,5 @@ class IndexController extends Controller {
 	public function test_mutiPost(){
 		$this->ajaxReturn(qc_json_success(I('post.')));
 	}
+	
 }
