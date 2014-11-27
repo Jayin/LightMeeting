@@ -96,7 +96,7 @@ class DiscussModel extends BaseModel {
 		if($limit <= 0){
 			$limit = 10;
 		}
-		$res = $this->where("meetid=%s",$meetid)->limit(($page-1)*$limit,$limit)->select();
+		$res = $this->where("meetid=%s",$meetid)->order("ctime DESC")->limit(($page-1)*$limit,$limit)->select();
 		if(empty($res)){
 			$res = array();
 		}
@@ -116,9 +116,11 @@ class DiscussModel extends BaseModel {
 	    if($limit <= 0){
 	        $limit = 10;
 	    }
-	    $res = $this->where("d.memberid=m.id and d.meetid=%s",$meetid)
+	    $res = $this
 	    ->field("d.*,m.nickname")
 	    ->table("qc_discuss d,qc_member m")
+	    ->where("d.memberid=m.id and d.meetid=%s",$meetid)
+	    ->order("d.ctime DESC")
 	    ->limit(($page-1)*$limit,$limit)->select();
 	    if(empty($res)){
 	        $res = array();

@@ -114,7 +114,7 @@ class ResearchModel extends BaseModel {
         if($limit <= 0){
             $limit = 10;
         }
-    	$res = $this->where("meetid=%s",$meetid)->limit(($page-1)*$limit,$limit)->select();
+    	$res = $this->where("meetid=%s",$meetid)->order("id DESC")->limit(($page-1)*$limit,$limit)->select();
     	if(empty($res)){
     		$res = array();
     	}

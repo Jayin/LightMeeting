@@ -27,7 +27,7 @@ endtime|会议结束地点|Y|eg 2014-09-25 21:30:25
 ```
 
 
-###会议更新
+### 会议更新
 `POST /home/meet/updatemeet`
 
 `ps：该api需要登录`  
@@ -50,7 +50,7 @@ endtime|会议结束地点|N|eg 2014-09-25 21:30:25
 ```
 
 
-###删除会议
+### 删除会议
 `POST /home/meet/deletemeet`
 
 `ps：该api需要登录`  
@@ -66,15 +66,14 @@ meetid|所要删除的会议id|Y|int
 }
 ```
 
-###参加会议
-`POST /home/meet/addjoin`
+### 参加会议
+`GET /home/meet/addjoin`
 
 `ps：该api需要登录`  
 
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
 meetid|加入会议id|Y|int
-memberid|加入人员id|N|为空默认为登录id
 
 
 ```json
@@ -84,8 +83,35 @@ memberid|加入人员id|N|为空默认为登录id
 }
 ```
 
+### 会议签到
+**会议签到，如果之前没有加入会议，就相当于加入+签到。如果之前加入了，现在就只有签到功能 **  
+`GET /home/meet/checkIn`
 
-###退出会议
+`ps：该api需要登录`  
+
+字段  |描述 |  是否必须 |数据类型
+------------ | -------------| -------------| -------------
+meetid|加入会议id|Y|int
+
+**没有加入返回 **  
+```json
+{
+    "code":20000, // error_code:40000
+    "response"："加入成功" // msg:加入失败
+}
+```
+
+**已经加入**  
+
+```json
+{
+    "code":20000, // error_code:40000
+    "response"："签到成功" // msg:签到失败
+}
+```
+
+
+### 退出会议
 `POST /home/meet/outjoin`
 
 `ps：该api需要登录`  
@@ -104,7 +130,7 @@ meetid|加入会议id|Y|int
 
 
 
-###查看会议成员
+### 查看会议成员
 `POST /home/meet/getjoinmember`
 
 `ps：该api需要登录` 
@@ -133,7 +159,7 @@ meetid|查询会议的id|Y|int
 ```
 
 
-###查看会议列表
+### 查看会议列表
 `POST /home/meet/getjoinmeet`
 
 `ps：该api需要登录`   

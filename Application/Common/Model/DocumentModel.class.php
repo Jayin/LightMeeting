@@ -111,7 +111,7 @@ class DocumentModel extends BaseModel
             $limit=5;
         }
          
-        $res=$this->where("meetid=".$meetid)->page($page,$limit)->select();
+        $res=$this->where("meetid=".$meetid)->order("ctime DESC")->page($page,$limit)->select();
          
         if($res){
             return qc_json_success($res);
@@ -138,9 +138,11 @@ class DocumentModel extends BaseModel
         }
          
         $res=$this->field("d.*,m.nickname")
-        ->where("m.id=d.memberid and d.meetid='%d'",$meetid)
         ->table("qc_document d,qc_member m")
-        ->page($page,$limit)->select();
+        ->where("m.id=d.memberid and d.meetid='%d'",$meetid)
+        ->order("d.ctime DESC")
+        ->page($page,$limit)
+        ->select();
         
         if($res){
             return qc_json_success($res);
