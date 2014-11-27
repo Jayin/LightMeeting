@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS `qc_meet` (
   `starttime` int(10) NOT NULL COMMENT '会议开始时间',
   `endtime` int(10) NOT NULL COMMENT '会议介绍时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=gbk AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
