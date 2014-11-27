@@ -75,11 +75,12 @@ class MeetController extends BaseController {
 		
 		$postdata=array("meetid");
 		$this->reqPost($postdata)->getlogin();
+		$memberid=qc_getLoginUser()["id"];
 		
 		
 		$meetid=I("post.meetid");
 		$meetmodel=D("Meet");
-		$res=$meetmodel->deletemeet($meetid);
+		$res=$meetmodel->deletemeet($meetid,$memberid);
 		$this->ajaxReturn($res);
 		
 		
