@@ -11,3 +11,25 @@
 <script src="__PUBLIC__/flat/dist/js/flat-ui.min.js"></script>
 <script src="__PUBLIC__/flat/docs/assets/js/application.js"></script>
 <script src="__PUBLIC__/js/qc.js"></script>
+    <script>
+    (function($) {
+        $('#btn-logout').on('click', function() {
+            qc.debug = true;
+            data={};
+           qc.post("/Home/Member/logout", data, function(res) {
+                swal({
+                    title: "退出成功!",
+                    text: "",
+                    type: "success",
+                    confirmButtonText: "确定",
+                    closeOnConfirm: false
+                }, function() {
+                    location = "{:U('Admin/Member/index')}";
+                });
+            }, function(msg) {
+                swal(msg,"","error");
+
+            });
+        });
+    })(jQuery);
+    </script>
