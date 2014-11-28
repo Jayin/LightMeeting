@@ -16,8 +16,8 @@ password  | 密码不需要加密   | Y|varchar（32）
 sex  | 性别 | Y|char （f，m）
 phone|电话号码|N|varchar(64)
 email  | 电子邮箱  | Y|varchar（64）
-company|公司名称|N|int
-position|公司职位|N|int
+company|公司名称|N|varchar(128)
+position|公司职位|N|varchar(128)
 birth|出生日期|N|2014-10-30
 
 
@@ -44,8 +44,8 @@ nickname|  昵称      | N|varchar（32）
 sex  | 性别 | N|char （f，m）
 phone|电话号码|N|varchar(64)
 email  | 电子邮箱  | N|varchar（64）
-company|公司名称|N|int
-position|公司职位|N|int
+company|公司名称|N|varchar(128)
+position|公司职位|N|varchar(128)
 birth|出生日期|N|2014-10-30
 
 ```json
