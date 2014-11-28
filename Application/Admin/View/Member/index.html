@@ -99,22 +99,7 @@
 				   			   )
 				  data.s1=$("#"+s1+""); */
 				(function($) {
-					$("[name=btn-delete]").on("click", function() {
-						var $ele = $(this);
-						var id = $ele.data('id');
-						var title = $ele.data('title');
-						if (confirm('你确定删除会议 《' + title + '》 吗? ')) {
-							qc.post("/Home/Meet/deletemeet", {
-								"meetid" : id
-							}, function(res) {
-								alert("删除成功");
-								//闪烁不显示
-								$ele.parent().parent().parent().fadeOut();
-							}, function(msg) {
-								alert(msg);
-							});
-						}
-					});
+
 
 				})(jQuery);
 			</script>

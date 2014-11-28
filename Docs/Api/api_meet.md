@@ -146,13 +146,15 @@ meetid|查询会议的id|Y|int
     "code": 20000,
     "response": [
         {
-            "id": "2",
+            "stime": "1416629119",
+            "checkin": "0",
+            "checkin_time": null,
+            "id": "26",
             "username": "zhlhuang",
             "nickname": "黄振炼",
             "sex": "m",
-            "company": "1",
-            "position": "1",
-            "stime": "1415004702"
+            "company": null,
+            "position": null
         }
     ]
 }

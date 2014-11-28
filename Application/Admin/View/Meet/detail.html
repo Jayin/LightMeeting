@@ -60,6 +60,25 @@
 
 					</div>
 
+					<div class="meet" id="meet" >
+						<foreach name="listmember" item="val" >
+						<div class="meet meet-listm">
+							<div>{$val.nickname}</div>
+							<hr />
+							<div>
+							<span>公司：<if condition="$val.company eq NULL "><else />{$val.company}</if></span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<span>职位：<if condition="$val.position eq NULL "><else />{$val.position}</if></span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<span>性别：<if condition="$val.sex eq 'm' "> 男<else />女</if></span>
+							</div>
+							<hr />
+							<div><if condition="$val.checkin eq '1' "> 已签到<else />未签到</if></div>
+						</div>
+						<hr />
+						</foreach>
+					</div>
+
 				</div>
 			</div>
 		</div>

@@ -61,9 +61,10 @@ class MeetModel extends BaseModel{
 	
 	
 	
-	public function deletemeet($meetid){
+	public function deletemeet($meetid,$memberid){
 	    if($meetid){
-	        $res=$this->where("id=".$meetid)->delete();
+	        
+	        $res=$this->where("createmember='%s' and id='%d'",$memberid,$meetid)->delete();
 	        if($res){
 	            return qc_json_success();
 	        }else{
