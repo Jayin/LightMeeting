@@ -8,9 +8,12 @@ use Common\Model\BaseModel;
  * @author Jayin Ton
  */
 class PushMessageModel extends BaseModel{
+    const MSG_TYPE_ALL = 1;
+    const MSG_TYPE_MEET = 2;
+    const MSG_TYPE_PERSON = 3;
 
     protected $_auto = array(
-        array('sendtime',NOW_TIME,self::MODEL_INSERT)
+        array('ctime',NOW_TIME,self::MODEL_INSERT)
     );
     /** 
      * 创建
@@ -18,10 +21,21 @@ class PushMessageModel extends BaseModel{
      * @return json
      */
     public function createMessage($data){
+        if($data['type'] == self::MSG_TYPE_ALL){
+            $data['to'] = 'a';
+        }else if($data['type'] == self::MSG_TYPE_MEET){
+            $data['to'] = 'm_' . $data['to'] ;
+        }else if($data['type'] == self::MSG_TYPE_PERSON ){
+            $data['to'] = 'p_' . $data['to'];
+        }else{
+        	return qc_json_error('没有该发送对象');
+        }
+        //创建人
+        $data['author'] = qc_getLoginUser()['id'];
         if($this->create($data)){
-            $res = $this->add();
-            if($res){
-            	return qc_json_success();
+            $id = $this->add();
+            if($id){
+            	return qc_json_success($id);
             } 
             return qc_json_error();
         }
@@ -38,6 +52,20 @@ class PushMessageModel extends BaseModel{
         	return qc_json_success('删除成功');
         }
         return qc_json_error('删除失败');
+    }
+    /**
+     * 发送成功，添加msg_id
+     * @param int $id
+     * @param int $msg_id
+     * @return json
+     */
+    public function addMsgId($id,$msg_id){
+    	$this->id = $id;
+    	$this->msg_id = $msg_id;
+    	if($this->save()){
+    		return qc_json_success();
+    	}
+    	return qc_json_error();
     }
     
     /**
