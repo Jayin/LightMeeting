@@ -22,8 +22,8 @@ $common_config = array(
 		// 'db_pwd' => 'root', // 密码
 		
 		//JPush
-		'JPUSH_APP_KEY' => 'aba9dfd2ab6d4a7e061b95b5',
-		'JPUSH_MASTER_SECRET' => '3c7e5d499b69f81675384a66',
+		'JPUSH_APP_KEY' => '3d9f486d5b5cb7500cc24c26',
+		'JPUSH_MASTER_SECRET' => 'af88b5d6c84caab0c080f1bd',
 );
 //CONF_PATH公共配置路径 :APP_PATH . 'Common/' . 'Conf/' 
 $_Server_Config_File = CONF_PATH .'server_config.php';
