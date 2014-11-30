@@ -47,6 +47,49 @@ vpintro  | 选项 介绍   | Y
 ```
 
 
+### 添加一组选项
+`POST /home/vote/addOptionForAdmin`
+
+字段  |描述 |  是否必须 
+------------ | -------------| -------------
+|res|一组选项存放的json数据|Y
+
+**下面是res json 格式**
+
+```json
+{
+    "0": {
+        "voteid": 38,
+        "meetid": "126",
+        "vpintro": "第一个选项"
+    },
+    "1": {
+        "voteid": 38,
+        "meetid": "126",
+        "vpintro": "第二个选项"
+    },
+    "2": {
+        "voteid": 38,
+        "meetid": "126",
+        "vpintro": "第三个选项"
+    }
+}
+```
+
+
+
+
+
+**Response**  
+
+```json
+{
+    "code":20000,
+    "response"："operate successfully"
+}
+```
+
+
 ### 更新一选项
 `POST /home/vote/updateOption`
 

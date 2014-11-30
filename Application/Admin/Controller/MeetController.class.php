@@ -251,4 +251,21 @@ class MeetController extends AdminBaseController {
 		}
 		$this->display ();
 	}
+
+	/**
+	 * 会议投票
+	 *
+	 * @param int $id
+	 *  会议id
+	 */
+
+	public function createvote($id){
+		
+		$this->reqLogin();
+		$Meet ["id"] = $id; // 将会议id分配前端页面显示
+		$this->assign ( "Meet", $Meet );
+
+		
+		$this->display();
+	}
 }

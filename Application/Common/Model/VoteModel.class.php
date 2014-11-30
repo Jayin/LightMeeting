@@ -21,8 +21,9 @@ class VoteModel extends BaseModel {
 	 */
 	public function createVote($data){
 		if($this->create($data)){
-			if($this->add()){
-				return qc_json_success();
+			$voteid=$this->add();
+			if($voteid){
+				return qc_json_success(array("voteid"=>$voteid));
 			}
 			return qc_json_error("can't not create a vote");
 		}

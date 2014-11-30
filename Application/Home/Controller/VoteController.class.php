@@ -49,6 +49,27 @@ class VoteController extends BaseController {
 		$this->ajaxReturn(D('VoteOption')->addOption(I('post.')));
 
 	} 
+	
+	/**
+	 * 添加一组选项
+	 * by zhlhuang
+	 */
+	public function addOptionForAdmin(){
+		$this->reqPost(array('res'))->reqLogin();
+		$res=json_decode(I("post.res",'',''),1);
+		$VoteOptionModel=D("VoteOption");
+		foreach ($res as $val){
+			$addRes=$VoteOptionModel->addOption($val);
+			if(!isset($addRes["code"])){
+				$this->ajaxReturn(qc_json_error("添加有误"));
+			}
+		}
+		
+		$this->ajaxReturn(qc_json_success());
+	
+	}
+	
+	
 	/**
 	 * 更新一选项
 	 */
