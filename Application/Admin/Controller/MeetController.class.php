@@ -66,10 +66,17 @@ class MeetController extends AdminBaseController {
 			
 			$Membermodel = D ( "Member" ); // 获取相关联的会议创建人
 			$resMember = $Membermodel->getMemberInfo ( $meet ["createmember"] )["response"];
+			$listmembermodel = D ( "Joinmeet" );
 			
+			$listmember=$listmembermodel->getjoinmember($id)["response"];//获取参加会议人员
+/* 			echo "<pre>";
+			print_r($listmember);
+			echo "</pre>";
+			exit; */
 			$this->assign ( "Meet", $meet );
 			$this->assign ( "LoginMemberid", $LoginMember ["id"] ); // 分配登录id
 			$this->assign ( "Member", $resMember );
+			$this->assign("listmember",$listmember);
 		} else {
 			$this->error ( "查不到此会议" );
 		}
@@ -208,22 +215,23 @@ class MeetController extends AdminBaseController {
 	}
 	/**
 	 * 更新调查(未完成交互功能)
-	 * @param unknown $id
-	 * @param unknown $researchid
+	 * 
+	 * @param unknown $id        	
+	 * @param unknown $researchid        	
 	 */
-	public function updateResearch($id,$researchid){
+	public function updateResearch($id, $researchid) {
 		$this->reqLogin ();
 		$Meet ["id"] = $id; // 将会议id分配前端页面显示
 		$this->assign ( "Meet", $Meet );
 		
-		$resResearch = D('Research')->info($researchid);
-		if(isset($resResearch['code'])){
-			//questions
-			$resResearch['response']['questions'] = D('ResearchQuestion')->listsAll($researchid)['response'];
-			$this->assign('Research',$resResearch['response']);
+		$resResearch = D ( 'Research' )->info ( $researchid );
+		if (isset ( $resResearch ['code'] )) {
+			// questions
+			$resResearch ['response'] ['questions'] = D ( 'ResearchQuestion' )->listsAll ( $researchid )['response'];
+			$this->assign ( 'Research', $resResearch ['response'] );
 			$this->display ();
-		}else{
-			$this->error('找不到该调查','Admin/Meet/research');
+		} else {
+			$this->error ( '找不到该调查', 'Admin/Meet/research' );
 		}
 	}
 	/**
