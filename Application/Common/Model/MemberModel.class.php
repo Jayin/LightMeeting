@@ -115,7 +115,7 @@ class MemberModel extends BaseModel{
 			unset($res['password']); //session不存入密码这属性
 			
 			session("member",$res);//将登录成功会员数据存在session中
-			return qc_json_success();
+			return qc_json_success($res);
 		}else{
 			return qc_json_error("密码错误");
 		}
