@@ -7,14 +7,14 @@ api_pushmessge
 
 
 ### 创建推送消息
-`POST /home/PushMessage/create`  
+`POST /ome/PushMessage/create`  
 
 
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
 to|'发送对象(a:全部 id为个人or会议群组)|Y|text
 content|发送内容|Y|text
-type|发送对象类型(1全部，2会议群组，3个人)|Y
+type|发送对象类型(1全部，2会议群组，3个人)|Y|int
 
 **to字段**
 对于暴露给客户端：你只需要填写a或者一个数字（id）
@@ -51,7 +51,7 @@ type|发送对象类型(1全部，2会议群组，3个人)|Y
 
 
 ### 发送已创建的的推送消息
-`POST /home/PushMessage/send`  
+`POST /Home/PushMessage/send`  
 
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
@@ -68,7 +68,7 @@ id|消息id|Y|int
 
 
 ### 删除推送消息
-`POST /home/PushMessage/delete`  
+`POST /Home/PushMessage/delete`  
 
 字段  |描述 |  是否必须 |数据类型
 ------------ | -------------| -------------| -------------
@@ -86,7 +86,7 @@ id|消息|Y|int
 
 
 ### 获得推送消息列表
-`GET /home/PushMessage/lists`  
+`GET /Home/PushMessage/lists`  
 
 
 字段  |描述 |  是否必须 |数据类型
