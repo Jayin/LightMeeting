@@ -114,6 +114,7 @@ class MeetController extends AdminBaseController {
 	 *        	所属会议id
 	 */
 	public function createdocument($id) {
+        $this->reqLogin();
 		$Meet ["id"] = $id; // 将会议id分配前端页面显示
 		$this->assign ( "Meet", $Meet );
 		$this->display ();
