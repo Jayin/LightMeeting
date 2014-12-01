@@ -11,7 +11,9 @@ use Think\Controller\RestController;
  */
 class IndexController extends RestController {
 	
-	
+	public function index(){
+        $this->redirect('Admin/Member/Login');
+    }
 	public function test(){
 		$this->display();
 	}
