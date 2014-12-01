@@ -3,6 +3,7 @@
 namespace Admin\Controller;
 
 use Admin\Controller\AdminBaseController;
+use Common\Model\PushMessageModel;
 
 /**
  * 会议控制器
@@ -268,4 +269,24 @@ class MeetController extends AdminBaseController {
 		
 		$this->display();
 	}
+
+    /**
+     * @param int $id 会议id
+     */
+    public function createMessage($id ){
+        $this->reqLogin();
+        $Meet ["id"] = $id; // 将会议id分配前端页面显示
+        $this->assign ( "Meet", $Meet );
+        $this->display();
+    }
+
+    public function message($id){
+        $this->reqLogin();
+        $Meet ["id"] = $id; // 将会议id分配前端页面显示
+        $this->assign ( "Meet", $Meet );
+
+        $resPushMessage = D('PushMessage')->lists(PushMessageModel::MSG_TYPE_MEET,$id);
+        $this->assign("Messages",$resPushMessage['response']);
+        $this->display();
+    }
 }

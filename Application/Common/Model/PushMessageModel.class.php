@@ -2,7 +2,7 @@
 namespace Common\Model;
 
 use Common\Model\BaseModel;
-/** 
+/**
  * 推送消息模型
  * @author zjien
  * @author Jayin Ton
@@ -15,9 +15,9 @@ class PushMessageModel extends BaseModel{
     protected $_auto = array(
         array('ctime',NOW_TIME,self::MODEL_INSERT)
     );
-    /** 
+    /**
      * 创建
-     * @param array $data 
+     * @param array $data
      * @return json
      */
     public function createMessage($data){
@@ -36,12 +36,12 @@ class PushMessageModel extends BaseModel{
             $id = $this->add();
             if($id){
             	return qc_json_success($id);
-            } 
+            }
             return qc_json_error();
         }
         return qc_json_error($this->getError());
     }
-    /** 
+    /**
      * 删除
      * @param  int $id 消息id
      * @return json
@@ -67,21 +67,36 @@ class PushMessageModel extends BaseModel{
     	}
     	return qc_json_error();
     }
-    
+
     /**
      * 查看所有推送的消息
-     * @param $page=1 当前页数默认为1
-     * @param $limit=10 每页大小默认为10
+     * @param int $page 当前页数默认为1
+     * @param int $limit  每页大小默认为10
+     * @param int $type 消息类型 MSG_TYPE_ALL by default
+     * @param int $id 对应类型的
+     * @return json
      */
-    public function lists($page = 1,$limit = 10){
+    public function lists($type = self::MSG_TYPE_ALL,$id = 0,$page = 1,$limit = 10){
     	if($page <= 0){
     		$page = 1;
     	}
     	if($limit <= 0){
     		$limit = 10;
     	}
-    	$res = $this->limit(($page-1)*$limit,$limit)->select();
-    	return qc_json_success($res);
+        $map['type'] = $type;
+        if($type == self::MSG_TYPE_ALL){
+            $map['to'] = 'a';
+        }else if($type == self::MSG_TYPE_MEET){
+            $map['to'] = 'm_' . $id;
+        }else if($type == self::MSG_TYPE_PERSON){
+            $map['to'] = 'p_' . $id;
+        }else{
+            return qc_json_error('消息类型不支持: '.$type);
+        }
+    	$res = $this->where($map)->limit(($page-1)*$limit,$limit)->select();
+        if($res){
+            return qc_json_success($res);
+        }
+        return qc_json_success(array());
     }
-    
 }
