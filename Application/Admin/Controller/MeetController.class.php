@@ -270,7 +270,39 @@ class MeetController extends AdminBaseController {
 		$this->display();
 	}
 
+
     /**
+     * 显示会议投票
+     *
+     * @param int $id
+     *  会议id
+     *
+     *   */
+
+    public function vote($id){
+        $this->reqLogin();
+        $Meet ["id"] = $id; // 将会议id分配前端页面显示
+        $this->assign ( "Meet", $Meet );
+
+        $VoteModel=D("Vote");
+        $res=$VoteModel->lists($id);
+
+        if(isset($res["code"])){
+            $this->assign("vote",$res["response"]);
+        }
+
+
+        /* 		echo "<pre>";
+                print_r($res);
+                echo "</pre>";
+                exit();
+                 */
+
+        $this->display();
+    }
+
+    /**
+     * 创建推送消息
      * @param int $id 会议id
      */
     public function createMessage($id ){
@@ -280,6 +312,10 @@ class MeetController extends AdminBaseController {
         $this->display();
     }
 
+    /**
+     * 查看推送消息列表
+     * @param $id
+     */
     public function message($id){
         $this->reqLogin();
         $Meet ["id"] = $id; // 将会议id分配前端页面显示

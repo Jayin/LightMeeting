@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>轻会议--创建调查</title>
     <include file="Base/head" />
-
+ <link href="__PUBLIC__/css/datepicker.css" rel="stylesheet">
     <link href="__PUBLIC__/umeditor/themes/default/css/umeditor.css" rel="stylesheet">
 </head>
 
@@ -149,7 +149,7 @@
                    
                 var postData={};
                 postData.res=JSON.stringify(pData);
-                alert(postData.res);
+                //alert(postData.res);
 
                     qc.post("/home/vote/addOptionForAdmin",postData,function(res){
                     swal({
