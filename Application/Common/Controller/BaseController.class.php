@@ -9,7 +9,12 @@ class BaseController extends Controller {
 	 * 对应控制器下没有方法就会执行该方法
 	 */
 	protected function _empty(){
-		$this->ajaxReturn(qc_json_error("No interface for this."));
+        if(file_exists_case($this->view->parseTemplate())) {
+            // 检查是否存在默认模版 如果有直接输出模版
+            $this->display();
+        }else{
+            $this->ajaxReturn(qc_json_error("No interface for this."));
+        }
 	}
 	/**
 	 * 需要Post的字段
