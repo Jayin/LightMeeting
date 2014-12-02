@@ -63,5 +63,19 @@ class ViewController extends AdminBaseController {
 		$this->assign("Document",$Document);
 		$this->display();
 	}
+
+    /**
+     * @param $id 讨论id
+     */
+    public function discuss($id){
+
+        $resDiscuss = D('Discuss')->info($id);
+        if(isset($resDiscuss['code'])){
+            $this->assign('Discuss',$resDiscuss['response']);
+        }else{
+            $this->error('找不到该讨论');
+        }
+        $this->display();
+    }
 }
 

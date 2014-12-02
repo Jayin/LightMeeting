@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{$Meet.title|default='会议详情'}</title>
+    <include file="Base/head" />
+
+
+</head>
+
+<body style="background-color: #EDEFF1;">
+    <div class="container-fluid" style="margin-top: 120px;">
+        <div class="row-fluid">
+            <div class="col-xs-12"></div>
+        </div>
+    </div>
+    <div id="div-hidden" style="display: none">
+        <div class="meet meet-comment">{nickname}： {content}
+            <p align="right">{ctime}</p>
+            <div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+            <div class="row demo-samples">
+                <div class="col-xs-12" style="border-color: #fff;">
+                    <div class="meet" >
+                        <div class="meet meet-title">
+                            <h4>{$Discuss.title}</h4>
+                        </div>
+                        <hr>
+                        <div class="meet meet-title">
+                            讨论内容：
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$Discuss.content}
+                            </p>
+                        </div>
+                    </div>
+                    <div id="listcomment" class="meet meet-title">
+
+                    </div>
+                    <br>
+                    <div class="col-xs-2"></div>
+                    <div  class="col-xs-8">
+                        <a id="btn-loadmore"href="javascript:void(0)" class="btn btn-lg btn-block btn-primary"> 加载更多</a>
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-1"></div>
+    </div>
+    <include file="Base/foot" />
+    <script>
+    (function($) {
+        function js_date_time(unixtime) { //时间戳转换函数
+            date = new Date(parseInt(unixtime) * 1000);
+            str = '';
+            str += date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+            str += " " + (date.getHours()) + ":" + date.getMinutes() + ":" + date.getSeconds();
+            return str;
+        }
+        var tpl_comment = $('#div-hidden').html();
+        var $commentList = $('#listcomment');
+        var data = {};
+        data.discussid = "{$Discuss.id}";
+        data.page = 1;
+        data.limit = 20;
+        data.with_member = 1;
+        // qc.debug = true;
+        //加载下一页
+        function load_more(){
+            data.page = data.page + 1;
+            qc.get("/home/discuss/listComment",
+            data,
+            function(res) {
+                for (val in res) {
+                    $commentList.append(tpl_comment.replace('{nickname}', res[val].nickname)
+                        .replace('{content}', res[val].content)
+                        .replace('{ctime}', js_date_time(res[val].ctime)));
+                }
+            },
+            function(msg) {
+                swal(msg);
+            });
+        }
+        //刷新到首页
+        function refresh(){
+            data.page = 1;
+            qc.get("/home/discuss/listComment",
+            data,
+            function(res) {
+                $commentList.html("");
+                for (val in res) {
+                    $commentList.append(tpl_comment.replace('{nickname}', res[val].nickname)
+                        .replace('{content}', res[val].content)
+                        .replace('{ctime}', js_date_time(res[val].ctime)));
+                }
+            },
+            function(msg) {
+                swal(msg);
+            });
+        }
+
+        $('#btn-loadmore').on('click',function(){
+            load_more();
+        });
+
+        refresh();
+        function loop(){
+            setTimeout(function(){
+                refresh();
+                loop();
+            },10000);
+        }
+        loop();
+
+    })(jQuery);
+    </script>
+</body>
+
+</html>
