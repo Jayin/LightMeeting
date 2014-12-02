@@ -68,7 +68,7 @@
 					<foreach name="Meet" item="val">
 					<div class="meet" id="meet">
 						<div class="meet meet-title">
-							会议主题：<a href="../Meet/detail.html?id={$val.id}">{$val.title}</a>
+							会议主题：<a href="{:U('Admin/Meet/detail')}?id={$val.id}">{$val.title}</a>
 							<a href="{:U('Admin/View/meeting/id/','','')}/{$val.id}"
 								style="float: right;">会议二维码</a>
 						</div>
