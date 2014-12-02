@@ -61,6 +61,7 @@
 					<div id="optionlist" style="display:none">
 					<div class="meet meet-listm" >
 							{%content%}
+                            <span style="float: right">{%count%}</span>
 						</div>
 						</div>
 
@@ -86,7 +87,7 @@
 					var ResOption=res.option;
 					for(val in ResOption){
 						str=optionlist;
-						str=str.replace("{%content%}",ResOption[val].vpintro);
+						str=str.replace("{%content%}",ResOption[val].vpintro).replace("{%count%}",ResOption[val].count);
 						DivOptionlist.append(str);
 					}	
 					
