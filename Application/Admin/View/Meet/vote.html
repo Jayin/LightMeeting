@@ -75,18 +75,15 @@
 			
 			var optionlist=$("#optionlist").html();
 		
-			
-			
 			$("#votelist").on("click","[name=btn-votelist]",function(){
 				
 				var voteid=$(this).data("voteid");
-				//alert(voteid);
 				DivOptionlist=$(this).parent().parent().next();
-				data={};
+				var data = {};
 				data.voteid=voteid
 				qc.post("/home/vote/info/",data,function(res){
 					DivOptionlist.html("");
-					ResOption=res.option;
+					var ResOption=res.option;
 					for(val in ResOption){
 						str=optionlist;
 						str=str.replace("{%content%}",ResOption[val].vpintro);
@@ -94,10 +91,8 @@
 					}	
 					
 				},function(msg){
-					swf(msg);
+					swal(msg);
 				});
-				
-				
 
 				//DivOptionlist.append(optionlist);
 				if(DivOptionlist.css("display")=="none"){
@@ -105,11 +100,9 @@
 				}else{
 					DivOptionlist.slideUp();
 				}
-				
+
 			});
-			
-			
-			
+
 		})(jQuery);
 	</script>
 </body>
