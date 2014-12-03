@@ -27,10 +27,12 @@ class BaseModel extends AdvModel {
 	 * @return string   前端显示数据
 	 * */ 
 	
-	public function  ShowPage($where,$goUrl,$pagenow=1,$pagecount=4){
-		 $count=count($this->where($where)->select());//拿到查询总的条目
+	public function  ShowPage($where,$goUrl,$pagenow=1,$pagecount=10){
+		$count=count($this->where($where)->select());//拿到查询总的条目
+		
+		$pageall=(ceil($count/$pagecount));
+		
 		$data=I("get.");
-	
 		unset($data["page"]);
 		
 		$url="?";
@@ -44,7 +46,7 @@ class BaseModel extends AdvModel {
 		<ul>
 		<li class="previous active btn-previous">
 		<a id="btn-previous" href="'.$goUrl.$url.($pagenow-1).'" >上一页</a></li>';
-		for($i=1;$i<=(ceil($count/$pagecount)) && $i<=10 ;$i++){	
+		for($i=1;$i<=$pageall && $i<=10 ;$i++){	
 		$showPage.='<li class="active"><a href="'.$goUrl.$url.$i.'" >'.$i.'</a></li>';
 		}
 		$showPage.='<li class="next active">

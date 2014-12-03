@@ -11,12 +11,20 @@ class MemberController extends AdminBaseController {
      *
      *   */
     
-    public function index(){
+    public function index($page=1){
+    	
+    	if($page <= 0 ){
+    		$page = 1;
+    	}
+    	
         $this->reqLogin();
         $Member=$this->reqLoginmember();
         $Meetmodel=D("Joinmeet");
        // $this->Member=$Member;
-         $Meet=$Meetmodel->getjoinmeet($Member["id"]);
+         $Meet=$Meetmodel->getjoinmeet($Member["id"],$page,10);
+         
+         $pageshow=D ( 'Joinmeet' )->ShowPage("memberid=".$Member["id"],"index",$page,10);
+         $this->assign('Page',$pageshow);
        
         $this->assign('Member',$Member);
         $this->assign("Meet",$Meet["response"]);
