@@ -9,16 +9,12 @@ use Common\Controller\BaseController;
  *
  */
 class RelationController extends BaseController {
-	public function index(){
-		echo "ok";
-	}
-	
 	/**
 	 * 添加人脉名片
-	 * @param unknown $vicememberid  被添加人的id
+	 * @param int $vicememberid  被添加人的id
 	 * */
 	public function create(){
-		
+		//$vicememberid  被添加人的id
 		$this->reqPost(array("vicememberid"))->reqLogin();
 		$vicememberid=I("post.vicememberid");
 		$member=qc_getLoginUser();
@@ -31,7 +27,10 @@ class RelationController extends BaseController {
 		$this->ajaxReturn($res);
 		
 	}
-	
+
+    /**
+     * 删除人脉关系
+     */
 	public  function delete(){
 		$this->reqPost(array("relationid"))->reqLogin();
 		
@@ -40,9 +39,11 @@ class RelationController extends BaseController {
 		$res=$RelationModel->deleteRelation($relationid);
 		
 		$this->ajaxReturn($res);
-		
 	}
-	
+
+    /**
+     * 获得登陆用户的人脉关系
+     */
 	public function lists(){
 		$this->reqLogin();
 		
@@ -53,7 +54,5 @@ class RelationController extends BaseController {
 		$res=$RelationModel->lists($member["id"]);
 		
 		$this->ajaxReturn($res);
-		
-		
 	}
 }

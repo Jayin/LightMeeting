@@ -1,6 +1,6 @@
 api_relation
 ===
-> 投票  
+>  人脉关系  
 > By zhlhuang
 
 
@@ -26,7 +26,7 @@ vicememberid | 需要添加人的id    | Y
 
 
 
-### 创建人脉关系  
+### 删除人脉关系  
 `POST /home/relation/delete` 
 
 `需要登录`   
@@ -49,7 +49,7 @@ relationid | 人脉表对应的id    | Y
 
 
 
-### 创建人脉关系  
+### 获得登陆用户的人脉关系
 `POST /home/relation/lists`  
 
 `需要登录`  

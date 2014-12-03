@@ -8,7 +8,12 @@ class RelationModel extends BaseModel{
 	protected $_validate = array(
 			array("vicememberid",'','添加人不能为空',self::EXISTS_VALIDATE,'notequal')
 	);
-	
+
+    /**
+     * 创建人脉关系
+     * @param $data
+     * @return json
+     */
 	public function createRelation($data){
 		$data["ctime"]=time();
 		$res=$this->where("hostmemberid='%s' and vicememberid='%s'",$data["hostmemberid"],$data["vicememberid"])
@@ -27,8 +32,12 @@ class RelationModel extends BaseModel{
 			return qc_json_error($this->getError());
 		}
 	}
-	
-	
+
+    /**
+     * 删除人脉关系
+     * @param $id 人脉id
+     * @return json
+     */
 	public function deleteRelation($id){
 		$res=$this->where("id=".$id)->delete();
 		if($res){
@@ -38,7 +47,12 @@ class RelationModel extends BaseModel{
 		}
 			
 	}
-	
+
+    /**
+     * 获得某人得人脉关系
+     * @param $hostmemberid 用户id
+     * @return \multitype
+     */
 	public function lists($hostmemberid){
 		
 		$res=$this->table("qc_member m,qc_relation r")
