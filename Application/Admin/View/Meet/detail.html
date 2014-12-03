@@ -60,7 +60,6 @@
 
 					</div>
 
-					<div class="meet" id="meet" >
 						<foreach name="listmember" item="val" >
 						<div class="meet meet-listm">
 							<div>{$val.nickname}</div>
@@ -73,11 +72,15 @@
 							<span>性别：<if condition="$val.sex eq 'm' "> 男<else />女</if></span>
 							</div>
 							<hr />
-							<div><if condition="$val.checkin eq '1' "> 已签到<else />未签到</if></div>
+							<div>
+                                <if condition="$val.checkin eq '1' "> <span class="label label-success">已签到</span>
+                                  <else />
+                                    <span class="label label-default">未签到</span>
+                                </if>
+                            </div>
 						</div>
 						<hr />
 						</foreach>
-					</div>
 
 				</div>
 			</div>
