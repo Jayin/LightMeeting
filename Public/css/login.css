@@ -1,0 +1,14 @@
+body {
+    opacity:0.9;
+    background: url(../img/bg2.jpg) fixed no-repeat center 0px / 100% 100%;
+}
+footer{
+    background: transparent;
+    position: absolute;
+    left: 45%;
+    bottom:25px;
+}
+footer a{
+    color: #f5f5f5;
+    margin-left: 8px;
+}
