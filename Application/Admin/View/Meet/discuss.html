@@ -62,16 +62,7 @@
 
                     </div>
                 </foreach>
-                <div class="text-center">
-                    <div class="pagination">
-                        <ul>
-                            <li class="previous active btn-previous"><a id="btn-previous"
-                                                                        href="javascript:void(0);">上一页</a></li>
-                            <li class="active"><a>{$Page}</a></li>
-                            <li class="next active"><a id="btn-next" href="javascript:void(0);">下一页</a></li>
-                        </ul>
-                    </div>
-                </div>
+            {$Page}
             </div>
         </div>
     </div>
@@ -123,21 +114,6 @@
                             alert(msg);
                         });
             }
-        });
-
-        $('#btn-previous').on('click', function () {
-            var p = parseInt(page) - 1;
-            p = p > 0 ? p : 1;
-            var url = "{:U('Admin/Meet/discuss')}?id={id}&page={page}".replace('{id}', id).replace('{page}', p);
-            location = url;
-        });
-
-
-        $('#btn-next').on('click', function () {
-            var p = parseInt(page) + 1;
-            p = p > 0 ? p : 1;
-            var url = "{:U('Admin/Meet/discuss')}?id={id}&page={page}".replace('{id}', id).replace('{page}', p);
-            location = url;
         });
 
     })(jQuery);
