@@ -158,14 +158,18 @@ class MeetController extends AdminBaseController {
 	 * @param int $id
 	 *        	所属会议id
 	 */
-	public function discuss($id) {
+	public function discuss($id,$page = 1) {
 		$this->reqLogin ();
+        if($page < 0 ){
+            $page = 1;
+        }
+        $this->assign('Page',$page);
 		$Meet ["id"] = $id; // 将会议id分配前端页面显示
 		$this->assign ( "Meet", $Meet );
 
 		$DisModel = D ( "Discuss" );
 		$LoginMember = $this->reqLoginmember (); // 获取登录用户
-		$res = $DisModel->lists_m ( $id );
+		$res = $DisModel->lists_m ( $id ,$page);
 
 		if ($res) {
 

@@ -71,9 +71,12 @@
 				data=qc.form().add("meetid").add("title").add("content").create();
 				
 				qc.post("/home/discuss/create",data,function(res){
-					alert("添加成功");
+					swal("添加成功");
+                    setTimeout(function(){
+                        location = "{:U('Admin/Meet/discuss')}?id={$Meet.id}"
+                    },1500);
 				},function(msg){
-					alert(msg);
+					swal(msg);
 				});
 
 				
