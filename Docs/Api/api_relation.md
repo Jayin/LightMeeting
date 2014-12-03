@@ -5,7 +5,7 @@ api_relation
 
 
 ### 创建人脉关系  
-`POST /home/relation/create`  
+`GET /home/relation/create`  
 
 `需要登录`  
 
