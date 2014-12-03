@@ -51,13 +51,20 @@ class RelationModel extends BaseModel{
     /**
      * 获得某人得人脉关系
      * @param $hostmemberid 用户id
-     * @return \multitype
+     * @param $page 页码
+     * @param $limit  返回数
+     * @return json
      */
-	public function lists($hostmemberid){
-		
+	public function lists($hostmemberid, $page = 1, $limit = 10){
+        if($page <= 0 ){
+            $page = 1;
+        }
+        if($limit <= 0){
+            $limit = 10;
+        }
 		$res=$this->table("qc_member m,qc_relation r")
 		->field("r.id as relationid,m.id,m.nickname,m.sex,m.company,m.position")
-		->where("r.vicememberid=m.id and hostmemberid='%s'",$hostmemberid)->select();
+		->where("r.vicememberid=m.id and hostmemberid='%s'",$hostmemberid)->limit(($page-1)*$limit,$limit)->select();
 		if($res){
 			return qc_json_success($res);
 		}else{

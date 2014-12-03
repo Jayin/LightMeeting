@@ -44,14 +44,14 @@ class RelationController extends BaseController {
     /**
      * 获得登陆用户的人脉关系
      */
-	public function lists(){
+	public function lists($page = 1,$limit = 10){
 		$this->reqLogin();
 		
 		$member=qc_getLoginUser();
 		
 		$RelationModel=D("Relation");
 		
-		$res=$RelationModel->lists($member["id"]);
+		$res=$RelationModel->lists($member["id"],$page,$limit);
 		
 		$this->ajaxReturn($res);
 	}
