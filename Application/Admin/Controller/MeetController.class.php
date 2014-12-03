@@ -160,16 +160,20 @@ class MeetController extends AdminBaseController {
 	 */
 	public function discuss($id,$page = 1) {
 		$this->reqLogin ();
-        if($page < 0 ){
+        if($page <= 0 ){
             $page = 1;
         }
-        $this->assign('Page',$page);
+        
 		$Meet ["id"] = $id; // 将会议id分配前端页面显示
 		$this->assign ( "Meet", $Meet );
 
 		$DisModel = D ( "Discuss" );
+
 		$LoginMember = $this->reqLoginmember (); // 获取登录用户
-		$res = $DisModel->lists_m ( $id ,$page);
+		$res = $DisModel->lists_m ( $id ,$page,5);
+		
+		$showpage=$DisModel->ShowPage("meetid=".$id,"discuss",$page,5); //调用分页
+		$this->assign('Page',$showpage);
 
 		if ($res) {
 
@@ -246,12 +250,21 @@ class MeetController extends AdminBaseController {
 	 * @param int $id
 	 *        	调查id
 	 */
-	public function research($id) {
+	public function research($id,$page=1) {
+		
+		if($page <= 0 ){
+			$page = 1;
+		}
+		
 		$this->reqLogin ();
 		$Meet ["id"] = $id; // 将会议id分配前端页面显示
 		$this->assign ( "Meet", $Meet );
 		// TODO handle not research
-		$res = D ( 'Research' )->lists ( $id );
+		$res = D ( 'Research' )->lists ( $id,$page,5);
+		
+		$pageshow=D ( 'Research' )->ShowPage("meetid=".$id,"research",$page,5);
+		$this->assign('Page',$pageshow);
+		
 		if (isset ( $res ['code'] )) {
 			$this->assign ( 'Researchs', $res ['response'] );
 		}
@@ -284,13 +297,22 @@ class MeetController extends AdminBaseController {
      *
      *   */
 
-    public function vote($id){
+    public function vote($id,$page=1){
+    	
+    	if($page <= 0 ){
+    		$page = 1;
+    	}
+    	
+    	
         $this->reqLogin();
         $Meet ["id"] = $id; // 将会议id分配前端页面显示
         $this->assign ( "Meet", $Meet );
 
         $VoteModel=D("Vote");
-        $res=$VoteModel->lists($id);
+        $res=$VoteModel->lists($id,$page,5);
+        
+        $pageshow=D ( 'Vote' )->ShowPage("meetid=".$id,"vote",$page,5);
+        $this->assign('Page',$pageshow);
 
         if(isset($res["code"])){
             $this->assign("vote",$res["response"]);
@@ -321,12 +343,21 @@ class MeetController extends AdminBaseController {
      * 查看推送消息列表
      * @param $id
      */
-    public function message($id){
+    public function message($id,$page=1){
+    	
+    	if($page < 0 ){
+    		$page = 1;
+    	}
+    	
         $this->reqLogin();
         $Meet ["id"] = $id; // 将会议id分配前端页面显示
         $this->assign ( "Meet", $Meet );
 
-        $resPushMessage = D('PushMessage')->lists(PushMessageModel::MSG_TYPE_MEET,$id);
+        $resPushMessage = D('PushMessage')->lists(PushMessageModel::MSG_TYPE_MEET,$id,$page,10);
+        
+        $pageshow=D ( 'PushMessage' )->ShowPage("meetid=".$id,"message",$page,10);
+        $this->assign('Page',$pageshow);
+        
         $this->assign("Messages",$resPushMessage['response']);
         $this->display();
     }

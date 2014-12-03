@@ -13,10 +13,10 @@ class RelationController extends BaseController {
 	 * 添加人脉名片
 	 * @param int $vicememberid  被添加人的id
 	 * */
-	public function create(){
+	public function create($vicememberid=NULL){
 		//$vicememberid  被添加人的id
-		$this->reqPost(array("vicememberid"))->reqLogin();
-		$vicememberid=I("post.vicememberid");
+		$this->reqLogin();
+	
 		$member=qc_getLoginUser();
 		
 		$data["hostmemberid"]=$member["id"];
