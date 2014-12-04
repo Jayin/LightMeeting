@@ -1,7 +1,11 @@
 <?php
 
 namespace Common\Model;
-
+/**
+ * Class CommentModel
+ * @author Jayin Ton
+ * @package Common\Model
+ */
 class CommentModel extends BaseModel {
 	
 	protected $_validate = array(

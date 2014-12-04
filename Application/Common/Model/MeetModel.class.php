@@ -3,6 +3,12 @@ namespace Common\Model;
 
 use Common\Model\BaseModel;
 
+/**
+ * Class MeetModel
+ * 会议模型
+ * @author Zhlhuang
+ * @package Common\Model
+ */
 class MeetModel extends BaseModel{
     protected $readonlyField = array("id","createmember");
     
@@ -19,7 +25,12 @@ class MeetModel extends BaseModel{
         }
         return true;
     }
-    
+
+    /**
+     * 创建会议
+     * @param $data
+     * @return \multitype
+     */
 	public function addmeet($data){
 		$data["starttime"]=strtotime($data["starttime"]);//将格式化时间转化成时间戳
 		$data["endtime"]=strtotime($data["endtime"]);
@@ -38,7 +49,12 @@ class MeetModel extends BaseModel{
 		    return qc_json_error("添加失败"); //添加会议失败
 		}
 	}
-	
+
+    /**
+     * 更新会议
+     * @param $data
+     * @return \multitype
+     */
 	public function updatemeet($data){
 		//更新会议资料
 
@@ -57,10 +73,13 @@ class MeetModel extends BaseModel{
 		}
 		
 	}
-	
-	
-	
-	
+
+    /**
+     * 删除会议
+     * @param $meetid
+     * @param $memberid
+     * @return \multitype
+     */
 	public function deletemeet($meetid,$memberid){
 	    if($meetid){
 	        
@@ -74,8 +93,12 @@ class MeetModel extends BaseModel{
 	        return qc_json_error("数据错误");
 	    }	    
 	}
-	
-	
+
+    /**
+     * 获得(查询)会议
+     * @param $id
+     * @return \multitype|null
+     */
 	public function findmeet($id){
 	    $res=$this->where("id=".$id)->find();
 	    
