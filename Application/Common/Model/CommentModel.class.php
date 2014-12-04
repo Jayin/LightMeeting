@@ -57,7 +57,7 @@ class CommentModel extends BaseModel {
 		if($limit <= 0){
 			$limit = 10;
 		}
-		$res = $this->where("discussid=%s",$discussid)->limit(($page-1)*$limit,$limit)->order('ctime asc')->select();
+		$res = $this->where("discussid=%s",$discussid)->limit(($page-1)*$limit,$limit)->order('ctime desc')->select();
 		if($res){
 			return qc_json_success($res);
 		}
@@ -83,7 +83,7 @@ class CommentModel extends BaseModel {
 	    ->table("qc_comment c,qc_member m")
 	    ->where("m.id=c.author and c.discussid=%s",$discussid)
 	    ->limit(($page-1)*$limit,$limit)
-	    ->order('ctime asc')->select();
+	    ->order('ctime desc')->select();
 	    if($res){
 	        return qc_json_success($res);
 	    }

@@ -77,9 +77,9 @@ class DiscussController extends BaseController {
 	 /**
 	  * 获得一讨论的评论的列表
 	  * @param unknown $discussid 讨论id
-	  * @param number $with_member 是否返回发布者昵称 0否1是，默认0
-	  * @param number $page
-	  * @param number $limit
+	  * @param int $with_member 是否返回发布者昵称 0否1是，默认0
+	  * @param int $page
+	  * @param int $limit
 	  */
 	 public function listComment($discussid,$with_member = 0,$page = 1 ,$limit = 10){
 	 	$this->reqLogin();
@@ -92,7 +92,7 @@ class DiscussController extends BaseController {
 	 }
 	 /**
 	  * 获得会议的讨论列表
-	  * @param unknown $meetid 会议id
+	  * @param int $meetid 会议id
 	  */
 	 public function lists($meetid, $page = 1 ,$limit = 10){
 	 	$this->reqLogin();
