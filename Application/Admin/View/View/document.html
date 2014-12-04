@@ -4,19 +4,21 @@
 	<meta charset="utf-8">
 	<title>{$Document['title']|default='无'}</title>
 	<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
-	<link href="__PUBLIC__/flat/dist/css/vendor/bootstrap.min.css" rel="stylesheet">
-	<link href="__PUBLIC__/flat/dist/css/flat-ui.css" rel="stylesheet">
+	<!-- <link href="__PUBLIC__/flat/dist/css/vendor/bootstrap.min.css" rel="stylesheet"> -->
+	<!-- <link href="__PUBLIC__/flat/dist/css/flat-ui.css" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/typo.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/document.css">
 </head>
-<body style="background-color: #EDEFF1;">
+<body >
 	<div class="container-fluid" style="padding-top: 30px;">
 		<div class="row-fluid">
 			<div class="col-xs-12"></div>
 		</div>
 		<div class="row-fluid">
 			<div class="col-xs-12 " style="border-color: #fff;">
-				<h1 class="text-center">{$Document['title']}</h1>
-				<p class="text-center">{$Document['ctime']}</p>
-				{$Document['content']}
+				<h2 class="text-center document-title">{$Document['title']}</h2>
+				<div class="text-center document-time">{$Document['ctime']}</div>
+				<div class="document-content">{$Document['content']}</div>
 			</div>
 		</div>
 	</div>

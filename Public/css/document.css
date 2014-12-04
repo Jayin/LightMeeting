@@ -1,0 +1,35 @@
+.document-time span {
+    margin-right: 20px;
+    color: #666;
+    font-size: 0.90em;
+}
+.document-time {
+    margin-top: 5px;
+    text-align: center;
+}
+.document-title {
+    text-align: center;
+    border-bottom: 3px solid #ededed;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+.document-content {
+
+    margin-left: 0.62em;
+    margin-right: 0.62em;
+    font-size: 1em;
+    line-height: 1.8em;
+}
+.document-content p {
+    margin-bottom: 0.5em;
+}
+.document-picture {
+    text-align: center;
+}
+img {
+    width: 90%;
+    margin-top: 4px;
+}
+a {
+    margin-top: 2px;
+}
