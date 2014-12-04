@@ -14,14 +14,14 @@ use Common\Model\PushMessageModel;
  */
 class MeetController extends AdminBaseController {
 	public function index() {
-		$this->redirect ( 'member/index' );
+		$this->redirect('member/index');
 	}
 
 	/**
 	 * 添加会议
 	 */
 	public function createmeet() {
-		$this->display ();
+		$this->display();
 	}
 
 	/**
@@ -29,82 +29,84 @@ class MeetController extends AdminBaseController {
 	 */
 	public function updatemeet($id) {
 		// echo $id;
-		$this->reqLogin ();
+		$this->reqLogin();
 
-		$MeetModel = D ( "Meet" );
-		$res = $MeetModel->findmeet ( $id );
-		$data = $res ["response"];
-		if ($res ["code"] == 20000) {
-			$starttime = $data ["starttime"];
-			$data ["starttime"] = date ( "Y-m-d", $starttime );
-			$data ["starttime-h"] = date ( "H", $starttime );
-			$data ["starttime-i"] = date ( "i", $starttime );
+		$MeetModel = D("Meet");
+		$res = $MeetModel->findmeet($id);
+		$data = $res["response"];
+		if ($res["code"] == 20000) {
+			$starttime = $data["starttime"];
+			$data["starttime"] = date("Y-m-d", $starttime);
+			$data["starttime-h"] = date("H", $starttime);
+			$data["starttime-i"] = date("i", $starttime);
 
-			$endtime = $data ["endtime"];
-			$data ["endtime"] = date ( "Y-m-d", $endtime );
-			$data ["endtime-h"] = date ( "H", $endtime );
-			$data ["endtime-i"] = date ( "i", $endtime );
+			$endtime = $data["endtime"];
+			$data["endtime"] = date("Y-m-d", $endtime);
+			$data["endtime-h"] = date("H", $endtime);
+			$data["endtime-i"] = date("i", $endtime);
 
-			$this->assign ( "Meet", $data );
-			$this->assign ( "id", $id );
+			$this->assign("Meet", $data);
+			$this->assign("id", $id);
 		}
 
-		$this->display ();
+		$this->display();
 	}
 
 	/**
 	 * 会议详情
 	 */
 	public function detail($id = 0) {
-		$this->reqLogin ();
-		$Meetmodel = D ( "Meet" );
+		$this->reqLogin();
+		$Meetmodel = D("Meet");
 
-		$LoginMember = $this->reqLoginmember (); // 获取登录用户
-		$res = $Meetmodel->findmeet ( $id ); // 查找对应meet
+		$LoginMember = $this->reqLoginmember();// 获取登录用户
+		$res = $Meetmodel->findmeet($id);// 查找对应meet
 
-		if (isset ( $res ["code"] )) {
-			$meet = $res ["response"];
+		if (isset($res["code"])) {
+			$meet = $res["response"];
 
-			$Membermodel = D ( "Member" ); // 获取相关联的会议创建人
-			$resMember = $Membermodel->getMemberInfo ( $meet ["createmember"] )["response"];
-			$listmembermodel = D ( "Joinmeet" );
+			$Membermodel = D("Member");// 获取相关联的会议创建人
+			$resMember = $Membermodel->getMemberInfo($meet["createmember"])["response"];
+			$listmembermodel = D("Joinmeet");
 
-			$listmember=$listmembermodel->getjoinmember($id)["response"];//获取参加会议人员
-/* 			echo "<pre>";
+			$listmember = $listmembermodel->getjoinmember($id)["response"];//获取参加会议人员
+			/* 			echo "<pre>";
 			print_r($listmember);
 			echo "</pre>";
 			exit; */
-			$this->assign ( "Meet", $meet );
-			$this->assign ( "LoginMemberid", $LoginMember ["id"] ); // 分配登录id
-			$this->assign ( "Member", $resMember );
-			$this->assign("listmember",$listmember);
+			$this->assign("Meet", $meet);
+			$this->assign("LoginMemberid", $LoginMember["id"]);// 分配登录id
+			$this->assign("Member", $resMember);
+			$this->assign("listmember", $listmember);
 		} else {
-			$this->error ( "查不到此会议" );
+			$this->error("查不到此会议");
 		}
 
-		$this->display ();
+		$this->display();
 	}
 
 	/**
 	 * 会议文档
+	 *
+	 * @param int $id 文档id
 	 */
 	public function document($id) {
-		$this->reqLogin ();
-		$Meet ["id"] = $id; // 将会议id分配前端页面显示
-		$this->assign ( "Meet", $Meet );
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
 
-		$DocModel = D ( "Document" );
-		$LoginMember = $this->reqLoginmember (); // 获取登录用户
+		$DocModel = D("Document");
+		$LoginMember = $this->reqLoginmember();// 获取登录用户
 
-		$res = $DocModel->listmeetdoc1 ( $id );
-		if (isset ( $res ["code"] )) {
-			$doc = $res ["response"];
+		$res = $DocModel->listmeetdoc_with_member($id);
+		if (isset($res["code"])) {
+			$doc = $res["response"];
 
-			$this->assign ( "doc", $doc );
-			$this->assign ( "LoginMemberid", $LoginMember ["id"] ); // 分配登录id
+			$this->assign("doc", $doc);
+			$this->assign("LoginMemberid", $LoginMember["id"]);// 分配登录id
 		}
 
-		$this->display ();
+		$this->display();
 	}
 
 	/**
@@ -114,10 +116,10 @@ class MeetController extends AdminBaseController {
 	 *        	所属会议id
 	 */
 	public function createdocument($id) {
-        $this->reqLogin();
-		$Meet ["id"] = $id; // 将会议id分配前端页面显示
-		$this->assign ( "Meet", $Meet );
-		$this->display ();
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
+		$this->display();
 	}
 
 	/**
@@ -127,18 +129,18 @@ class MeetController extends AdminBaseController {
 	 *        	所属文档id
 	 */
 	public function updatedocument($id) {
-		$this->reqLogin ();
-		$DocModel = D ( "Document" );
-		$res = $DocModel->listdoc ( $id );
+		$this->reqLogin();
+		$DocModel = D("Document");
+		$res = $DocModel->listdoc($id);
 
 		if ($res) {
-			$doc = $res ["response"];
-			$Meet ["id"] = $doc ["meetid"]; // 将会议id分配前端页面显示
-			$this->assign ( "Meet", $Meet );
-			$this->assign ( "doc", $doc );
+			$doc = $res["response"];
+			$Meet["id"] = $doc["meetid"];// 将会议id分配前端页面显示
+			$this->assign("Meet", $Meet);
+			$this->assign("doc", $doc);
 		}
 
-		$this->display ();
+		$this->display();
 	}
 	/**
 	 * 创建会议讨论
@@ -147,10 +149,10 @@ class MeetController extends AdminBaseController {
 	 *        	所属会议id
 	 */
 	Public function creatediscuss($id) {
-		$this->reqLogin ();
-		$Meet ["id"] = $id; // 将会议id分配前端页面显示
-		$this->assign ( "Meet", $Meet );
-		$this->display ();
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
+		$this->display();
 	}
 	/**
 	 * 查看会议讨论
@@ -158,31 +160,31 @@ class MeetController extends AdminBaseController {
 	 * @param int $id
 	 *        	所属会议id
 	 */
-	public function discuss($id,$page = 1) {
-		$this->reqLogin ();
-        if($page <= 0 ){
-            $page = 1;
-        }
-        
-		$Meet ["id"] = $id; // 将会议id分配前端页面显示
-		$this->assign ( "Meet", $Meet );
+	public function discuss($id, $page = 1) {
+		$this->reqLogin();
+		if ($page <= 0) {
+			$page = 1;
+		}
 
-		$DisModel = D ( "Discuss" );
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
 
-		$LoginMember = $this->reqLoginmember (); // 获取登录用户
-		$res = $DisModel->lists_m ( $id ,$page,5);
-		
-		$showpage=$DisModel->ShowPage("meetid=".$id,"discuss",$page,5); //调用分页
-		$this->assign('Page',$showpage);
+		$DisModel = D("Discuss");
+
+		$LoginMember = $this->reqLoginmember();// 获取登录用户
+		$res = $DisModel->lists_m($id, $page, 5);
+
+		$showpage = $DisModel->ShowPage("meetid=" . $id, "discuss", $page, 5);//调用分页
+		$this->assign('Page', $showpage);
 
 		if ($res) {
 
-			$dis = $res ["response"];
-			$this->assign ( "dis", $dis );
-			$this->assign ( "LoginMemberid", $LoginMember ["id"] ); // 分配登录id
+			$dis = $res["response"];
+			$this->assign("dis", $dis);
+			$this->assign("LoginMemberid", $LoginMember["id"]);// 分配登录id
 		}
 
-		$this->display ();
+		$this->display();
 	}
 	/**
 	 * 更新会议讨论
@@ -191,22 +193,22 @@ class MeetController extends AdminBaseController {
 	 *        	讨论id
 	 */
 	public function updatediscuss($id) {
-		$this->reqLogin ();
+		$this->reqLogin();
 
-		$DisModel = D ( "Discuss" );
-		$res = $DisModel->info ( $id );
-		if (isset ( $res ["code"] )) {
-			$dis = $res ["response"];
+		$DisModel = D("Discuss");
+		$res = $DisModel->info($id);
+		if (isset($res["code"])) {
+			$dis = $res["response"];
 
-			$Meet ["id"] = $dis ["meetid"]; // 将会议id分配前端页面显示
-			$this->assign ( "Meet", $Meet );
+			$Meet["id"] = $dis["meetid"];// 将会议id分配前端页面显示
+			$this->assign("Meet", $Meet);
 
-			$this->assign ( "dis", $dis );
+			$this->assign("dis", $dis);
 		} else {
-			$this->error ( "找不到该记录" );
+			$this->error("找不到该记录");
 		}
 
-		$this->display ();
+		$this->display();
 	}
 
 	/**
@@ -216,12 +218,12 @@ class MeetController extends AdminBaseController {
 	 *        	会议id
 	 */
 	public function createResearch($id) {
-		$this->reqLogin ();
-		$Meet ["id"] = $id; // 将会议id分配前端页面显示
-		$this->assign ( "Meet", $Meet );
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
 		// TODO handle not research
-		$this->assign ( 'meetid', $id );
-		$this->display ();
+		$this->assign('meetid', $id);
+		$this->display();
 	}
 	/**
 	 * 更新调查(未完成交互功能)
@@ -230,18 +232,18 @@ class MeetController extends AdminBaseController {
 	 * @param unknown $researchid
 	 */
 	public function updateResearch($id, $researchid) {
-		$this->reqLogin ();
-		$Meet ["id"] = $id; // 将会议id分配前端页面显示
-		$this->assign ( "Meet", $Meet );
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
 
-		$resResearch = D ( 'Research' )->info ( $researchid );
-		if (isset ( $resResearch ['code'] )) {
+		$resResearch = D('Research')->info($researchid);
+		if (isset($resResearch['code'])) {
 			// questions
-			$resResearch ['response'] ['questions'] = D ( 'ResearchQuestion' )->listsAll ( $researchid )['response'];
-			$this->assign ( 'Research', $resResearch ['response'] );
-			$this->display ();
+			$resResearch['response']['questions'] = D('ResearchQuestion')->listsAll($researchid)['response'];
+			$this->assign('Research', $resResearch['response']);
+			$this->display();
 		} else {
-			$this->error ( '找不到该调查', 'Admin/Meet/research' );
+			$this->error('找不到该调查', 'Admin/Meet/research');
 		}
 	}
 	/**
@@ -250,25 +252,25 @@ class MeetController extends AdminBaseController {
 	 * @param int $id
 	 *        	调查id
 	 */
-	public function research($id,$page=1) {
-		
-		if($page <= 0 ){
+	public function research($id, $page = 1) {
+
+		if ($page <= 0) {
 			$page = 1;
 		}
-		
-		$this->reqLogin ();
-		$Meet ["id"] = $id; // 将会议id分配前端页面显示
-		$this->assign ( "Meet", $Meet );
+
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
 		// TODO handle not research
-		$res = D ( 'Research' )->lists ( $id,$page,5);
-		
-		$pageshow=D ( 'Research' )->ShowPage("meetid=".$id,"research",$page,5);
-		$this->assign('Page',$pageshow);
-		
-		if (isset ( $res ['code'] )) {
-			$this->assign ( 'Researchs', $res ['response'] );
+		$res = D('Research')->lists($id, $page, 5);
+
+		$pageshow = D('Research')->ShowPage("meetid=" . $id, "research", $page, 5);
+		$this->assign('Page', $pageshow);
+
+		if (isset($res['code'])) {
+			$this->assign('Researchs', $res['response']);
 		}
-		$this->display ();
+		$this->display();
 	}
 
 	/**
@@ -278,96 +280,92 @@ class MeetController extends AdminBaseController {
 	 *  会议id
 	 */
 
-	public function createvote($id){
+	public function createvote($id) {
 
 		$this->reqLogin();
-		$Meet ["id"] = $id; // 将会议id分配前端页面显示
-		$this->assign ( "Meet", $Meet );
-
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
 
 		$this->display();
 	}
 
+	/**
+	 * 显示会议投票
+	 *
+	 * @param int $id
+	 *  会议id
+	 *
+	 *   */
 
-    /**
-     * 显示会议投票
-     *
-     * @param int $id
-     *  会议id
-     *
-     *   */
+	public function vote($id, $page = 1) {
 
-    public function vote($id,$page=1){
-    	
-    	if($page <= 0 ){
-    		$page = 1;
-    	}
-    	
-    	
-        $this->reqLogin();
-        $Meet ["id"] = $id; // 将会议id分配前端页面显示
-        $this->assign ( "Meet", $Meet );
+		if ($page <= 0) {
+			$page = 1;
+		}
 
-        $VoteModel=D("Vote");
-        $res=$VoteModel->lists($id,$page,5);
-        
-        $pageshow=D ( 'Vote' )->ShowPage("meetid=".$id,"vote",$page,5);
-        $this->assign('Page',$pageshow);
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
 
-        if(isset($res["code"])){
-            $this->assign("vote",$res["response"]);
-        }
+		$VoteModel = D("Vote");
+		$res = $VoteModel->lists($id, $page, 5);
 
+		$pageshow = D('Vote')->ShowPage("meetid=" . $id, "vote", $page, 5);
+		$this->assign('Page', $pageshow);
 
-        /* 		echo "<pre>";
-                print_r($res);
-                echo "</pre>";
-                exit();
-                 */
+		if (isset($res["code"])) {
+			$this->assign("vote", $res["response"]);
+		}
 
-        $this->display();
-    }
+		/* 		echo "<pre>";
+		print_r($res);
+		echo "</pre>";
+		exit();
+		 */
 
-    /**
-     * 创建推送消息
-     * @param int $id 会议id
-     */
-    public function createMessage($id ){
-        $this->reqLogin();
-        $Meet ["id"] = $id; // 将会议id分配前端页面显示
-        $this->assign ( "Meet", $Meet );
-        $this->display();
-    }
+		$this->display();
+	}
 
-    /**
-     * 查看推送消息列表
-     * @param $id
-     */
-    public function message($id,$page=1){
-    	
-    	if($page < 0 ){
-    		$page = 1;
-    	}
-    	
-        $this->reqLogin();
-        $Meet ["id"] = $id; // 将会议id分配前端页面显示
-        $this->assign ( "Meet", $Meet );
+	/**
+	 * 创建推送消息
+	 * @param int $id 会议id
+	 */
+	public function createMessage($id) {
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
+		$this->display();
+	}
 
-        $resPushMessage = D('PushMessage')->lists(PushMessageModel::MSG_TYPE_MEET,$id,$page,10);
-        
-        $pageshow=D ( 'PushMessage' )->ShowPage("meetid=".$id,"message",$page,10);
-        $this->assign('Page',$pageshow);
-        
-        $this->assign("Messages",$resPushMessage['response']);
-        $this->display();
-    }
+	/**
+	 * 查看推送消息列表
+	 * @param $id
+	 */
+	public function message($id, $page = 1) {
 
-    /**
-     *关于我们
-     */
-    public function about(){
-        $this->reqLogin();
-        $this->display();
-    }
+		if ($page < 0) {
+			$page = 1;
+		}
+
+		$this->reqLogin();
+		$Meet["id"] = $id;// 将会议id分配前端页面显示
+		$this->assign("Meet", $Meet);
+
+		$resPushMessage = D('PushMessage')->lists(PushMessageModel::MSG_TYPE_MEET, $id, $page, 10);
+
+		$pageshow = D('PushMessage')->ShowPage("meetid=" . $id, "message", $page, 10);
+		$this->assign('Page', $pageshow);
+
+		$this->assign("Messages", $resPushMessage['response']);
+		$this->display();
+	}
+
+	/**
+	 *关于我们
+	 */
+	public function about() {
+		$this->reqLogin();
+		$this->display();
+	}
 
 }
