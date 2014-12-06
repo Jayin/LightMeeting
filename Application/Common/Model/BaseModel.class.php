@@ -39,12 +39,12 @@ class BaseModel extends AdvModel {
 		}
 		$url .= "page=";
 
-		$showPage .= '<div class=‘text-center’><div class=‘pagination’><ul><li class=‘previous active btn-previous’><a id=‘btn-previous’ href=‘' . $goUrl . $url . ($pagenow - 1) . '’ >上一页</a></li>';
+		$showPage .= "<div class='text-center'><div class='pagination'><ul><li class='previous active' style='margin-right:0px'><a id='btn-previous' href='" . $goUrl . $url . ($pagenow - 1) . "'>上一页</a></li>";
 		for ($i = 1; $i <= $pageall && $i <= 10; $i++) {
 
-			$showPage .= '<li class=‘active’><a href=‘' . $goUrl . $url . $i . '’ >' . $i . '</a></li>';
+			$showPage .= "<li class='active'><a href='" . $goUrl . $url . $i . "' >" . $i . "</a></li>";
 		}
-		$showPage .= '<li class=’next active‘><a id=‘btn-next’ href=’' . $goUrl . $url . ($pagenow + 1) . '‘>下一页</a></li></ul></div></div>';
+		$showPage .= "<li class='next active'><a id='btn-next' href='" . $goUrl . $url . ($pagenow + 1) . "'>下一页</a></li></ul></div></div>";
 
 		return $showPage;
 	}
