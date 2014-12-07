@@ -27,6 +27,7 @@ class BaseModel extends AdvModel {
 	 */
 	public function ShowPage($where, $goUrl, $pagenow = 1, $pagecount = 10) {
 		$count = count($this->where($where)->select());//拿到查询总的条目
+		//$count = $this->where($where)->count();
 
 		$pageall = (ceil($count / $pagecount));
 
