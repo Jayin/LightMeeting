@@ -21,6 +21,7 @@ class MeetController extends AdminBaseController {
 	 * 添加会议
 	 */
 	public function createmeet() {
+        $this->reqLogin();
 		$this->display();
 	}
 
