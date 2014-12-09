@@ -96,4 +96,15 @@ class ResearchAnswerModel extends BaseModel{
         //delete relate..
         return qc_json_success('删除成功');
     }
+    /**
+     * 查询一回答
+     * @param $questionid 问题id
+     * @param $optionid 选项id
+     * @return json
+     */
+    public function info($questionid,$optionid){
+        $where['questionid'] = $questionid;
+        $where['optionid']   = $optionid;
+        return qc_json_success($this->where($where)->count());
+    }
 }
