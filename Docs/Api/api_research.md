@@ -261,29 +261,25 @@ researchid |  调查表id  | Y
 {
     "code": 20000,
     "response": {
-        "id": "2",
-        "meetid": "1",
-        "title": "Title22",
-        "intro": "This is introduction222",
-        "stime": "1356969600",
-        "etime": "1356969600",
+        "id": "23",
+        "meetid": "128",
+        "title": "你觉得袂卓移动开发工作室是一个什么样的地方?",
+        "intro": "袂卓移动开发工作室是一个温馨的大家庭",
+        "stime": "1399305600",
+        "etime": "1404748800",
         "questions": [
             {
-                "id": "7",
-                "researchid": "2",
-                "title": "what's you sex?",
+                "id": "31",
+                "researchid": "23",
+                "title": "你喜欢袂卓工作室吗",
                 "options": {
-                    "1": "man",
-                    "2": "woman"
-                }
-            },
-            {
-                "id": "8",
-                "researchid": "2",
-                "title": "what's you sex?",
-                "options": {
-                    "1": "man",
-                    "2": "woman"
+                    "1": "喜欢",
+                    "2": "非常喜欢"
+                },
+                "option_type": "1",
+                "result": {
+                    "1": "1",
+                    "2": "0"
                 }
             }
         ]

@@ -91,7 +91,14 @@ class ResearchModel extends BaseModel {
             $ret = $research;
             $questions = D('ResearchQuestion')->lists($researchid);
             if(isset($questions['code'])){
-                $ret['questions'] = $questions['response'];    
+                $ret['questions'] = $questions['response'];
+                for($i = 0;$i < count($ret['questions']);$i++){
+                    $result = array();
+                    foreach($ret['questions'][$i]['options'] as $key => $value){
+                        $result[$key] = D('ResearchAnswer')->info($ret['questions'][$i]['id'],$key)['response'];
+                    }
+                    $ret['questions'][$i]['result'] = $result;
+                }
             }else{
                 $ret['questions'] = array();
             }
