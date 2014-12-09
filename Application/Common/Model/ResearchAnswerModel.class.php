@@ -27,6 +27,14 @@ class ResearchAnswerModel extends BaseModel{
      * @return json
      */
     public function createAnswer($data){
+        //检查是否已经回答
+        $where['questionid'] = $data['questionid'];
+        $where['optionid'] = $data['optionid'];
+        $where['author'] = $data['author'];
+        $ans = $this->where($where)->find();
+        if($ans){
+            return qc_json_error('调查已回答,不能重复操作');
+        }
         if($this->create($data)){
             if($this->add()){
                 return qc_json_success();
@@ -42,6 +50,14 @@ class ResearchAnswerModel extends BaseModel{
      * @return json
      */
     public function createAnswerMulti(array $data){
+        //检查是否已经回答
+        $where['questionid'] = $data[0]['questionid'];
+        $where['optionid'] = $data[0]['optionid'];
+        $where['author'] = $data[0]['author'];
+        $ans = $this->where($where)->find();
+        if($ans){
+            return qc_json_error('调查已回答,不能重复操作');
+        }
         $this->startTrans();
         foreach ($data as $q) {
             if(!($this->create($q) && $this->add())){
