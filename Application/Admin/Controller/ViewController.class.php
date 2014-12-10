@@ -77,5 +77,19 @@ class ViewController extends AdminBaseController {
         }
         $this->display();
     }
+
+    public function research($researchid){
+        $this->reqLogin();
+
+        $resResearch = D('Research')->info($researchid);
+        if (isset($resResearch['code'])) {
+            // questions
+            $resResearch['response']['questions'] = D('ResearchQuestion')->listsAll($researchid)['response'];
+            $this->assign('Research', $resResearch['response']);
+            $this->display();
+        } else {
+            $this->error('找不到该调查', 'Admin/Meet/research');
+        }
+    }
 }
 

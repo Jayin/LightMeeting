@@ -247,6 +247,8 @@ class MeetController extends AdminBaseController {
 			$this->error('找不到该调查', 'Admin/Meet/research');
 		}
 	}
+
+
 	/**
 	 * 查看调查列表
 	 *
