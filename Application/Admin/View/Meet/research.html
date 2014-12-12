@@ -33,7 +33,7 @@
                 <div class="col-xs-9" style="border-color: $fff;">
                     <foreach name="Researchs" item="val">
                         <div class="meet" id="meet">
-                            <div class="meet meet-title">标题：{$val.title}</div>
+                            <div class="meet meet-title">标题：<a href="{:U('Admin/View/research','','')}/researchid/{$val.id}" target="_blank">{$val.title}</a></div>
                             <div class="meet meet-title">开始时间：{$val.stime|date="Y-m-d H:i:s",###}
                             </div>
                             <div class="meet meet-title">结束时间：{$val.etime|date="Y-m-d H:i:s",###}

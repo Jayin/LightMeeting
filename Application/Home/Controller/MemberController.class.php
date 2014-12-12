@@ -4,30 +4,16 @@ namespace Home\Controller;
 
 use Common\Controller\BaseController;
 
-
+/**
+ * Class MemberController
+ * 会员接口
+ * @author zhlhuang
+ * @package Home\Controller
+ */
 class MemberController extends BaseController {
-	
-	
-	public function hello(){
-		$res=D("Member")->getloginmember();
-		echo "<pre>";
-		print_r($res);
-		echo "</pre>";
-	}
-	/*
-	 *
-	* 通过传入一个memberid值，获得一个会员资料
-	* 需要传入会员资料有：
-	*       [username] => zhlhuang
-            [nickname] => 黄振炼
-            [password] => 123
-            [sex] => m
-            [company] => 0
-            [position] => 0
-            [phone] => 15088132444
-            [email] => 364626853@qq.com
-            [birth] => 2014-10-31
-	*/
+    /**
+     * 创建用户
+     */
 	public function addmember(){
 		//一下数据必须不能为空   公司职位可以为空
 		$postdata=array('username','nickname','password','sex');
@@ -42,19 +28,9 @@ class MemberController extends BaseController {
 		$this->ajaxReturn($res);
 		
 	}
-	
-	/*
-	 * 通过传入一个memberid值，获得一个会员资料
-	 * 需要传入会员资料有：
-	 [id]=>2
-	 [nickname] => 黄振炼
-	 [sex] => m
-	 [company] => 0
-	 [position] => 0
-	 [phone] => 15088132444
-	 [email] => 364626853@qq.com
-	 [birth] => 2014-10-31
-	 */
+    /**
+     * 更新会员信息
+     */
 	public function updatemember(){
 	    //以上信息是允许更新的。
 	    $this->getlogin();  //修改用户时要有用户的id
@@ -72,16 +48,9 @@ class MemberController extends BaseController {
 	   // print_r($data);
 	   
 	}
-	
-	/*
-	 *
-	 * 这是用户密码修改
-	 *  id 用户id
-	 *  password  旧密码 
-	 *  newpassword  新密码
-	 */
-	
-	
+    /**
+     * 更新密码
+     */
 	public function updatepassword(){
 	    $this->reqPost(array('password','newpassword'))->getlogin();
 	   
@@ -98,13 +67,9 @@ class MemberController extends BaseController {
 	    print_r($member);
 	    
 	}
-	
-	/*
-	 *
-	* 这里是会员的登录界面
-	*  所需数据，username password
-	*/
-	
+    /**
+     * 登陆
+     */
 	public function login(){
 		$postdata=array("username","password");
 		$this->reqPost($postdata);
@@ -117,11 +82,9 @@ class MemberController extends BaseController {
 
 		$this->ajaxReturn($res);
 	}
-	
-	/*
-	 *
-	 *退出登录
-	 */
+    /**
+     * 退出登陆
+     */
 	public function logout(){
 	    session("member",null);
 	    if(session("member")==NULL){
@@ -130,43 +93,9 @@ class MemberController extends BaseController {
 	        $this->ajaxReturn(qc_json_error());
 	    }
 	}
-	
-
-	/*
-	 *
-	* 获取会员相应资料
-	*Param id 是用户的指定id（默认为空从session）  key  就是我们要查找会员属性
-	*
-	*返回
-	*{
-    "code": 20000,
-    "response": {
-        "username": "zhlhuang"
-    }
-     }
-	*/
-	
-
-	public function  getfield(){
-		
-		    $key=I("get.key");
-		    $member=session("member");
-		    if($member==NULL){
-		    	$this->ajaxReturn(qc_json_error());
-		    }else{
-// 		    	echo  $member[$key];
-		    	
-		    	$this->ajaxReturn(qc_json_success(array($key=>$member[$key])));
-		    	
-		    }
-	}
-	
-	
-	/*
-	 *
-	 * 获取登录会员资料
-	 *
-	 */
+    /**
+     * 获取登录会员资料
+     */
 	public function getloginmember(){
 	   
 	   
@@ -176,43 +105,30 @@ class MemberController extends BaseController {
 	 
 	    $this->ajaxReturn(qc_json_success($member));
 	}
-	
-	/*
-	 *
-	* 获取全部会员资料
-	*
-	*/
-	
-	
+    /**
+     * 获取全部会员资料
+     */
 	function getallmember(){
 		$membermodel=M("member");
 		$res=$membermodel->select();
       $this->ajaxReturn(qc_json_success($res));
 	}
-	
-	/*
-	 * 
-	 * 通过传入一个memberid值，获得一个会员资料
-	 *   
-	 */
+    /**
+     * 获得一用户的信息(给定的id)
+     */
 	function getonemember(){
-		
-		
 		$this->reqLogin();
-		
-		
+
 		$memberid=I("post.memberid");//通过post方式获取会员id
 		if($memberid==NULL){
 			$memberid=$this->reqLoginmember()["id"];// 如果传入会议id为空，默认登录会员id
 		}
-		
 		$membermodel=D("Member");
-		
+
 		$res=$membermodel->getMemberInfo($memberid);
-		
-       $this->ajaxReturn($res);
-		
+
+        $this->ajaxReturn($res);
 	}
-	
+
 	
 }

@@ -64,9 +64,7 @@
                 return;
             }
             isSending =true;
-            data=qc.form().add("to").add("content").add("type",2).create();
-            console.log(data);
-            qc.debug = true;
+            var data = qc.form().add("to").add("content").add("type",2).create();
             $(this).text('发送中....');
             qc.post("/Home/PushMessage/create",data,function(res){
                 swal({
@@ -80,10 +78,10 @@
                 });
             },function(msg){
                 swal({
-                    title: "操作失败 " + msg,
+                    title: "操作失败",
                     text: "",
                     type: "error",
-                    confirmButtonText: "重新发送",
+                    confirmButtonText: "关闭",
                     closeOnConfirm: false
                 }, function() {
                     location = "{:U('Admin/Meet/message','','')}/id/{$Meet.id}";

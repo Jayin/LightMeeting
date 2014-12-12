@@ -33,7 +33,7 @@
                 <foreach name="dis" item="val">
                     <div class="meet" id="meet">
                         <div class="meet meet-title">讨论标题：<a
-                                href="{:U('Admin/View/discuss')}?id={$val.id}">{$val.title}</a></div>
+                                href="{:U('Admin/View/discuss')}?id={$val.id}" target="_blank">{$val.title}</a></div>
                         <div class="meet meet-title">发布时间：{$val.ctime|date="Y-m-d
                             H:i:s",###}
                         </div>

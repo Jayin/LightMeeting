@@ -36,13 +36,13 @@
 				<foreach name="doc" item="val">
 					<div class="meet" id="meet">
 						<div class="meet meet-title">
-							标题：<a href="{:U('Admin/View/document','','')}/id/{$val.id}">{$val.title}</a>
+							标题：<a href="{:U('Admin/View/document','','')}/id/{$val.id}" target="_blank">{$val.title}</a>
 
 						</div>
 						<div class="meet meet-title">发布者：{$val.nickname}</div>
 						<div class="meet meet-title">发布时间：{$val.ctime|date="Y-m-d H:i:s",###}</div>
 						
-						<div class="meet meet-title">文档内容：<p>{$val.content}</p></div>
+						<!-- <div class="meet meet-title">文档内容：<p>{$val.content}</p></div> -->
 						<div class="meet meet-title" align="right">
 						<if condition="$LoginMemberid eq $val.memberid ">
 						<span><a href="javascript:void(0);" name='btn-delete' data-title="{$Meet.title}" data-id="{$Meet.id}">删除</a>|</span>

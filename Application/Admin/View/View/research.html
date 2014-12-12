@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{$Research.title}</title>
+    <include file="Base/head"/>
+</head>
+
+<body style="background-color: #EDEFF1;">
+<div class="container-fluid" style="margin-top: 120px;">
+    <div class="row-fluid">
+        <div class="col-xs-12"></div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+
+
+        <div class="row demo-samples">
+            <div class="col-xs-1">
+            </div>
+            <div class="col-xs-10" style="border-color: #fff;">
+
+                <div class="meet" id="meet">
+                    <input type="hidden" id='meetid' value="{$Meet.id}">
+
+                    <div class="meet meet-title">
+                        <strong>{$Research.title}</strong>
+                    </div>
+                    <hr>
+
+                    <div class="meet meet-title" style=" margin-left: 4px;"><strong>基本信息</strong>
+                    </div>
+                    <div class="meet meet-title " style="font-size: 0.9em">
+                        {$Research.intro}
+                    </div>
+                    <div class="meet meet-title" style="font-size: 0.9em">开始时间：{$Research.stime|date="Y-m-d H:i:s",###}
+                    </div>
+                    <div class="meet meet-title" style="font-size: 0.9em">结束时间：{$Research.etime|date="Y-m-d H:i:s",###}
+                    </div>
+
+                    <div class="meet meet-title" style="margin-left: 4px;"><strong>调查问题</strong>
+
+                    </div>
+                    <hr>
+                    <div class="meet meet-title">
+                        <div>
+                            <dl id="question-list">
+                                <!-- 调查问题里列表-->
+                                <foreach name="Research.questions" item="q">
+                                    <div name="question-item" data-type="1">
+                                        <if condition="$q.option_type eq '1' ">
+                                            <dt name="question-title">
+                                                <!--选项类型单选1-->
+                                            <div class="question question-title">
+                                                <span class="label label-success" style="color: white">单选</span>
+
+                                                <span>{$q.title}</span>
+                                            </div>
+                                            </dt>
+
+                                            <else/>
+
+                                            <dt name="question-title">
+                                                <!--选项类型多选2-->
+                                            <div class="question question-title ">
+                                                <span class="label label-primary" style="color: white">多选</span>
+
+                                                <span>{$q.title}</span>
+                                            </div>
+                                            </dt>
+                                        </if>
+                                        <foreach name="q.options" item="option">
+                                            <dt>
+                                            <div class="question question-options ">
+                                                <span></span>
+
+                                                <p class="meet meet-listm">{$option}</p>
+                                            </div>
+                                            </dt>
+                                        </foreach>
+                                    </div>
+                                </foreach>
+                            </dl>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-xs-1"></div>
+    <include file="Base/foot"/>
+
+</body>
+
+</html>

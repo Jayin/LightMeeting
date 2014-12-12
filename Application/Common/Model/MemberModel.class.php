@@ -1,6 +1,11 @@
 <?php
 namespace Common\Model;
-
+/**
+ * Class MemberModel
+ * 会员模型
+ * @author Zhlhuang
+ * @package Common\Model
+ */
 class MemberModel extends BaseModel{
     protected $readonlyField = array("id","username","ctime","cIP");
     protected $_validate = array(
@@ -23,9 +28,12 @@ class MemberModel extends BaseModel{
 	public function geton(){
 		return $this->select();
 	}
-	
-	
-	
+
+    /**
+     * 创建会员
+     * @param $data
+     * @return \multitype
+     */
 	public function addmember($data){
 	    
 	    $data["ctime"]=time(); //注册时间
@@ -54,7 +62,11 @@ class MemberModel extends BaseModel{
 	        
 	    
 	}
-	
+    /**
+     * 更新会员信息
+     * @param $data
+     * @return \multitype
+     */
 	public function updatemember($data){
 	    //修改用户资料
 	    
@@ -70,8 +82,13 @@ class MemberModel extends BaseModel{
 	        return qc_json_error($this->getError());
 	    }
 	}
-	
-	
+    /**
+     * 更换密码
+     * @param $id
+     * @param $password
+     * @param $newpassword
+     * @return \multitype
+     */
 	public function updatepassword($id,$password,$newpassword){ //$password 旧密码
 	    //修改密码
 	    
@@ -89,7 +106,12 @@ class MemberModel extends BaseModel{
 	    }
 	    
 	}
-	
+    /**
+     * 检查密码
+     * @param $id
+     * @param $password
+     * @return bool
+     */
 	public function chkpassword($id,$password){
 	    //这个是原始密码检测
 	   $where="id=%d and password='%s'";
@@ -98,11 +120,14 @@ class MemberModel extends BaseModel{
 	   if($res){
 	       return true;
 	   }
-	   
 	   return false;
-	   
 	}
-	
+    /**
+     * 检测用户登陆
+     * @param $username
+     * @param $password
+     * @return \multitype
+     */
 	public function chklogin($username,$password){
 		//检测用户登录
 		$where="username='%s' and password='%s'";
@@ -121,8 +146,11 @@ class MemberModel extends BaseModel{
 		}
 		
 	}
-	
-	
+    /**
+     * 获得一会员的信息
+     * @param $id
+     * @return \multitype
+     */
 	public function getMemberInfo($id){
 	    $res=$this->field("password",true)->where("id='%d'",$id)->find();
 	    if($res){

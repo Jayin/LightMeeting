@@ -1,3 +1,15 @@
+User Guide & Tips
+===
+
+消息推送
+---
+
+推送的时候，推送信息最好附带是来自哪个会议的消息(默认是木有的)
+
+
+Development Guide
+===
+
 Getting Start
 ===
 * 在Applica/Common/Conf里面配置你的新建一个server_config.php,配置
