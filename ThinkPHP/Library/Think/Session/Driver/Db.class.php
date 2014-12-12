@@ -23,12 +23,12 @@ class Db {
     /**
      * Session有效时间
      */
-   protected $lifeTime      = '1800'; 
+   protected $lifeTime      = ''; 
 
     /**
      * session保存的数据库名
      */
-   protected $sessionTable  = 'session';
+   protected $sessionTable  = '';
 
     /**
      * 数据库句柄
