@@ -16,6 +16,22 @@ class BaseController extends Controller {
             $this->ajaxReturn(qc_json_error("No interface for this."));
         }
 	}
+    /**
+     * 需要Get的字段
+     * @param array $require_data
+     * @return $this
+     */
+    public function reqGet(array $require_data = null){
+        if($require_data){
+            foreach ($require_data as $key){
+                $_k = I('get.' . $key,null);
+                if(is_null($_k)){
+                    $this->ajaxReturn(qc_json_error("require params: " . $key));
+                }
+            }
+        }
+        return $this;
+    }
 	/**
 	 * 需要Post的字段
 	 * @param array $require_data
