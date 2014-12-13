@@ -57,8 +57,9 @@ class [MODEL]Model extends Model {
                 APP_PATH.$module.'/View/',
                 RUNTIME_PATH,
                 CACHE_PATH,
+                CACHE_PATH.$module.'/',
                 LOG_PATH,
-                LOG_PATH.$module.'/',                
+                LOG_PATH.$module.'/',
                 TEMP_PATH,
                 DATA_PATH,
                 );
@@ -121,6 +122,10 @@ class [MODEL]Model extends Model {
             if(!C('APP_USE_NAMESPACE')){
                 $content    =   preg_replace('/namespace\s(.*?);/','',$content,1);
             }
+            $dir = dirname($file);
+            if(!is_dir($dir)){
+                mkdir($dir, 0755, true);
+            }
             file_put_contents($file,$content);
         }
     }
@@ -132,6 +137,10 @@ class [MODEL]Model extends Model {
             $content = str_replace(array('[MODULE]','[MODEL]'),array($module,$model),self::$model);
             if(!C('APP_USE_NAMESPACE')){
                 $content    =   preg_replace('/namespace\s(.*?);/','',$content,1);
+            }
+            $dir = dirname($file);
+            if(!is_dir($dir)){
+                mkdir($dir, 0755, true);
             }
             file_put_contents($file,$content);
         }
