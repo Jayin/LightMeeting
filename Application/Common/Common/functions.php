@@ -31,7 +31,7 @@ function qc_json_error_request(){
  * @return string
  */
 function qc_getRoteIP(){
-	return $_SERVER['REMOTE_ADDR'];
+	return get_client_ip();
 }
 /** 
  * 获得登陆用户信息

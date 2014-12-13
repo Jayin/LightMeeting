@@ -16,7 +16,7 @@ class VoteRecordModel extends BaseModel {
 			array('memberid','require','缺少关联的用户id',self::MUST_VALIDATE,'regex',self::MODEL_INSERT),
 	);
 	protected $_auto = array(
-			array('ip','qc_getRoteIP',self::MODEL_INSERT,'function'),
+			array('ip','get_client_ip',self::MODEL_INSERT,'function'),
 			array('ctime',NOW_TIME,self::MODEL_INSERT),
 	);
 	/**

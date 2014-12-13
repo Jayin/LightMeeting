@@ -16,7 +16,7 @@ class CommentModel extends BaseModel {
 	
 	protected $_auto = array(
 			array('ctime',NOW_TIME,self::MODEL_INSERT),
-			array('cip','qc_getRoteIP',self::MODEL_INSERT,'function'),
+			array('cip','get_client_ip',self::MODEL_INSERT,'function'),
 			array('reply_member','0',self::MODEL_INSERT),
 	);
 	protected $readonlyField = array('discussid','reply_member','author','ctime','cip');

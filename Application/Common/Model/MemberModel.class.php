@@ -37,7 +37,7 @@ class MemberModel extends BaseModel{
 	public function addmember($data){
 	    
 	    $data["ctime"]=time(); //注册时间
-	    $data["cIP"]=$_SERVER['REMOTE_ADDR'];//加入注册IP
+	    $data["cIP"]=get_client_ip();//加入注册IP
 	    
 	    $data["lasttime"]=time(); //登录时间
 	    $data["lastIP"]=$_SERVER['REMOTE_ADDR'];//登录IP
