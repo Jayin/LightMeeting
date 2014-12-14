@@ -19,6 +19,12 @@ Getting Start
 - 创建表 see [Docs/sql](Docs/sql) 
 - MySql配置 see [Docs](Docs/readme.md)
 
+Thanks
+===
+
+首席测试[甄景恩]( )
+首席包装[杨志海]()  
+首席设计[邹妍]() 
 
 API Test
 ===
