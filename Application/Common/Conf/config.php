@@ -30,6 +30,7 @@ $_Server_Config_File = CONF_PATH .'server_config.php';
 
 if(getenv('Platform_Coding') == '1'){
     $config = require_once(CONF_PATH . 'Platform_Coding.php');
+    	return array_merge($common_config,$config);
 }
 //本机的配置
 if(file_exists($_Server_Config_File)){
@@ -38,4 +39,6 @@ if(file_exists($_Server_Config_File)){
 }
 
 //默认的配置，若有本机的配置则忽略
-return array_merge($common_config,$config);
+return array_merge($common_config,array(
+//'配置项'=>'配置值'
+));
