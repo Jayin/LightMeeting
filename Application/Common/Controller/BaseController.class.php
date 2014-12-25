@@ -59,7 +59,7 @@ class BaseController extends Controller {
 	protected function getlogin(){
 		$member=session("member");
 		if($member==NULL){
-			$this->ajaxReturn(qc_json_error("no login"));
+			$this->ajaxReturn(qc_json_error("no login",40002));//登录失败返回40002代码
 		}else{
 			return $this;
 		}
