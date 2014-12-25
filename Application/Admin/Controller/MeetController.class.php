@@ -344,7 +344,7 @@ class MeetController extends AdminBaseController {
 	 * 查看推送消息列表
 	 * @param $id
 	 */
-	public function message($id, $page = 1) {
+	public function message($id, $page = 1,$limit = 10) {
 
 		if ($page < 0) {
 			$page = 1;
@@ -354,9 +354,9 @@ class MeetController extends AdminBaseController {
 		$Meet["id"] = $id;// 将会议id分配前端页面显示
 		$this->assign("Meet", $Meet);
 
-		$resPushMessage = D('PushMessage')->lists(PushMessageModel::MSG_TYPE_MEET, $id, $page, 10);
+		$resPushMessage = D('PushMessage')->lists(PushMessageModel::MSG_TYPE_MEET, $id, $page, $limit);
 
-		$pageshow = D('PushMessage')->ShowPage("meetid=" . $id, "message", $page, 10);
+		$pageshow = D('PushMessage')->ShowPage(array('to'=>'m_'.$id), "message", $page, $limit);
 		$this->assign('Page', $pageshow);
 
 		$this->assign("Messages", $resPushMessage['response']);
