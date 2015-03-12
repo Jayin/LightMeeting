@@ -12,7 +12,7 @@ use Common\Controller\BaseController;
 class IndexController extends BaseController {
 	
 	public function index(){
-        $this->redirect('Admin/Member/Login');
+        $this->redirect('Admin/Member/login');
     }
 	public function test(){
 		$this->display();
