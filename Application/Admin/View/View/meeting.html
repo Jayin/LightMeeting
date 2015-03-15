@@ -20,12 +20,12 @@
         <div class="row demo-samples">
             <div class="col-xs-3">
                 <!-- 二维码 -->
-                <img src="{:U('home/common/createQRcode/','','')}?text=http://120.24.64.127/LightMeeting/home/meet/addjoinClient/meetid/{$Meet.id}&size=150">
+                <img src="{:U('home/common/createQRcode/','','')}?text=http://112.74.101.0/LightMeeting/home/meet/addjoinClient/meetid/{$Meet.id}&size=150">
 
                 <p class="text-center">扫一扫即可加入会议</p>
                 <br/>
                 <if condition="$LoginMemberid eq $Meet.createmember ">
-                    <img src="{:U('home/common/createQRcode/','','')}?text=http://120.24.64.127/LightMeeting/home/meet/checkIn/meetid/{$Meet.id}&size=150">
+                    <img src="{:U('home/common/createQRcode/','','')}?text=http://112.74.101.0/LightMeeting/home/meet/checkIn/meetid/{$Meet.id}&size=150">
 
                     <p class="text-center">扫一扫即可签到会议</p>
                     <else/>
