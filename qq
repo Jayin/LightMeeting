@@ -1,0 +1,2030 @@
+[33mcommit 815d014e547f7b571242eaf8c449fe6517bef858[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Dec 4 19:40:49 2014 +0800
+
+    添加手机端模板
+
+[33mcommit d93d8756d3b2e53bc561db0aeb5b0dd1d128c12e[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Dec 4 14:45:37 2014 +0800
+
+    评论显示应为按时间倒序
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit 410bceb4acd30c3956fccdb90c3e649b2823dbde[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 22:39:02 2014 +0800
+
+     the backgroud pic
+
+[33mcommit c3d98aa33686a5ed01406f7448553b3b38326501[m
+Merge: 2fc9907 3f854db
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 22:35:30 2014 +0800
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 2fc99078a91d0223fd974531a51ab1b2f84d48f2[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 22:35:09 2014 +0800
+
+    fix #22 更换登陆页面
+
+[33mcommit 66f0aa35a6dbe14d279496753afb5204af212cac[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 21:30:57 2014 +0800
+
+    typo
+
+[33mcommit 3f854dbb4a1015004295ddb8f53674e7bca6219d[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Wed Dec 3 21:10:15 2014 +0800
+
+    会议列表也实现分页功能。
+
+[33mcommit a6100dceca995b71b6401701bcac4454a303d143[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Wed Dec 3 20:51:52 2014 +0800
+
+    增加翻页功能
+    #16
+
+[33mcommit b7cb9fc05ff5e8ff15cf75e0616f0da3f073ba3d[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Wed Dec 3 20:49:46 2014 +0800
+
+    添加人脉改为GET请求
+
+[33mcommit 1a9d726c4c453f14b106cf05803b7e77fc6b4f9d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 17:07:45 2014 +0800
+
+    *  点击文章预览
+    *  优化文档页面的排版
+
+[33mcommit 99d04e10deff77d455e25b0e530fe1873ff2aeec[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 15:39:05 2014 +0800
+
+    获得用户的人脉关系支持支持分页
+
+[33mcommit 7d700408a445f666a31533f9cd37e9c87dd63bb8[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 15:25:42 2014 +0800
+
+    会议支持分页
+
+[33mcommit a2207f9f24bf0666cd54d3105567386de791cb63[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 10:51:46 2014 +0800
+
+    make more sexy
+
+[33mcommit c1f64957e8212b5481a0e6c669f8736abc8ed890[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Dec 3 10:34:47 2014 +0800
+
+    * 补充文档注释
+    * update api docs
+
+[33mcommit 7181cca53830ed1eaa1fb372593a89833070f2f3[m
+Merge: 0a6f333 f2d68ff
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 22:52:23 2014 +0800
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 0a6f33320f57e4d22afa4859385e3aa036e31d85[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 22:50:11 2014 +0800
+
+    fix #19 :单一页面去显示单个会议讨论
+
+[33mcommit f2d68ff776f76a1ef17d5e5d59a0ddf56564b7c3[m
+Merge: 926aa07 ffa36d1
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Dec 2 22:41:34 2014 +0800
+
+    Merge branch 'master' of git@github.com:Jayin/LightMeeting.git
+
+[33mcommit 926aa076f19cce74b663e6bfce6c8985577d10b4[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Dec 2 22:39:44 2014 +0800
+
+    #24 ： 完成初步人脉功能
+
+[33mcommit ffa36d1c01d292bd51c35e068fd2561dc7df90e8[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 20:48:29 2014 +0800
+
+    简介应该放在下面
+
+[33mcommit 4e1ed123a9f075f6185d76d5d445bdc16cd1b63d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 20:47:13 2014 +0800
+
+    use U() to generate the url
+
+[33mcommit 90faf4031e61f3d871b85bb23b43ad7bfde8a20d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 20:33:23 2014 +0800
+
+    Fix #21 :关于我们的页面
+
+[33mcommit f9359319ef45ec43d1072d6c1f50230ee3a1ea59[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 19:49:07 2014 +0800
+
+    若存在默认模板，则显示
+
+[33mcommit 234a9ca7658aad5cecdffa87ecd55ec02772629a[m
+Merge: 06b8235 e7129e2
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 17:22:28 2014 +0800
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 06b823584f8875664ba10db0106d344482f0d8dd[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 17:21:51 2014 +0800
+
+    fix #15 :投票显示投票数
+
+[33mcommit 04a773be037711ca789530706fd18b6cc135c930[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 16:52:33 2014 +0800
+
+    typo
+
+[33mcommit 0f0a343fdfa6ff461d1563aa06ada702d88fc8b9[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 16:06:00 2014 +0800
+
+    fix #20 :更换会议消息的图标
+
+[33mcommit e7129e2b55fb791e17aae2f4aa23a34ed5d1ec5f[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Dec 2 15:47:31 2014 +0800
+
+    添加人脉功能数据库
+
+[33mcommit 6fe7535d1cdd1ee53c75494dd0f96e34327d48bc[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Dec 2 15:13:51 2014 +0800
+
+    change the title
+
+[33mcommit 8a1146de25a8994fba58d411d42520e263d4af47[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 19:44:39 2014 +0800
+
+    rm "
+
+[33mcommit 35cc49c0d20149d6b2679dd0318f7cc0998d76f9[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 19:42:28 2014 +0800
+
+    login required
+
+[33mcommit 3582ece872dce8c620151c228ae8b837920e8100[m
+Merge: 1ad7926 d899462
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 17:35:44 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting
+    
+    Conflicts:
+    	Application/Admin/Controller/MeetController.class.php
+
+[33mcommit 1ad792669575f699caa05cf5a4d3d530cd90d6c9[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 17:33:11 2014 +0800
+
+    消息推送创建、列表显示
+    rel #17 #8
+
+[33mcommit c858ac13fd7f54abcf17bc766acbda18ab254628[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 17:30:44 2014 +0800
+
+    update api docs
+
+[33mcommit d899462ddbfb9dd2ddc0bd24c14f8a369a5afd06[m
+Merge: 245625c af08eb2
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 16:02:11 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting
+
+[33mcommit 245625c1f918f80095ed48fd1d010743b26a78c1[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 15:37:54 2014 +0800
+
+    backup
+
+[33mcommit af08eb2ad039556e35636d29a48062b445773fc7[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Dec 1 15:24:00 2014 +0800
+
+    #15 ： 顺利完成投票界面，欢迎测试
+
+[33mcommit 64157a17b0962c966d5fe963f6bd722f55a24a3c[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Dec 1 15:18:00 2014 +0800
+
+    #15 ： 显示投票页面
+
+[33mcommit b675c35f023c2ea1a202ccb9f70eb59d30304c78[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 14:20:03 2014 +0800
+
+    add datepick.css
+
+[33mcommit 5563f62d9de99af6eab7565fe6cc273dead5ce1a[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Dec 1 11:51:39 2014 +0800
+
+    * 默认跳转到登陆页面
+    * 美化登陆页面
+
+[33mcommit 160c49648da323bc0c2671232346eda8217bf8f2[m
+Merge: 76eba2b b2e296b
+Author: zhlhuang <364626853@qq.com>
+Date:   Sun Nov 30 23:09:40 2014 +0800
+
+    Merge branch 'master' of git@github.com:Jayin/LightMeeting.git
+
+[33mcommit 76eba2be9c7472b9639d8780b5685fe3bdd05124[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sun Nov 30 23:08:48 2014 +0800
+
+    增加 新增投票功能
+
+[33mcommit b2e296b2e66ce2aa67dbb655666545a809d544d0[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sun Nov 30 20:23:30 2014 +0800
+
+    return more user information when login successfully
+
+[33mcommit 982babbe2613ef3278f614a1bfc3c3e51cc8b08a[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sun Nov 30 14:58:47 2014 +0800
+
+    Jpush:使用对应的App Key & Master Key
+
+[33mcommit 9c9890de38fc452b47f685ed9e70dc9a849ab8fd[m
+Merge: 7808872 b805897
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sun Nov 30 14:29:43 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting
+
+[33mcommit 78088721a170ed315b11bd83a3c245f464fd06cd[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sun Nov 30 14:28:45 2014 +0800
+
+    back up
+
+[33mcommit b80589738d170afecdc9c77cf60b42f0a5321c6b[m
+Merge: 2e3e758 4752d24
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 28 12:14:28 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting.git
+
+[33mcommit 2e3e758e957586615256474e308937d86ef7e29f[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 28 12:14:09 2014 +0800
+
+    #8 添加发送推送消息接口
+
+[33mcommit 4752d244ee96ca051df663300fa80e3575e10e38[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 28 12:09:37 2014 +0800
+
+    #12 ： 完成会员退出功能
+
+[33mcommit df533a79a87c088b66eb654681349dbfa87df49e[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 28 11:39:03 2014 +0800
+
+    #11 ： 会议创建人才能看见签到二维码
+
+[33mcommit 1be631f4456190d0338665654c60049fce5fea27[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 28 11:25:50 2014 +0800
+
+    会议详情下面显示参会人员
+
+[33mcommit 091c75abe2e43199827cf2645995189535622cbd[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 28 10:50:16 2014 +0800
+
+    参加会议成功提示有response信息
+
+[33mcommit d269c003285afcc595608e34e42d81a79fe7cee8[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 28 09:43:01 2014 +0800
+
+    会员公司和职位直接用字符串
+
+[33mcommit 92f988b81a8ff7e572833744bb61c61426d12dd4[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 27 22:55:50 2014 +0800
+
+    增加参加会议人员信息
+
+[33mcommit d053be8a4a02a22e1baae65d8ba275aa38f00939[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 27 22:38:30 2014 +0800
+
+    删除会议的时候需要身份认证
+
+[33mcommit ededf2e60c05e70b2e94736486126bd5fcc58e7e[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 27 22:12:19 2014 +0800
+
+    修改qc_member的字段类型
+
+[33mcommit d623d2e7b616e5db397e22d3961288027be48b38[m
+Merge: b201b6b 4ffdd55
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 27 22:00:35 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting.git
+
+[33mcommit b201b6bcc2f8fca70b0370e384f2fc03dba97e3f[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 27 21:55:06 2014 +0800
+
+    重新设计推送消息表
+
+[33mcommit 4ffdd55e7065042c83af84453b255a54efa4c344[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 27 21:02:14 2014 +0800
+
+    修改查询资料排序问题
+
+[33mcommit 07fced746d15d79346d49f51f056dc87169df94d[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 27 20:50:15 2014 +0800
+
+    二维码生成页面增加了签到二维码
+
+[33mcommit 998f6288fad2d2c4e3352825aec31dd13a0cb630[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 27 20:41:02 2014 +0800
+
+    update api_meet.md
+
+[33mcommit 8a813a99af025040ab4069668f8f1b02071eb6e2[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 27 20:38:23 2014 +0800
+
+    添加会议签到
+
+[33mcommit c153c2fc304a1fb879d5fdcdc7050e74b017427f[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 27 20:18:55 2014 +0800
+
+    补充qc_meet的两个字段
+
+[33mcommit d19dd4b75bee420cf0eec9e99f94f31d7e4109d0[m
+Merge: b32c50c 7b16b65
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 27 20:01:14 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting
+
+[33mcommit b32c50cf836a69e0e4a169f6e6c49981f72d96dc[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 27 20:00:53 2014 +0800
+
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit 7b16b65b332fb58d1dbef45c24774f48dfd19b19[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 27 19:33:36 2014 +0800
+
+    修改加入会员资料多加一层qc_json_xx
+
+[33mcommit c132aed8093144c9dea1ea523a22bb9ffb5176c2[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 27 15:55:57 2014 +0800
+
+    加入回答多选择题接口
+
+[33mcommit 47eb660b1c51872190776599f80468f8c3e260e6[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 26 21:43:58 2014 +0800
+
+    更新调查表的显示
+
+[33mcommit 3ff5241c67ef2fe950c1e35dd54e20bc3312ffac[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 26 16:23:06 2014 +0800
+
+    修正页面显示
+
+[33mcommit 36b24b16baf3a7d4ff1e2e2b1dcd7bf57f3c49f5[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 26 15:08:26 2014 +0800
+
+    ~ fix the typo
+    ~ code format
+
+[33mcommit 7349e5401b8a5fe314d04ad2b0ad6daa1318f6a0[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 26 10:56:16 2014 +0800
+
+    update docs
+
+[33mcommit 19d49cfc9cbf4c2dc74b9387031c86fb78121bba[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 26 10:51:36 2014 +0800
+
+    code format
+
+[33mcommit dc6224cf34717b89d3b9c2f8603d8eae15e24117[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 26 10:45:59 2014 +0800
+
+    完成调查的创建
+    rel #4
+
+[33mcommit 0b8f01a5f7c81ae76d1449c5a4b4de3b0f31b231[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 26 10:25:22 2014 +0800
+
+    fix : api error
+
+[33mcommit 5c982cb871db275002374c2e5f7a2bedd7638f73[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 26 09:16:37 2014 +0800
+
+    调查模块
+    ~ 调查：创建调查问题成功后返回调查问题id
+    ~ 修复创建多个调查问题时title应该不一样
+
+[33mcommit c04e8425de0382becae54ebfd31c91cc6f79531c[m
+Merge: cf8ae3d bcbcffa
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 25 11:30:16 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting.git
+
+[33mcommit cf8ae3d0d71cd732c4b805c20425ea776cff3a8d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 25 11:29:38 2014 +0800
+
+    [#3]加入批量创建调查问题接口
+
+[33mcommit bcbcffa980fa89d214b298f7f3e9083911700e9d[m
+Author: Jayin Ton <273942569@qq.com>
+Date:   Tue Nov 25 11:14:38 2014 +0800
+
+    Update README.md
+
+[33mcommit d6465bd3b214381e0fb4e0187f4974533a8e9685[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 24 22:15:53 2014 +0800
+
+    修改会员资料获取方式
+
+[33mcommit 8285c83767e9497f923fff0362016691c12898a1[m
+Author: zhlhuang <zhlhuang@users.noreply.github.com>
+Date:   Mon Nov 24 21:21:02 2014 +0800
+
+    Update api_member.md
+
+[33mcommit 27d1679e26c05b6b116b635330562b4082c2eb58[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 20:18:02 2014 +0800
+
+    错误也弹出萌萌哒的提示
+
+[33mcommit 659fff7d9637956988eb6710888065532dddb045[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 20:08:49 2014 +0800
+
+    ~ fix the return type
+
+[33mcommit b2f7f2598d230c22ef21257ef12a799998daecd9[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 20:06:52 2014 +0800
+
+    default db should be `qcdatabase`
+
+[33mcommit 6727fb8367b8d1b792b86b3ffacf57191bbffd4d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 20:01:46 2014 +0800
+
+    加入数据库备份脚本
+
+[33mcommit 7b288b5c4da684c17b25c49face2ad0548d2a604[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 20:01:09 2014 +0800
+
+    加入字段`option_type`
+
+[33mcommit 081862e9ddf0cca842a50eccc8db69cf4aa38ec4[m
+Merge: 7d060a1 9abd2c3
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 19:37:14 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting.git
+
+[33mcommit 9abd2c37104e57a3320980d209589adecfc8b3fd[m
+Merge: c306cd9 9fa59ad
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 19:35:58 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting
+
+[33mcommit c306cd9e5a65b0c0d2f96ad4e1ecfbc113ca662c[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 19:35:00 2014 +0800
+
+    add test data
+
+[33mcommit 9fa59adb3b6ce7570e7b74bebf3e24dd0663a4db[m
+Author: Jayin Ton <273942569@qq.com>
+Date:   Mon Nov 24 16:21:17 2014 +0800
+
+    Update api_research.md
+
+[33mcommit 1afa29a16ea1ee0c723a8290a787738bd5077991[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 24 16:12:41 2014 +0800
+
+    增加获取会员信息api
+
+[33mcommit 7d060a1b31778cc8162a12bf90da556c858d0123[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 15:25:16 2014 +0800
+
+    修正日期选择器的引入
+
+[33mcommit 336a0dd105efae9ebdf5c927b8745434a85a8941[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 24 15:09:54 2014 +0800
+
+    添加生日数据处理
+
+[33mcommit 9d1d9a5ed65f315bb73f7ba1a0c891a453dbd3fd[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 12:33:02 2014 +0800
+
+    add sweet-alert
+
+[33mcommit 76140aba2f328d94b17d5cad06b2dd279c1195d3[m
+Merge: eb43c40 57d67f8
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 24 11:55:56 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting
+
+[33mcommit 57d67f81a93de6cdd463274b9040c87f8f944a06[m
+Merge: 137df7e f240a5f
+Author: Jayin Ton <273942569@qq.com>
+Date:   Mon Nov 24 11:55:31 2014 +0800
+
+    Merge pull request #2 from Jayin/jayin
+    
+    Jayin
+
+[33mcommit f240a5fea4909ca1c3e33c18d6e62eeb83236830[m
+Merge: c640371 137df7e
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sun Nov 23 21:36:03 2014 +0800
+
+    Merge branch 'master' of https://github.com/Jayin/LightMeeting into jayin
+    
+    Conflicts:
+    	Application/Admin/Controller/MeetController.class.php
+
+[33mcommit eb43c40372b0571688e76197f1201afd3175d795[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 23:00:09 2014 +0800
+
+    使用ip地址
+
+[33mcommit e9ed7913a66c96aec6c93d6498d7ebdc558413d8[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 22:36:31 2014 +0800
+
+    update the url
+
+[33mcommit 580a588ac25cb5c6871dd8e8b19387fe97f62608[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 22:19:01 2014 +0800
+
+    update~
+
+[33mcommit 97e94c2b40b7b9d44e6de0fa669fa99b252b71a9[m
+Merge: b91e574 137df7e
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 22:12:59 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit b91e57420a753dc4fcbdcbf1b1736a99c30d7871[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 22:12:50 2014 +0800
+
+    addjoinClient
+
+[33mcommit 137df7e8b264a5e45336392d57e9984226459e11[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 21:59:14 2014 +0800
+
+    update myself.css
+
+[33mcommit c714a39c239719fffad0cbc6ba9f9a2a56123850[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 21:30:36 2014 +0800
+
+    修改会议资料显示格式
+
+[33mcommit 041a1f893d583ca7ffebf7e60727a325294204d5[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 21:25:38 2014 +0800
+
+    添加了讨论页面中评论的显示
+
+[33mcommit ac1740b5d673c7699b08f8f14c1666e053995fdf[m
+Merge: b148694 89bcbf4
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 21:25:12 2014 +0800
+
+    Merge branch 'master' of git@coding.net:zhlhuang/LightMeeting.git
+
+[33mcommit b1486945470703fc59f847b0f3c5d9cd4652e8af[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 21:24:55 2014 +0800
+
+    添加查看评论可以返回会员信息
+
+[33mcommit 89bcbf4602817421aec4886b505f8ea6519e4e8d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 20:15:46 2014 +0800
+
+    rm the permission
+
+[33mcommit 5f9ad61d6a37aace4d3902048753ae2d9d457107[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 20:03:13 2014 +0800
+
+    加入文档显示
+
+[33mcommit c64037149801e49d15cc00a93d8172deef121184[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 17:31:12 2014 +0800
+
+    创建调查页面
+
+[33mcommit bf1dfdc87439e1258834868bd42e5d47d93c8fbe[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 17:20:53 2014 +0800
+
+    完成会议讨论显示还有更新
+
+[33mcommit 0dc0b61326a931cd914c04648fd8f2db0a530cbc[m
+Author: zjien <694396727@qq.com>
+Date:   Sat Nov 22 17:05:12 2014 +0800
+
+    add position
+
+[33mcommit c1f83a5444b19ea3390faf10afbefa49bb85f5f4[m
+Merge: 811e7c6 5fb3730
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 16:54:28 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting
+
+[33mcommit 811e7c60aefb6fd0ff24c006d87ebbff631fdc62[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 16:36:11 2014 +0800
+
+    * 创建会议成功后跳转
+    * 登陆页面使用qc.js
+
+[33mcommit 5fb37307d026ee948715bb7b9b759566e26cdf0f[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 16:13:20 2014 +0800
+
+    实现会议讨论创建
+
+[33mcommit d3d20c7830deacab1accd69120a74dce2c715ec6[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 15:44:52 2014 +0800
+
+    跳转会议二维码显示也页面
+
+[33mcommit d361f17e198a6d0a0c712ef21e93de5ac82fca58[m
+Merge: 87c609a 0e00549
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 15:34:03 2014 +0800
+
+    Merge branch 'master' of git@coding.net:zhlhuang/LightMeeting.git
+
+[33mcommit 87c609ac97c4ac03a8e6405bc12a8acec5ce8f81[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 15:33:34 2014 +0800
+
+    完成文档更新页面
+
+[33mcommit 0e0054921b43998b086f30981d34e0c9cf4b0de7[m
+Merge: 791d4f5 39fc770
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 15:30:16 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 791d4f59683c16c61b9d8597d9e7b613eed97958[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 15:30:08 2014 +0800
+
+    rm the option
+
+[33mcommit 39fc7704afeaa6c068cbb4c968300084eeb2c435[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 15:29:44 2014 +0800
+
+    修复更新文档转化html标签问题
+
+[33mcommit 7228a6a0d9f2c1e6f965da94ffbb4727f8b7d2ce[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 14:40:24 2014 +0800
+
+    减少二维码的大小
+
+[33mcommit c49620b6a7d6c5cedf4868ab7ed50fbd7e643aa4[m
+Merge: 84fd51b 5b51f07
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 14:25:05 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 84fd51bae3cc6ee148894a1ff0501349c7a5654c[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 14:24:55 2014 +0800
+
+    会议详情生成二维码页面
+
+[33mcommit 5b51f079233b58620a50395b9f4a075f03ec1b89[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 14:24:55 2014 +0800
+
+    完成会议文档创建
+
+[33mcommit b65a8799f717296745cdf678999472060adac0d8[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 14:24:29 2014 +0800
+
+    * rm useless code
+    * add comments
+
+[33mcommit 1a844047f5bf6b396d93ea5a9432d043d0ba67b7[m
+Merge: 0ca98c7 a9a3837
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 14:24:28 2014 +0800
+
+    Merge branch 'master' of git@coding.net:zhlhuang/LightMeeting.git
+
+[33mcommit 0ca98c77d0e07e3ad2f6a31fc38a0ce7b68e6198[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 14:23:53 2014 +0800
+
+    修复自动转化html标签
+
+[33mcommit a9a383744ec03eeed66b649d89a1afcba81f78fc[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 22 13:44:02 2014 +0800
+
+    add test data
+
+[33mcommit 2c2d9ccdef0a1859e4e7cf205fffb8705fa8386a[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 11:18:08 2014 +0800
+
+    添加umeditor
+
+[33mcommit 9c61fa6618d7ef7b2a5eb3625501c3b99b2b758f[m
+Merge: b61cd50 c965bbf
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 11:00:28 2014 +0800
+
+    Merge branch 'master' of git@coding.net:zhlhuang/LightMeeting.git
+
+[33mcommit b61cd50e58bfd41460df0337c7086114ebb5ef6a[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 11:00:16 2014 +0800
+
+    查看会议文档
+
+[33mcommit c965bbfa43f6ce2bd8ab732489025cbcc7f14d7d[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 10:10:07 2014 +0800
+
+    update api_document.md
+
+[33mcommit dc9ff2c1aabf1f448a610139602a1138c6d9cf9e[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 10:02:39 2014 +0800
+
+    实现前台页面菜单文件的引入。
+
+[33mcommit b1ef2c67dbbac857f0bb3df6461c628b265efe54[m
+Merge: e487342 ae956fe
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 22 09:50:30 2014 +0800
+
+    Merge branch 'master' of git@coding.net:zhlhuang/LightMeeting.git
+
+[33mcommit e487342e760382af0541731e2d5ca7e5e1d70ac3[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 21 22:35:53 2014 +0800
+
+    修改会议添加bug
+
+[33mcommit ae956feff7c1a858c7630e05945da8830e0b5751[m
+Merge: 30158ed e11715a
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 21:01:40 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit e11715a197ce2e2fdd8bf45a64e86e72191e6dcb[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 21 20:46:08 2014 +0800
+
+    创建了会议详情查看页面
+
+[33mcommit 30158ed3fb02b376720516187b599195fd8a4c6d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 20:13:23 2014 +0800
+
+    update the home page
+
+[33mcommit d57150991ad71f016c5e5f0b28ea704046e86b3f[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 21 17:02:11 2014 +0800
+
+    添加了一个AdminBaseController
+
+[33mcommit 46330837c9ae23b680b34ababb5d775b6c087393[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 16:26:34 2014 +0800
+
+    update home page
+
+[33mcommit 51897788920a46fe19b30352f0becf514972b802[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 15:15:57 2014 +0800
+
+    修复调查问题更新字符串过滤了json字符串
+
+[33mcommit 0fed67cc578d8aa8c301dc3569a988989cf5838d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 14:05:15 2014 +0800
+
+    调查表：获得调查表的时候，返回options应为一个对象
+
+[33mcommit 41ce811b89c3d5fa12e243dc19f117a2797c7a46[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 12:22:30 2014 +0800
+
+    return [] instead of an erro when there is no any data for a meeting
+
+[33mcommit 7d04bf2fabca3b275eed8ab6f88c8d129da21e76[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 11:43:00 2014 +0800
+
+    update docs
+
+[33mcommit dd6d1228d8fa7cd9e72b74654a0cac42c9decf6d[m
+Merge: 8fe018d 23e2b82
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 11:07:06 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting
+
+[33mcommit 8fe018d9da5e6ac1e6ebfb26b8e105268204edd2[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 21 11:06:15 2014 +0800
+
+    change the field name
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit 23e2b82a58c94e3723c0fd54db100469c9cff81c[m
+Merge: d1c3cfc 16dba06
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 20 21:16:44 2014 +0800
+
+    Merge branch 'master' of git@coding.net:zhlhuang/LightMeeting.git
+
+[33mcommit d1c3cfc310f075d3a2f344b9847df6e4c5e3eed8[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 20 21:16:32 2014 +0800
+
+    添加了会议更新还有删除功能
+
+[33mcommit 16dba063d10f7201afd9f40a4970bc4f4400520d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 17:36:02 2014 +0800
+
+    * URL模式改为 rewrite模式
+    * 注册页面:注册成功后跳转
+
+[33mcommit 553553ad49c0d43cea010fae479e45441fe3dafb[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 17:16:03 2014 +0800
+
+    use BaseController
+
+[33mcommit 439a245b1883668ee4cf7f67ed342614f6c1c41a[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 20 17:09:09 2014 +0800
+
+    完善了 四个model字段筛选
+
+[33mcommit 77d6785f220686030c172f052ceb65d73d80a2cb[m
+Merge: d67e269 51dc94e
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 20 16:43:03 2014 +0800
+
+    Merge branch 'master' of git@coding.net:zhlhuang/LightMeeting.git
+
+[33mcommit d67e269bfda3d396caed290a2f690d926f0e2371[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 20 16:38:13 2014 +0800
+
+    完成会议添加功能
+
+[33mcommit 51dc94e44049331493e94b6b7aaffe52a5c0d62b[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 15:36:48 2014 +0800
+
+    更新二维码生成接口
+
+[33mcommit 8d352bfe485de59650bb5cea9d17246dba222409[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 15:12:59 2014 +0800
+
+    投票选项没有分页
+
+[33mcommit 479fb2caa4830292d1aa3fa52e7e04d069e6bf91[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 15:01:57 2014 +0800
+
+    add QA.md
+
+[33mcommit fc98c0d5f19d507686e83ad403b65e1faf059d66[m
+Merge: a3bbcd0 bbda44a
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 14:46:47 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit a3bbcd08891db295aacbad8c271ceb0b209afe8b[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 14:46:24 2014 +0800
+
+    使用只读字段
+
+[33mcommit bbda44a84460574e33d1c9e24e8916f99ec4533e[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 20 14:22:33 2014 +0800
+
+    添加会议增加页面
+
+[33mcommit f5b51fdaeed2508829a539889ba67a038bb4e2fd[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 20 14:22:08 2014 +0800
+
+    修改一些前端界面问题
+
+[33mcommit 3210e82963431d10ad79c52d000458952b9d3f52[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 12:09:33 2014 +0800
+
+    update配置
+
+[33mcommit d26b36f94ac49ed5608b5c13a9a7ee0f7cda4a07[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 10:59:45 2014 +0800
+
+    fix : 加入会议的时候显示非法对象
+    原因：
+    同样也是因为没有执行create()
+
+[33mcommit 73a32918e34c688b7d0b33972d9f5c307408c2ff[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 10:32:25 2014 +0800
+
+    Fix :
+    * 加入会议没有检查必填参数:endtime
+    * 加入会议失败:
+    By @zjien
+    描述：
+    请求 `/home/Meet/addmeet` 返回 :非法数据对象！:[username=>admine1] 的错误
+    
+    原因：
+    没有执行create()方法进行字段过滤
+
+[33mcommit fed2a5901791d2cbf75215cd7ec46861fa2da119[m
+Merge: e76fb16 472c0ae
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 09:53:20 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit e76fb16be393349b31dfc0a5d115b78595fdcc23[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 09:53:11 2014 +0800
+
+    * 使用只读字段
+
+[33mcommit 859714ffd75d54aa7088bc70a632078278c9aab8[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 20 09:50:02 2014 +0800
+
+    多处改动：
+    * 调查加入调查列表分页，调查问题分页
+    * 补充投票的文档
+    * 修正 api_meet的显示格式
+
+[33mcommit 472c0ae3d598ab35526e1a4c81b74adcc39a8687[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Wed Nov 19 22:08:54 2014 +0800
+
+    添加会员中心页面
+
+[33mcommit a70c6ffd015a719d4a64510c63b333849cf8d07e[m
+Author: zjien <694396727@qq.com>
+Date:   Wed Nov 19 22:02:55 2014 +0800
+
+    update PushMessageModel.class.php
+
+[33mcommit 752bc4e8e110132e3b13ef54f270830746b76d39[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 21:48:17 2014 +0800
+
+    don's ignore /home/conf
+
+[33mcommit a85401f0f070f328483b7bf1856b3c21c66d767c[m
+Merge: 9ae4e09 51760ea
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 21:46:38 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 9ae4e09a56ef4045dbd91dfe418b65ad13ce6aee[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 21:46:31 2014 +0800
+
+    diff confi
+
+[33mcommit 51760ea6dd03b371e07a08461f43e0aa1d75d7bf[m
+Author: zjien <694396727@qq.com>
+Date:   Wed Nov 19 17:05:50 2014 +0800
+
+    update api_document.md
+
+[33mcommit cdba4178a079d1d207bab1a38a9b22d0813f05ca[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 15:34:15 2014 +0800
+
+    rm the useless `index.html` file
+
+[33mcommit 94a18cf7bb8291998e82cf4a3a611f794eb4a2ab[m
+Merge: c9e5434 67eadd4
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 14:45:58 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit c9e54341fe4c93950a3dcc1d1f3ac338fbd9a5c0[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 14:44:16 2014 +0800
+
+    讨论列表，评论列表，投票均加入分页
+
+[33mcommit 67eadd4192e997022b5dced686cd52f44f57e18f[m
+Author: zjien <694396727@qq.com>
+Date:   Wed Nov 19 14:29:03 2014 +0800
+
+    update api_vote.md
+
+[33mcommit 206fdebee7a91ac8dd54c6fdc3472bad4c0ca0da[m
+Author: zjien <694396727@qq.com>
+Date:   Wed Nov 19 14:23:53 2014 +0800
+
+    update api_vote.md
+
+[33mcommit 8bbf02ec02eeecf08570368eb43854cf50452cfd[m
+Merge: cde7844 29009f8
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 14:17:29 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit cde78449e12dc2ae491736d07e087b8dc736be51[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 14:17:21 2014 +0800
+
+    添加二维码生成接口
+
+[33mcommit 29009f8ca4e2ebca5891ac8db53caeb0cb0fd721[m
+Author: zjien <694396727@qq.com>
+Date:   Wed Nov 19 14:13:31 2014 +0800
+
+    update api_vote.md
+
+[33mcommit 3cca971597ce472da100de847695472ec3476a24[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 19 11:52:44 2014 +0800
+
+    fix not able to insert a meet
+
+[33mcommit 7f08e856574147da692d9ac1530f70f267c840dd[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 22:35:27 2014 +0800
+
+    add jpush
+
+[33mcommit 3422b1b543aeca6c731ce5a49781728427eb79b4[m
+Author: zjien <694396727@qq.com>
+Date:   Tue Nov 18 22:27:54 2014 +0800
+
+    update api_research.md
+
+[33mcommit 00c3736be71a4f11b9880924a69d2d810a371bf4[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 21:03:39 2014 +0800
+
+    update
+
+[33mcommit a7274ba9b90b78040a4e4b670687e6ca02e28cdb[m
+Merge: 1602659 861c22b
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 20:32:41 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 160265955d0668a5403b7b4bdbc40c6224ebf60c[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 20:32:34 2014 +0800
+
+    Code Review : @zjien Push Message API
+
+[33mcommit 861c22b5c73a1152242ad7770457352b730c71ea[m
+Author: zjien <694396727@qq.com>
+Date:   Tue Nov 18 20:19:38 2014 +0800
+
+    update api_research.md
+
+[33mcommit beb923a80d96c1b64fa9b6de77c8f999094bee47[m
+Author: zjien <694396727@qq.com>
+Date:   Tue Nov 18 19:40:06 2014 +0800
+
+    update api_research.md
+
+[33mcommit 17936e31adfa77b8846b4ca741ce547f413637fe[m
+Author: zjien <694396727@qq.com>
+Date:   Tue Nov 18 19:34:19 2014 +0800
+
+    update api_research.md
+
+[33mcommit d12b4d6c47fdb4317212f95807ed0f06e2605087[m
+Merge: 312ee98 4d1423f
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Nov 18 17:32:33 2014 +0800
+
+    Merge branch 'master' of coding.net:zhlhuang/LightMeeting
+
+[33mcommit 312ee9811f84ad2da3893479b20034f2701f8316[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Nov 18 17:30:30 2014 +0800
+
+    完成member注册
+
+[33mcommit 4d1423f201562a82e863ffc62428a680d215a1d2[m
+Merge: 0127d1a e0a444a
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 17:29:59 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+    
+    Conflicts:
+    	Public/js/qc_README.md
+    
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit 0127d1a27f0659e959272b28963fed04376ecc55[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 17:05:51 2014 +0800
+
+    加入表单创建工具函数
+    
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit e0a444a99516369c96e123f639c0b2339c8b6b1d[m
+Author: zjien <694396727@qq.com>
+Date:   Tue Nov 18 17:17:46 2014 +0800
+
+    update api_discuss.md
+
+[33mcommit fc167d67ab3f157cdefe6b31ada8af72166e3b2a[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 17:05:51 2014 +0800
+
+    add docs for qc.js
+
+[33mcommit 0abdd68ae0c78a5f5d63427e45cee5d6054f5a4f[m
+Merge: 3879c2f 9ab6797
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 16:36:52 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 3879c2f712e76040e096562a062b73f68092144e[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 16:36:40 2014 +0800
+
+    update docs
+
+[33mcommit ba2840d9d03581501678e30f165b2f756b3c829c[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 16:36:31 2014 +0800
+
+    fix error return on `comment` and `discuss`
+
+[33mcommit 9ab6797c7fb7a7909883e09175fafe10bf7903a6[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 18 14:55:41 2014 +0800
+
+    use innodb
+
+[33mcommit cf33b1c3e03c399cb7e14278aa3b26e9382629d3[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 17 23:03:57 2014 +0800
+
+    将们视图文件换成Member
+
+[33mcommit 1b81f3f3dd68e8066daaed7ff77a22974a2c507e[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 17:39:54 2014 +0800
+
+    fix:坑爹的配置
+
+[33mcommit 240d35021b6f3354729a818ad05dcede9645a64d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 17:12:08 2014 +0800
+
+    typo
+
+[33mcommit 6631dcee903976d016c14f76fb437a3ef00e86e0[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 17:09:35 2014 +0800
+
+    fail handler for post
+
+[33mcommit 1815b3c39c64738ead301c8eb2d35dc4a0230339[m
+Merge: d90f83e 280ce56
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 17:04:43 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit d90f83e031f84749e1341b40cdb8822c995f8203[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 17:04:26 2014 +0800
+
+    add qc.js
+
+[33mcommit 280ce566ff87c1ce22e507e693a864c9902a2244[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 17 16:14:47 2014 +0800
+
+    加入了flat模板，成功实现登录界面。
+
+[33mcommit 30d006504fb6d89ba4b7d2267c7f35a0191a1d29[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 14:52:51 2014 +0800
+
+    update api docs
+
+[33mcommit c994e4d3d0149affb13de70c107cbaf5d947b5bb[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 14:50:01 2014 +0800
+
+    protect the `Application/`
+
+[33mcommit 8afb3570027df2bd2027971207a66904e650746d[m
+Merge: 9999277 0a754b4
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 14:42:14 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 99992776839979417359654af07ae5116ffdb66e[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 14:42:07 2014 +0800
+
+    讨论接口的权限检查
+
+[33mcommit 8dfbff9b32d80eee6bcb1c8aeb8c1d7baae3aabb[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 14:38:40 2014 +0800
+
+    Discuss Research Vote 添加lists接口
+
+[33mcommit 0a754b4948d9238545b4cbb10a6b42d91a1e1f21[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 17 14:14:34 2014 +0800
+
+    将D方法实例化对象名称改成首字母大写
+
+[33mcommit 9ff379ac9641491a39a733cf436c1f4de04304d8[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 14:06:22 2014 +0800
+
+    模型调用错误
+
+[33mcommit 42433da4b74baa40173b29b7580ac7f8f79f5228[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 17 14:05:51 2014 +0800
+
+    删除home模块上的model
+
+[33mcommit 16ab03fb271766941c94a9615aa4f3d7e370a455[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 17 14:04:02 2014 +0800
+
+    转移model到common
+
+[33mcommit 72dc7e9829e0c0c86804c935052d7324f25572a9[m
+Merge: 000438b 92d99b3
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 11:48:14 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting
+
+[33mcommit 000438bbb0a6c53874debca08abde6dc4fdea7a3[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 17 11:47:23 2014 +0800
+
+    ~
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit 92d99b3cbf1e0e96f1eace9a5445f47d9a342afc[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sun Nov 16 22:50:12 2014 +0800
+
+    create api_document
+
+[33mcommit 2e83c79366db4da31d71fd59a7ea0d906e329257[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sun Nov 16 22:48:57 2014 +0800
+
+    通过伪静态获取指定文档
+
+[33mcommit 8c4931be8cd4f8bc1d6090c6279653d783b9172e[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sun Nov 16 22:26:57 2014 +0800
+
+    更新会议需要会议 id 返回时间格式纠正
+
+[33mcommit 28187bf44d5a1bbce6a345676085407d2144e9ad[m
+Merge: 952db3c 7e8c341
+Author: zjien <694396727@qq.com>
+Date:   Sun Nov 16 20:52:43 2014 +0800
+
+    Accept Merge Request #4 : (zjien -> master)
+
+[33mcommit 7e8c341da52eed193edf298f07e8ef7b7a41e14d[m
+Author: zjien <694396727@qq.com>
+Date:   Sun Nov 16 20:50:26 2014 +0800
+
+    add PushMessage
+
+[33mcommit 352128d4f4a59798823dbb59faa72ffff78a39c8[m
+Merge: 4c14a98 952db3c
+Author: zjien <694396727@qq.com>
+Date:   Sun Nov 16 20:43:19 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting into zjien
+
+[33mcommit 952db3ce7c4cf12cecfd881ad81d6561e77539f5[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sun Nov 16 01:39:03 2014 +0800
+
+    补充文档
+
+[33mcommit 20cbf7320f752c032b4dcd6a25744def14489cbd[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sun Nov 16 01:30:54 2014 +0800
+
+    * fix :handle the NOT FOUND
+    * add :comments for the model
+
+[33mcommit 3e4baae5a7ff23db3cd583ae9ff0ce8bdfe68abe[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sun Nov 16 01:14:45 2014 +0800
+
+    完成调查表的删除功能：调查表删除，调查问题删除
+
+[33mcommit 4c14a988e4d781b59583c776f7dfcae62f52d414[m
+Merge: f3e3509 15ed15a
+Author: zjien <694396727@qq.com>
+Date:   Sat Nov 15 23:59:10 2014 +0800
+
+    Merge branch 'zjien' of https://coding.net/zhlhuang/LightMeeting.git into zjien
+
+[33mcommit 2069d98cc6417c99ca4abe48f889e79caa4c735e[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 21:41:57 2014 +0800
+
+    typo
+
+[33mcommit fd5f1eeb0526a45e25c3e8f5743eeafb01bbf660[m
+Merge: 34fb9f1 80ee17b
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 17:35:16 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting
+
+[33mcommit 34fb9f18c75d0e9f0766795a778b298c47eb3f15[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 17:34:52 2014 +0800
+
+    90%完成调查表
+
+[33mcommit 80ee17b5a7b7fa07df7414a838f4944c3ac602a7[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 15 17:27:40 2014 +0800
+
+    修改参加会议需要memberid
+
+[33mcommit 79d8617ddb7d2bfdf856b48cb9b9a7cbb928daab[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 15 17:20:01 2014 +0800
+
+    通过会议id查找文档
+
+[33mcommit 3c8edbbdfb0d521a8492ad754c8c68edaf0895f4[m
+Merge: 012717f 333ae90
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 17:13:24 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting
+
+[33mcommit 012717f29f72ba1f1af3045dc25c3688dbf9106f[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 17:12:37 2014 +0800
+
+    修复建表错误
+    原因： OS X下的MAMP的建表wamp有区别
+
+[33mcommit 333ae90d5c1298e88bcc5230133d64010f9367d1[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 15 16:15:00 2014 +0800
+
+    修改不传值还有传入空值的误会
+
+[33mcommit a00cd687ef3ed369962363f966f6909155db8a34[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 15:58:29 2014 +0800
+
+    update the table info
+
+[33mcommit d4d57c4ca906a795512caeb5d0cfd9256e7d61ca[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 15:55:12 2014 +0800
+
+    meetid is useless
+
+[33mcommit 307bd11a51b974de11de38defd8e6d881e0ad498[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 02:19:17 2014 +0800
+
+    update the api docs
+
+[33mcommit aa5481c85626c6b999a2429d97315dd34e10dc48[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 15 02:17:20 2014 +0800
+
+    add simple models and controller
+
+[33mcommit 65ab612648cbf822a3b9dc60b00f4f84ca5f6c52[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 14 22:55:25 2014 +0800
+
+    update docs
+
+[33mcommit a4d59b2101c5b4124594ce5952bb84b0b6eeb6b0[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 14 21:26:44 2014 +0800
+
+    创建3张表的sql
+
+[33mcommit 8e0b2a7fbfca63772372ee47f1d4160be2b294d2[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 14 20:06:36 2014 +0800
+
+    update docs
+
+[33mcommit 4b57d0bb1aff3f4f739fb26058eab0bccbaf3344[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 14 20:00:22 2014 +0800
+
+    rm zip
+
+[33mcommit a51112ff507f2d48be1ac6b326b1a15a45b639b1[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 14 17:19:02 2014 +0800
+
+    分页查询会议，格式会议时间
+
+[33mcommit 964528d89d9e039f720eb4490cfaab182e9ace20[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 14 17:00:00 2014 +0800
+
+    更改api_member
+
+[33mcommit 75d6a5efebff81a232ea9ca8caddde06983b8c4d[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 14 16:54:56 2014 +0800
+
+    将会议创建人默认参加会议
+
+[33mcommit b48c98d0686a786a67f63a96f20a663c1c808708[m
+Merge: 21ddff1 f3e3509
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 14 16:44:02 2014 +0800
+
+    Merge branch 'master' of git@coding.net:zhlhuang/LightMeeting.git
+
+[33mcommit 21ddff110b8ed2007827efd6c0d0ea8b1bea5c96[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 14 16:43:46 2014 +0800
+
+    将错误提示修改成中文
+
+[33mcommit f3e3509ea3a592c1d5ad50253f99f222f2be0926[m
+Author: zjien <694396727@qq.com>
+Date:   Fri Nov 14 15:34:09 2014 +0800
+
+    add view
+
+[33mcommit a19b9cc7f2b92996fb496106563e6b88c2347626[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 14 10:40:59 2014 +0800
+
+    web framework
+
+[33mcommit d748f70649a94f61ee257d9e291ca03ef8ecf474[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 14 10:40:33 2014 +0800
+
+    add access controll
+
+[33mcommit 9af89aa70ff2fb6eac2ad13bcbc04e6da8f23dca[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 14 00:36:39 2014 +0800
+
+    api research darft
+    
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit 867acedad88bcf58cd3a3efaebbf7543acb0d96d[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 14 00:15:32 2014 +0800
+
+    update the api docs
+    
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit bbc57b2e302dae24d804a18d7b276ba57bf2051a[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 13 13:59:12 2014 +0800
+
+    大写一下
+
+[33mcommit 5cc90fab202686a0069f89ed026ea2440f24554f[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 13 13:53:23 2014 +0800
+
+    test: url 不区分大小写
+
+[33mcommit 08aaf590be782b3cb04d3b01c4c5cd4faaadaead[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 13 13:51:47 2014 +0800
+
+    不区分URL大小写
+
+[33mcommit ab789eb5fc64df3f39a27c57d5488da59c3b66be[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 13 13:51:36 2014 +0800
+
+    delete
+
+[33mcommit 02fa1ddff53ade0d5d2a194f4d9dd9a839c8d656[m
+Merge: 9cfafb7 b8774d5
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 13 13:49:33 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 9cfafb7cfc86890417fde8e91891b27e1d30dace[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Thu Nov 13 13:49:23 2014 +0800
+
+    not finish yet..
+
+[33mcommit b8774d53da3b80a8acd7aabf49f563f581f1abe7[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 13 12:23:05 2014 +0800
+
+    upcase
+
+[33mcommit 34a49fc9b0e78253e1c008a44cf46fc07d8af3de[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 13 10:33:48 2014 +0800
+
+    update member api
+
+[33mcommit 0b0212971b406ada0188fcff74666c5da5b5ca2c[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Thu Nov 13 10:31:28 2014 +0800
+
+    返回登录会员信息
+
+[33mcommit 2ec65d2775cf57aa267473f37f8b9788ca024d93[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 22:08:00 2014 +0800
+
+    move sql file from Api/ to Sql/
+
+[33mcommit a4bb35bcc7db1f379dc67d932a6d6bb6955a31f6[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 15:57:32 2014 +0800
+
+    update readme
+
+[33mcommit d435b5925a68937403b3f13a892a884b00a046dc[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 15:55:59 2014 +0800
+
+    add README and LICENSE
+
+[33mcommit 71b7e735e2aac384b7ad76ee7ee0c0b28d3566a0[m
+Merge: babe9bb a6fd293
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 15:45:23 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting
+
+[33mcommit babe9bb71d73c0ed40ab74aefe712ab4a3c6ba74[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 15:44:19 2014 +0800
+
+    add bootstrap
+    
+    Signed-off-by: Jayin Ton <tonjayin@gmail.com>
+
+[33mcommit a6fd293e943b3cca75e3209e4d58de9ee1c4165b[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 13:46:26 2014 +0800
+
+    rm the comments
+
+[33mcommit c574dfb94cd7b0e5d91ad21a12aeb9364e7ccd33[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 12:52:30 2014 +0800
+
+    add 2 sample config
+
+[33mcommit be27f2f6dafe31fa40d56c223b54ca8a2a57ff11[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 12:32:45 2014 +0800
+
+    讨论接口:
+    * 要加入讨论添加\ 删除权限检查
+    * 补充文档
+
+[33mcommit 0e22615003366c43e0bcffba40e692ab8aed8dc5[m
+Merge: 7e8d010 f14ad32
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 11:00:26 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 7e8d01003104e36d027c78d41e42b40081e18aa9[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Wed Nov 12 11:00:15 2014 +0800
+
+    添加获得用户登录信息方法
+
+[33mcommit f14ad32a4c95732aaaad77da938b76e6ebbdb382[m
+Merge: 1724d83 dcf330f
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Nov 11 22:59:25 2014 +0800
+
+    Merge branch 'master' of coding.net:zhlhuang/LightMeeting
+
+[33mcommit 1724d834cca82b064009dfc32fb78e6c0a525bb0[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Nov 11 22:58:57 2014 +0800
+
+    添加document空能，在base控制添加登录信息获取
+
+[33mcommit dcf330f10eac9f71ed267e22cc5c101c9c876168[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 11 22:25:35 2014 +0800
+
+    * 添加讨论接口
+    * TODO 权限检查
+
+[33mcommit ff4fe7766ecb5c1cff0b0bb0c9a017f91ef7fa4e[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 11 21:49:56 2014 +0800
+
+    handle the create error
+
+[33mcommit 8c7260a387e56ea333c310936178de1ae178fc7d[m
+Merge: 9ccc722 679232d
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 11 16:18:28 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 9ccc722dfc9cede488304fc6f1661dbe50e43226[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 11 16:18:20 2014 +0800
+
+    * 加入2个创建表的sql
+    * 更新api 问答文档
+
+[33mcommit 679232da13fa4d81c7efe3c679a022ef8c8b39fc[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Nov 11 16:13:49 2014 +0800
+
+    修改密码不需要传入id
+
+[33mcommit 1a18e763b0939b09a768910cf0cddfad34e55f99[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Tue Nov 11 15:33:17 2014 +0800
+
+    api daft
+
+[33mcommit 92d63af6e053c014ca0a578eb826beaff8943bb0[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Nov 11 15:05:53 2014 +0800
+
+    新增文档表，讨论表设计
+
+[33mcommit 4cf87bc2f2d591dbbecaba4959b74761becbceb5[m
+Author: zjien <694396727@qq.com>
+Date:   Mon Nov 10 21:03:29 2014 +0800
+
+    修改phtml后缀
+
+[33mcommit 18c2788a1315b280c6a3a3f63ff3579df985b008[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 10 20:04:07 2014 +0800
+
+    VoteMember -> VoteRecord
+
+[33mcommit 9d66a4b3b66e400891b7d46839885947c4772b5b[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 10 19:49:10 2014 +0800
+
+    完成查看投票信息接口
+
+[33mcommit bbe99140adde770f7b86f1a27e0c0cc623cda792[m
+Merge: 6542d8e 38b0683
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 10 16:34:06 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 6542d8e5ea5093312c9eca29bf3dca20e7ee7549[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 10 16:33:56 2014 +0800
+
+    完成用户投票功能
+
+[33mcommit 38b068387a148401596ef1a128e69caf97148e6c[m
+Merge: 64f23d2 fb0f311
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 10 15:52:26 2014 +0800
+
+    Merge branch 'master' of coding.net:zhlhuang/LightMeeting
+
+[33mcommit 64f23d26b8bb901414605e61f5b33168cc4da4e1[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 10 15:51:49 2014 +0800
+
+    完成会议管理，以及文档
+
+[33mcommit fb0f311c4959b3851251709331e414e1c1b343d9[m
+Merge: 9b48a94 b01e670
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 10 15:51:13 2014 +0800
+
+    Merge branch 'master' of https://coding.net/zhlhuang/LightMeeting.git
+
+[33mcommit 9b48a94f2239ac39533584d1b8b465244af16764[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Mon Nov 10 15:51:04 2014 +0800
+
+    完成选项的CURD
+
+[33mcommit b01e670ae3b9e8820057346c2830944b38d51987[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 10 13:57:37 2014 +0800
+
+    update api_member.md
+
+[33mcommit 45cdf81e648ac8b8567fdfcddf20b4544a9d7e32[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 8 19:12:18 2014 +0800
+
+    写了member api
+
+[33mcommit 3c9fc9984fa7a539ea92eb997c60fb6806641b3c[m
+Merge: 5b32c3b 0397c62
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 8 17:10:51 2014 +0800
+
+    Merge branch 'master' of coding.net:zhlhuang/LightMeeting
+
+[33mcommit 5b32c3bb0c2f31ea712f0f7db98cd13718f170df[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 8 17:10:12 2014 +0800
+
+    完善member处理
+
+[33mcommit 0397c6261f9343111d3bd8ca587822651b5e329b[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 16:55:29 2014 +0800
+
+    投票表的CUD操作
+
+[33mcommit 3883953abea4269059cde7801d77914106092666[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 16:15:17 2014 +0800
+
+    update api docs
+
+[33mcommit ab14e2f5bd85e3c4ae00c7064287d0e1f523eff0[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 16:12:12 2014 +0800
+
+    req login
+
+[33mcommit 3adf8bc41e03222cee5ea78f34d035393656c164[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 15:20:43 2014 +0800
+
+    config change
+
+[33mcommit 18fe2f84d1f7332d517d1326b64332441cb41d7a[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 15:17:49 2014 +0800
+
+    * add：_empty()
+    * update:comments
+
+[33mcommit d4bfbc55317a64ab5c4dd4241ac6d99d3007fdcf[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 14:50:38 2014 +0800
+
+    * 加入stime 开始时间 字段
+
+[33mcommit 0b13b1a6c705f7090dfe984c95c38f46aa75967b[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 14:17:29 2014 +0800
+
+    use PHP 5.5
+
+[33mcommit aad5980d2f20e8b27e32f65e28a0720e3130fefe[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 14:15:00 2014 +0800
+
+    php support lib
+
+[33mcommit 449dd48df1c3bbef737bc49d54b11c38162fa0f2[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 14:13:54 2014 +0800
+
+    update .gitignore
+
+[33mcommit 3b3b2f92909ff9cd0390a8ba770aef1b5e026c62[m
+Merge: 9d6b89c c12ef2c
+Author: jayinton <tonjayin@gmail.com>
+Date:   Sat Nov 8 13:53:34 2014 +0800
+
+    Accept Merge Request #3 : (jayin -> master)
+
+[33mcommit c12ef2cfaf771273f44ac20da8c4dd086618606c[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 13:52:24 2014 +0800
+
+    * 更新:会议的字段
+    * 新增:3个投票表
+
+[33mcommit 0207bdbc5b91815f89e343b8976a04abe3013752[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 11:45:02 2014 +0800
+
+    format
+
+[33mcommit 1d51f27031eb0514d49be0b4095cde1b2594819a[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 11:42:02 2014 +0800
+
+    option change
+
+[33mcommit 81d945d4dd7f0b21c79aed3bb1b6c4fa0b53c3c5[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Sat Nov 8 11:39:17 2014 +0800
+
+    update docs
+
+[33mcommit 9d6b89c7f3c32be84d5e5ff5bc9a24683d24840e[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Sat Nov 8 10:09:43 2014 +0800
+
+    数据库表修改
+
+[33mcommit 15ed15a4736ab7282976e16b2e2beef90381fac4[m
+Author: zjien <694396727@qq.com>
+Date:   Fri Nov 7 15:46:09 2014 +0800
+
+    add document.md
+
+[33mcommit 7f02034f29685ec3bc6a8d44e39277a630877224[m
+Author: zjien <694396727@qq.com>
+Date:   Fri Nov 7 11:27:10 2014 +0800
+
+    ignore~
+
+[33mcommit a5305d33beeb2287aa653252c721255a4802e4b1[m
+Author: zjien <694396727@qq.com>
+Date:   Fri Nov 7 11:26:01 2014 +0800
+
+    rm config
+
+[33mcommit c83fa91b0fe9a49f6d6c02c3a75415603fa8e044[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 7 11:10:25 2014 +0800
+
+    添加数据库文件
+
+[33mcommit aed549da22454db8fcc5059b44f512284b84e4de[m
+Merge: 6b783e6 e60bdc7
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 7 11:05:32 2014 +0800
+
+    Accept Merge Request #2 : (zhlhuang -> master)
+
+[33mcommit e60bdc77ab72bc70374b9612df790ca8f3c98f48[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Fri Nov 7 10:59:39 2014 +0800
+
+    统一修改返回数据类型
+
+[33mcommit 6b783e6f458b6e48b39ca895d537b5ca019d0939[m
+Author: Jayin Ton <tonjayin@gmail.com>
+Date:   Fri Nov 7 09:40:30 2014 +0800
+
+    docs
+
+[33mcommit 55507728087b6d628b9272561481bbed9f81d091[m
+Merge: bea8402 bdd64df
+Author: jayinton <tonjayin@gmail.com>
+Date:   Fri Nov 7 09:25:46 2014 +0800
+
+    Accept Merge Request #1 : (zhlhuang -> master)
+
+[33mcommit bdd64dfe0fd6910db2882f3ecd2b761826305cac[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Tue Nov 4 16:33:02 2014 +0800
+
+    可以根据会员查找会议，根据会议查找参会人
+
+[33mcommit bea84026aadc0ac457720cd5f1aed52b67b88b1f[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 3 18:32:46 2014 +0800
+
+    增加对meet表操作
+
+[33mcommit 88c5c95d6092cd3164889040d8cfdd96674838d3[m
+Author: zhlhuang <364626853@qq.com>
+Date:   Mon Nov 3 14:14:02 2014 +0800
+
+    初始化项目
